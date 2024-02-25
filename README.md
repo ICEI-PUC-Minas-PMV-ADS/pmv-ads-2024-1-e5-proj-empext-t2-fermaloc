@@ -1,12 +1,12 @@
 # FERMALOC - Loja de Ferramentas elétrica de manutenção e locação
 
-`CURSO`
+`CURSO: ` Analise e Desenvolvimento de Sistemas
 
-`DISCIPLINA`
+`DISCIPLINA: ` Projeto: Desenvolvimento de um Sistema Sociotécnico Inovador
 
-`SEMESTRE`
+`SEMESTRE: ` 5º Semestre
 
-O projeto consiste na criação de um website para a empresa FERMALOC com a finalidade de catalogar os produtos que a empresa tem disponíveis para venda e locação.
+`Sobre o Projeto: ` O projeto consiste na criação de um website para a empresa FERMALOC com a finalidade de catalogar os produtos que a empresa tem disponíveis para venda e locação.
 
 ## Integrantes
 
