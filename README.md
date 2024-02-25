@@ -1,4 +1,4 @@
-# TÍTULO DO PROJETO
+# FERMALOC - Loja de Ferramentas elétrica de manutenção e locação
 
 `CURSO`
 
@@ -6,18 +6,20 @@
 
 `SEMESTRE`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto consiste na criação de um website para a empresa FERMALOC com a finalidade de catalogar os produtos que a empresa tem disponíveis para venda e locação.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Diego Victor Fraga
+* Igor Teixeira da Costa
+* Matheus Estevam Nunes Cordeiro
+* Thais Malta Boscatti
+* Thais Munhoz Carneiro
+* Vinícius Eduardo Silva Oliveira
 
 ## Orientador
 
-* Nome completo do professor 1
+* Soraia Lúcia da Silva
 
 ## Instruções de utilização
 
