@@ -1,41 +1,28 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Devido ao aumento do número de vendas e divulgações de serviços por meios da internet, tornou-se cada vez mais necessário para o empreendedor investir, além das redes sociais, na criação de uma aplicação web. Isso se dá pelo fato do site ainda ser o principal meio de divulgação do cartão de visita da loja, visto que muitos consumidores pesquisam informações como endereo, telefone ou mesmo produtos e marcas em sites de busca. Além disso, uma aplicação web ainda consiste numa brading e reforço de uma marca, pelo fato do site carregar a identidade do seu negócio, causando uma melhor primeira imprensão.
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Além das mídias sociais, o site tem um papel fundamental na promoção dos serviços de uma empresa. Com base nisso, a Fermaloc deseja desenvolver uma aplicação web como uma forma de aumentar a divulgação dos seus serviços de vendas e locações de ferramentas, e também de assistência técnica.
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
-
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+O objetivo geral do trabalho é na criação de uma aplicação web para a empresa Fermaloc visando a divulgação dos seus serviços. A empresa deseja que a aplicação contenha a função de catalogar os seus produtos, que serão vendidos ou alugados, e também deseja facilitar a negociação através da conexão dos produtos especificados no site com vendedor, seja através do WhatsApp da empresa, ou do e-mail.
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+A presença de uma empresa nos meios digitais tem se tornado cada vez mais essencial para alavancar os seus negócios, visto que a maior parte dos consumidores se encontra na internet. Segundo uma pesquisa feita pela [Digital 2022](https://datareportal.com/reports/digital-2022-brazil) mais de 165 milhões de brasileiros tinham acesso à internet em janeiro de 2022. Portanto, o que antes era apenas uma tendência, hoje se tornou uma realidade, visto que consumidores e potenciais clientes se encontram on-line, trabalhando, estudando, fazendo negócios e comprando produtos ou adquirindo serviços.
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
+Vale observar que hoje também existem inúmeros canais digitais, como as redes sociais e os aplicativos de mensagens. Mas é importante salientar que nenhum deles substitui por completo o site como um dos principais canais de relacionamento e contato dos pequenos negócios com seus clientes. Isso se dá pelo fato das redes sociais funcionarem por meio de algoritmos que acabam prejudicando a visibilidade do negócio. Outro fator importante é que ao ter um site, o domínio dele é completamente da empresa, não ficando dependente das mídias sociais.
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Portanto, a criação de um site para a empresa torna-se algo primordial para a divulgação do seu negócio, visto que ele aumenta a atração e a visualização dos seus pontenciais consumidores, aumento a quantidade de clientes.
+ 
 
 ## Relação com a Extensão Universitária
 
-Relacionar a situação-problema da organização com o impacto social esperado com a implantação do sistema sociotécnico.
+A criação de uma aplicação web pelos alunos da PUC irão proposcionar uma melhora da identidade própria da empresa Fermaloc, além de contribuir para uma melhor divulgação dos seus serviços e também facilitar o contato do cliente com o vendedor.
 
 ## Descrição do Parceiro
 
-Apresente uma descrição resumida sobre a organização onde o projeto será desenvolvido para que possa ser compreendido o cenário sistema sociotécnico.
+Imgs/Logo.jpg | A Fermaloc Assitência Técnica é uma empresa localizada em Pedro Leopoldo - MG e que atua no ramo de vendas e locações de ferramentas elétricas, além da prestação de assistência técnica. A empresa possui CNPJ de nº 30.278.900/0001-66 e inscrição estadual MG: 003178206.00-65 e possui como proprietário o Gustavo Gomes da COnceição.
