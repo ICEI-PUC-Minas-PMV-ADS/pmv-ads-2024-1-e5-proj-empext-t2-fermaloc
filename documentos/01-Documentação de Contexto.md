@@ -25,4 +25,4 @@ A criação de uma aplicação web pelos alunos da PUC irão proposcionar uma me
 
 ## Descrição do Parceiro
 
-Imgs/Logo.jpg | A Fermaloc Assitência Técnica é uma empresa localizada em Pedro Leopoldo - MG e que atua no ramo de vendas e locações de ferramentas elétricas, além da prestação de assistência técnica. A empresa possui CNPJ de nº 30.278.900/0001-66 e inscrição estadual MG: 003178206.00-65 e possui como proprietário o Gustavo Gomes da COnceição.
+| ./Imgs/Logo.jpg | A Fermaloc Assitência Técnica é uma empresa localizada em Pedro Leopoldo - MG e que atua no ramo de vendas e locações de ferramentas elétricas, além da prestação de assistência técnica. A empresa possui CNPJ de nº 30.278.900/0001-66 e inscrição estadual MG: 003178206.00-65 e possui como proprietário o Gustavo Gomes da Conceição. |
