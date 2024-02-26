@@ -71,8 +71,11 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 | ID     | Descrição do Requisito                  | Prioridade |
 | ------ | --------------------------------------- | ---------- |
-| RF-001 | Permitir que o usuário cadastre tarefas | ALTA       |
-| RF-002 | Emitir um relatório de tarefas no mês   | MÉDIA      |
+| RF-001 | Garantir que o cliente tenha um acesso administrador | ALTA       |
+| RF-002 | Permitir que o administrador altere o banner do site (CRUD)  | ALTA      |
+| RF-003 | Permitir que o administrador adicione e edite os produtos do catálogo (CRUD)  | ALTA      |
+| RF-004 | Disponibilizar a visualização do catálogo de produtos a todos os usuários  | ALTA      |
+| RF-005 | Disponibilizar a comunicação direta com o empresário por meio do Whatsapp  | ALTA     |
 
 ### Requisitos não Funcionais
 
