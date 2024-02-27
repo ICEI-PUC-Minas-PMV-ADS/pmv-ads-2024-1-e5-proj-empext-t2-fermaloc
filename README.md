@@ -1,6 +1,6 @@
 # FERMALOC - Loja de Ferramentas elétrica de manutenção e locação
 
-<p align="center"><img src="[ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-pmv-ads-2024-1-e5-proj-fermaloc-t2/blob/main/Imgs/Logo.jpg](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-pmv-ads-2024-1-e5-proj-fermaloc-t2/blob/main/Imgs/Logo.jpg)" width="480" height="270"/></p>
+[<img src="Imgs/Logo.jpg">]([https://link-to-your-URL/](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-pmv-ads-2024-1-e5-proj-fermaloc-t2/blob/main/Imgs/Logo.jpg))
 
 
 `CURSO: Analise e Desenvolvimento de Sistemas`  
