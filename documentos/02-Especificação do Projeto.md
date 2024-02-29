@@ -52,7 +52,7 @@ Comunição da equipe: Microsoft Teams, WhatsApp, Discord
 ![]
 ## Project Model Canvas
 
-Colocar a imagem do modelo construído apresentando a proposta de solução.
+[<img src="Imgs/PMC.jpg">]([https://link-to-your-URL/](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-pmv-ads-2024-1-e5-proj-fermaloc-t2/blob/main/Imgs/PMC.jpg))
 
 > **Links Úteis**:
 > Disponíveis em material de apoio do projeto
