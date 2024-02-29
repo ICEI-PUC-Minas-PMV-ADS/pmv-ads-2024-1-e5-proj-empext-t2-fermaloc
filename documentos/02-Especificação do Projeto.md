@@ -52,7 +52,7 @@ Comunição da equipe: Microsoft Teams, WhatsApp, Discord
 ![]
 ## Project Model Canvas
 
-[<img src="Imgs/PMC.png">]([https://link-to-your-URL/](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-pmv-ads-2024-1-e5-proj-fermaloc-t2/blob/main/Imgs/PMC.png))
+![Alt](/Imgs/PMC.png)
 
 > **Links Úteis**:
 > Disponíveis em material de apoio do projeto
