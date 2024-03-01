@@ -99,4 +99,4 @@ Comunição da equipe: Microsoft Teams, WhatsApp, Discord
 
 ## Projeto da Base de Dados
 
-![ERR](/Img/eer.png)
+![EER](/Imgs/eer.png)
