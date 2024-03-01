@@ -8,8 +8,8 @@
 
 **Plataforma de Desenvolvimento:** .NET
 
-- Utilizaremos a versão mais recente do .NET para garantir benefícios de desempenho e segurança.
-- A escolha do .NET oferece suporte multiplataforma e uma ampla comunidade de desenvolvedores.
+- A versão mais recente do .NET será utilizada para garantir benefícios de desempenho e segurança.
+- A escolha do .NET oferece suporte multiplataforma e conta com uma ampla comunidade de desenvolvedores.
 
 **Persistência de Dados:** Entity Framework
 
@@ -17,7 +17,7 @@
 
 **Comunicação com Banco de Dados MySQL:** Pomelo
 
-- Utilizaremos o Pomelo EF Core MySQL para estabelecer uma conexão eficaz e otimizada com o banco de dados MySQL.
+- O Pomelo EF Core MySQL será utilizado para estabelecer uma conexão eficaz e otimizada com o banco de dados MySQL.
 
 **Criptografia de Senhas:** BCrypt
 
@@ -25,7 +25,7 @@
 
 **Frontend:** ReactJS
 
-- Para o desenvolvimento do frontend, adotaremos o ReactJS, uma biblioteca JavaScript de código aberto mantida pelo Facebook, proporcionando uma experiência de usuário dinâmica e responsiva.
+- Para o desenvolvimento do frontend, será adotado o ReactJS, uma biblioteca JavaScript de código aberto mantida pelo Facebook, proporcionando uma experiência de usuário dinâmica e responsiva.
 
 ### Ferramentas utilizadas para desenvolvimento
 
@@ -41,15 +41,17 @@ Comunição da equipe: Microsoft Teams, WhatsApp, Discord
 
 ## **Modelo de Arquitetura:**
 
-**Monolito:** Optamos por um modelo monolítico devido à simplicidade do projeto. Isso permitirá uma abordagem mais direta para o desenvolvimento e manutenção.
-![arquitetura](img/monolito.png)
+**Monolito:** Optou-se por um modelo monolítico devido à simplicidade do projeto. Isso permitirá uma abordagem mais direta para o desenvolvimento e manutenção.
+
+![arquitetura](/Imgs/monolito.png)
 
 ### **Benefícios Esperados:**
 
 - **Produtividade Aprimorada:** A combinação do .NET, Entity Framework, Pomelo, BCrypt e ReactJS acelera o desenvolvimento, permitindo-nos focar mais nas funcionalidades centrais da API e do frontend.
 - **Escalabilidade e Desempenho:** A plataforma .NET, juntamente com as otimizações proporcionadas pelo Pomelo, garantirá escalabilidade e desempenho eficientes na comunicação com o MySQL.
 - **Segurança Avançada:** A utilização do BCrypt para criptografia de senhas garante uma camada adicional de segurança, protegendo as informações sensíveis.
-![]
+  ![]
+
 ## Project Model Canvas
 
 ![Alt](/Imgs/PMC.png)
@@ -61,15 +63,15 @@ Comunição da equipe: Microsoft Teams, WhatsApp, Discord
 
 ### Requisitos Funcionais
 
-| ID     | Descrição do Requisito                  | Prioridade |
-| ------ | --------------------------------------- | ---------- |
-| RF-001 | Garantir que o cliente tenha um acesso administrador | ALTA       |
-| RF-002 | Permitir que o administrador altere o banner do site (CRUD)  | ALTA      |
-| RF-003 | Permitir que o administrador adicione e edite os produtos do catálogo (CRUD)  | ALTA      |
-| RF-004 | Permitir que o administrador classifique os produtos em diferentes categorias (CRUD)  | ALTA      |
-| RF-005 | Disponibilizar a visualização do catálogo de produtos a todos os usuários  | ALTA      |
-| RF-006 | Disponibilizar a visualização dos produtos de acordo com a categoria a todos os usuários  | ALTA      |
-| RF-007 | Disponibilizar a comunicação direta com o empresário por meio do Whatsapp  | ALTA     |
+| ID     | Descrição do Requisito                                                                   | Prioridade |
+| ------ | ---------------------------------------------------------------------------------------- | ---------- |
+| RF-001 | Garantir que o cliente tenha um acesso administrador                                     | ALTA       |
+| RF-002 | Permitir que o administrador altere o banner do site (CRUD)                              | ALTA       |
+| RF-003 | Permitir que o administrador adicione e edite os produtos do catálogo (CRUD)             | ALTA       |
+| RF-004 | Permitir que o administrador classifique os produtos em diferentes categorias (CRUD)     | ALTA       |
+| RF-005 | Disponibilizar a visualização do catálogo de produtos a todos os usuários                | ALTA       |
+| RF-006 | Disponibilizar a visualização dos produtos de acordo com a categoria a todos os usuários | ALTA       |
+| RF-007 | Disponibilizar a comunicação direta com o empresário por meio do Whatsapp                | ALTA       |
 
 ### Requisitos não Funcionais
 
@@ -89,12 +91,12 @@ Comunição da equipe: Microsoft Teams, WhatsApp, Discord
 
 ## Diagrama de Casos de Uso
 
-![MER](img/caso-de-uso.png)
+![MER](/Imgs/caso-de-uso.png)
 
 ## Modelo ER (Projeto Conceitual)
 
-![MER](img/mer.png)
+![MER](/Imgs/mer.png)
 
 ## Projeto da Base de Dados
 
-![ERR](img/eer.png)
+![ERR](/Img/eer.png)
