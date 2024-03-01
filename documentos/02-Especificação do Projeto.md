@@ -65,13 +65,14 @@ Comunição da equipe: Microsoft Teams, WhatsApp, Discord
 
 | ID     | Descrição do Requisito                                                                   | Prioridade |
 | ------ | ---------------------------------------------------------------------------------------- | ---------- |
-| RF-001 | Garantir que o cliente tenha um acesso administrador                                     | ALTA       |
-| RF-002 | Permitir que o administrador altere o banner do site (CRUD)                              | ALTA       |
+| RF-001 | Garantir que o cliente tenha um acesso administrador por meio de login                   | ALTA       |
+| RF-002 | Permitir que o administrador atualize o banner do site                                   | ALTA       |
 | RF-003 | Permitir que o administrador adicione e edite os produtos do catálogo (CRUD)             | ALTA       |
 | RF-004 | Permitir que o administrador classifique os produtos em diferentes categorias (CRUD)     | ALTA       |
 | RF-005 | Disponibilizar a visualização do catálogo de produtos a todos os usuários                | ALTA       |
 | RF-006 | Disponibilizar a visualização dos produtos de acordo com a categoria a todos os usuários | ALTA       |
 | RF-007 | Disponibilizar a comunicação direta com o empresário por meio do Whatsapp                | ALTA       |
+| RF-008 | Disponibilizar um relatório dos produtos que mais redirecionaram os clientes para o Whatsapp | MÉDIO      |
 
 ### Requisitos não Funcionais
 
@@ -80,6 +81,7 @@ Comunição da equipe: Microsoft Teams, WhatsApp, Discord
 | RNF-001 | O sistema deve ser responsivo e compatível com os principais navegadores            | ALTA       |
 | RNF-002 | Deve conter informações de horário de funcionamento, telefone de contato e endereço | ALTA       |
 | RNF-003 | A aplicação deve ser intuitiva, de fácil utilização e entendimento                  | ALTA       |
+| RNF-004 | O aplicativo deve ser seguro e proteger as informações do administrador             | ALTA       |
 
 ## Restrições
 
