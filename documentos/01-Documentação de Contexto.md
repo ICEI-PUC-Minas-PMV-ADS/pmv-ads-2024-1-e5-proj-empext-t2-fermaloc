@@ -1,6 +1,6 @@
 # Introdução
 
-Devido ao aumento do número de vendas e divulgações de serviços por meios da internet, tornou-se cada vez mais necessário para o empreendedor investir, além das redes sociais, na criação de uma aplicação web. Isso se dá pelo fato do site ainda ser o principal meio de divulgação do cartão de visita da loja, visto que muitos consumidores pesquisam informações como endereo, telefone ou mesmo produtos e marcas em sites de busca. Além disso, uma aplicação web ainda consiste numa brading e reforço de uma marca, pelo fato do site carregar a identidade do seu negócio, causando uma melhor primeira imprensão.
+Devido ao aumento do número de vendas e divulgações de serviços por meios da internet, tornou-se cada vez mais necessário para o empreendedor investir, além das redes sociais, na criação de uma aplicação web. Isso se dá pelo fato do site ainda ser o principal meio de divulgação do cartão de visita da loja, visto que muitos consumidores pesquisam informações como endereço, telefone ou mesmo produtos e marcas em sites de busca. Além disso, uma aplicação web ainda consiste numa branding e reforço de uma marca, pelo fato do site carregar a identidade do seu negócio, causando uma melhor primeira imprensão.
 
 ## Problema
 
@@ -16,12 +16,12 @@ A presença de uma empresa nos meios digitais tem se tornado cada vez mais essen
 
 Vale observar que hoje também existem inúmeros canais digitais, como as redes sociais e os aplicativos de mensagens. Mas é importante salientar que nenhum deles substitui por completo o site como um dos principais canais de relacionamento e contato dos pequenos negócios com seus clientes. Isso se dá pelo fato das redes sociais funcionarem por meio de algoritmos que acabam prejudicando a visibilidade do negócio. Outro fator importante é que ao ter um site, o domínio dele é completamente da empresa, não ficando dependente das mídias sociais.
 
-Portanto, a criação de um site para a empresa torna-se algo primordial para a divulgação do seu negócio, visto que ele aumenta a atração e a visualização dos seus pontenciais consumidores, aumento a quantidade de clientes.
+Portanto, a criação de um site para a empresa torna-se algo primordial para a divulgação do seu negócio, considerando que ele aumenta a atração e a visualização dos seus pontenciais consumidores, aumento a quantidade de clientes.
  
 
 ## Relação com a Extensão Universitária
 
-A criação de uma aplicação web pelos alunos da PUC irão proposcionar uma melhora da identidade própria da empresa Fermaloc, além de contribuir para uma melhor divulgação dos seus serviços e também facilitar o contato do cliente com o vendedor.
+A criação de uma aplicação web pelos alunos da PUC irá proporcionar uma melhora da identidade própria da empresa Fermaloc, além de contribuir para uma melhor divulgação dos seus serviços e também facilitar o contato do cliente com o vendedor.
 
 ## Descrição do Parceiro
 
