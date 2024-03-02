@@ -41,7 +41,7 @@ Comunição da equipe: Microsoft Teams, WhatsApp, Discord
 
 ## **Modelo de Arquitetura:**
 
-**Monolito:** Optou-se por um modelo monolítico devido à simplicidade do projeto. Isso permitirá uma abordagem mais direta para o desenvolvimento e manutenção.
+**Monolítico:** Optou-se por um modelo monolítico devido à simplicidade do projeto. Isso permitirá uma abordagem mais direta para o desenvolvimento e manutenção.
 
 ![arquitetura](/Imgs/monolito.png)
 
@@ -63,16 +63,16 @@ Comunição da equipe: Microsoft Teams, WhatsApp, Discord
 
 ### Requisitos Funcionais
 
-| ID     | Descrição do Requisito                                                                   | Prioridade |
-| ------ | ---------------------------------------------------------------------------------------- | ---------- |
-| RF-001 | Garantir que o cliente tenha um acesso administrador por meio de login                   | ALTA       |
-| RF-002 | Permitir que o administrador atualize o banner do site                                   | ALTA       |
-| RF-003 | Permitir que o administrador adicione e edite os produtos do catálogo (CRUD)             | ALTA       |
-| RF-004 | Permitir que o administrador classifique os produtos em diferentes categorias (CRUD)     | ALTA       |
-| RF-005 | Disponibilizar a visualização do catálogo de produtos a todos os usuários                | ALTA       |
-| RF-006 | Disponibilizar a visualização dos produtos de acordo com a categoria a todos os usuários | ALTA       |
-| RF-007 | Disponibilizar a comunicação direta com o empresário por meio do Whatsapp                | ALTA       |
-| RF-008 | Disponibilizar um relatório dos produtos que mais redirecionaram os clientes para o Whatsapp | MÉDIO      |
+| ID     | Descrição do Requisito                                                                         | Prioridade |
+| ------ | ---------------------------------------------------------------------------------------------- | ---------- |
+| RF-001 | Garantir que o cliente tenha um acesso administrador por meio de login                         | ALTA       |
+| RF-002 | Permitir ao administrador atualizar o banner do site                                           | ALTA       |
+| RF-003 | Permitir ao administrador adicionar, editar e excluir os produtos do catálogo                  | ALTA       |
+| RF-004 | Permitir ao administrador adicionar, editar e excluir categorias de classificação dos produtos |ALTA        |
+| RF-005 | Disponibilizar a visualização do catálogo de produtos a todos os usuários                      | ALTA       |
+| RF-006 | Disponibilizar a visualização dos produtos de acordo com a categoria a todos os usuários       | ALTA       |
+| RF-007 | Disponibilizar a comunicação direta com o empresário por meio do Whatsapp                      | ALTA       |
+| RF-008 | Disponibilizar um relatório dos produtos que mais redirecionaram os clientes para o Whatsapp   | MÉDIO      |
 
 ### Requisitos não Funcionais
 
