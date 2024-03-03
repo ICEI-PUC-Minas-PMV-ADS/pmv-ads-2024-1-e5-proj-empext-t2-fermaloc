@@ -54,7 +54,7 @@ Comunição da equipe: Microsoft Teams, WhatsApp, Discord
 
 ## Project Model Canvas
 
-![Alt](/Imgs/PMC.png)
+![Alt](/Imgs/PMCatt.png)
 
 > **Links Úteis**:
 > Disponíveis em material de apoio do projeto
