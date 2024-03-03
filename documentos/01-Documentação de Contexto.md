@@ -1,6 +1,13 @@
 # Introdução
 
-Devido ao aumento do número de vendas e divulgações de serviços por meios da internet, tornou-se cada vez mais necessário para o empreendedor investir, além das redes sociais, na criação de uma aplicação web. Isso se dá pelo fato do site ainda ser o principal meio de divulgação do cartão de visita da loja, visto que muitos consumidores pesquisam informações como endereço, telefone ou mesmo produtos e marcas em sites de busca. Além disso, uma aplicação web ainda consiste numa branding e reforço de uma marca, pelo fato do site carregar a identidade do seu negócio, causando uma melhor primeira imprensão.
+Atualmente a forma de divulgação da empresa é feita pelo Instagram, ferramenta de grande alcance mas ainda com público bem definido, em que 51 % dos usuários afirmam ter feito algum tipo de negociação a partir do que é visualizado, de acordo com a pesquisa da Opinion Box, que levou em consideração 2000 usuários brasileiros.
+
+Por ser uma divulgação limitada a quem já possui rede social, isso faz com que possíveis clientes possam não ter acesso. Também existe o fator algoritmo, que passa constantemente por alterações, e limita o alcance mesmo entre perfis verificados, assim como perfis com menos itens postados
+O acesso à um perfil de rede social também afeta a busca da empresa, considerando que muitas vezes existe uma restrição de acesso à essas ferramentas.
+
+Considerando o perfil de mercado e público alvo da FERMALOC, é necessário que seja desenvolvida uma ferramenta de divulgação, acesso do consumidor e interação com o time de venda de forma dinâmica, e que não esteja condicionado somente às redes sociais para conhecer o trabalho. Nesses casos ter uma plataforma de informação sobre serviços prestados e detalhes dos produtos em um site próprio, com acesso livre, sem que seja necessário um perfil e que possa ser visualizado em uma busca aumenta o alcance, atraindo novo consumidor final e facilitando também para quem já é cliente.
+
+Através de um site próprio, poderá ser definida estratégia de divulgação, reforçará a estrutura e força da marca, e poderá chegar também à consumidores mais tradicionais, que usam a internet de forma mais moderada e específica.
 
 ## Problema
 
