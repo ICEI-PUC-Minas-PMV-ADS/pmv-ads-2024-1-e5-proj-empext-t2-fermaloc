@@ -41,13 +41,13 @@ A criação de uma aplicação web pelos alunos da PUC irá proporcionar uma mel
 
 A Fermaloc Assistência Técnica, localizada em Pedro Leopoldo - MG, destaca-se como uma empresa dedicada às vendas e locações de ferramentas elétricas, além de oferecer serviços especializados de assistência técnica. Sob a direção de Gustavo Gomes da Conceição, a empresa possui o CNPJ de nº 30.278.900/0001-66 e inscrição estadual MG: 003178206.00-65.
 
-Dores e Necessidades:
+**Dores e Necessidades:**
 Atualmente, a Fermaloc enfrenta desafios significativos em sua estratégia de divulgação, confiando exclusivamente no Instagram. As limitações dessa abordagem incluem:
 
-Restrição de Alcance: A divulgação no Instagram atinge um público pré-existente, excluindo potenciais clientes sem presença na rede social.
+- Restrição de Alcance: A divulgação no Instagram atinge um público pré-existente, excluindo potenciais clientes sem presença na rede social.
 
-Vulnerabilidade ao Algoritmo: Flutuações algorítmicas constantes limitam o alcance mesmo para perfis verificados, afetando a visibilidade da empresa.
+- Vulnerabilidade ao Algoritmo: Flutuações algorítmicas constantes limitam o alcance mesmo para perfis verificados, afetando a visibilidade da empresa.
 
-Barreiras de Acesso: Restrições de acesso a perfis de redes sociais podem prejudicar a busca pela empresa, excluindo possíveis consumidores.
+- Barreiras de Acesso: Restrições de acesso a perfis de redes sociais podem prejudicar a busca pela empresa, excluindo possíveis consumidores.
 
 Diante desses obstáculos, a necessidade de desenvolver um site próprio, no estilo de um catálogo virtual, torna-se crucial. Essa plataforma permitirá uma divulgação mais ampla, acesso descomplicado às informações dos produtos e serviços, e interação facilitada com a equipe de vendas, abrindo caminho para atingir um público mais diversificado e tradicional na utilização da internet.
