@@ -15,7 +15,12 @@ Além das mídias sociais, o site tem um papel fundamental na promoção dos ser
 
 ## Objetivos
 
-O objetivo geral do trabalho é na criação de uma aplicação web para a empresa Fermaloc visando a divulgação dos seus serviços. A empresa deseja que a aplicação contenha a função de catalogar os seus produtos, que serão vendidos ou alugados, e também deseja facilitar a negociação através da conexão dos produtos especificados no site com vendedor, seja através do WhatsApp da empresa, ou do e-mail.
+Buscando aprimorar a presença online da Fermaloc, o objetivo principal deste projeto é desenvolver uma aplicação web dedicada à divulgação eficiente dos serviços oferecidos pela empresa. A ênfase será na criação de uma plataforma que não apenas cataloga os produtos disponíveis para aluguel, mas também simplifica o processo de negociação, conectando os clientes aos vendedores via WhatsApp ou e-mail.
+
+**Objetivos Específicos:**
+- Desenvolver uma aplicação web para a empresa Fermaloc.
+- Implementar uma função de catalogação de produtos, abrangendo itens para aluguel.
+- Facilitar a interação entre clientes e vendedores, integrando opções de contato via WhatsApp da empresa ou e-mail.
 
 ## Justificativa
 
@@ -32,6 +37,17 @@ A criação de uma aplicação web pelos alunos da PUC irá proporcionar uma mel
 
 ## Descrição do Parceiro
 
-![logo consertado](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-fermaloc-t2/assets/73408251/9646cdcd-aa05-4471-bf33-43dc2a6c3801)
+![logo](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-fermaloc-t2/assets/73408251/9646cdcd-aa05-4471-bf33-43dc2a6c3801)
 
-A Fermaloc Assitência Técnica é uma empresa localizada em Pedro Leopoldo - MG e que atua no ramo de vendas e locações de ferramentas elétricas, além da prestação de assistência técnica. A empresa possui CNPJ de nº 30.278.900/0001-66 e inscrição estadual MG: 003178206.00-65 e possui como proprietário o Gustavo Gomes da Conceição.
+A Fermaloc Assistência Técnica, localizada em Pedro Leopoldo - MG, destaca-se como uma empresa dedicada às vendas e locações de ferramentas elétricas, além de oferecer serviços especializados de assistência técnica. Sob a direção de Gustavo Gomes da Conceição, a empresa possui o CNPJ de nº 30.278.900/0001-66 e inscrição estadual MG: 003178206.00-65.
+
+Dores e Necessidades:
+Atualmente, a Fermaloc enfrenta desafios significativos em sua estratégia de divulgação, confiando exclusivamente no Instagram. As limitações dessa abordagem incluem:
+
+Restrição de Alcance: A divulgação no Instagram atinge um público pré-existente, excluindo potenciais clientes sem presença na rede social.
+
+Vulnerabilidade ao Algoritmo: Flutuações algorítmicas constantes limitam o alcance mesmo para perfis verificados, afetando a visibilidade da empresa.
+
+Barreiras de Acesso: Restrições de acesso a perfis de redes sociais podem prejudicar a busca pela empresa, excluindo possíveis consumidores.
+
+Diante desses obstáculos, a necessidade de desenvolver um site próprio, no estilo de um catálogo virtual, torna-se crucial. Essa plataforma permitirá uma divulgação mais ampla, acesso descomplicado às informações dos produtos e serviços, e interação facilitada com a equipe de vendas, abrindo caminho para atingir um público mais diversificado e tradicional na utilização da internet.
