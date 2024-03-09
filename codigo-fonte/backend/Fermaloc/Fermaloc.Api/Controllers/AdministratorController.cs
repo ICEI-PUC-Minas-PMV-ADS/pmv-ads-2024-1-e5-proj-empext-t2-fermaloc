@@ -26,12 +26,12 @@ public class AdministratorController : ControllerBase
         var administratorDto = await _administratorService.GetAdministratorAsync(id);
         return Ok(administratorDto);
     }
-    [HttpPut("id")]
+    [HttpPut("{id}")]
     public async Task<IActionResult> UpdateAdministrator (Guid id, [FromBody] UpdateAdministratorDto administratorDto){
         await _administratorService.UpdateAdministratorAsync(id, administratorDto);
         return NoContent();
     }
-    [HttpDelete("id")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteAdministrator (Guid id){
         await _administratorService.DeleteAdministratorAsync(id);
         return NoContent();

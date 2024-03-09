@@ -4,11 +4,11 @@ namespace Fermaloc.Api;
 
 [ApiController]
 [Route("fermaloc/v1/categoria")]
-public class CateogryController : ControllerBase
+public class CategoryController : ControllerBase
 {
-    protected ICategoryService _categoryService;
+    private readonly ICategoryService _categoryService;
 
-    public CateogryController(ICategoryService categoryService)
+    public CategoryController(ICategoryService categoryService)
     {
         _categoryService = categoryService;
     }
@@ -24,16 +24,20 @@ public class CateogryController : ControllerBase
         return Ok(categoryDto);
     }
     [HttpGet()]
-    public async Task<IActionResult> GetAllCategories(Guid id){
+    public async Task<IActionResult> GetAllCategories(){
         var categoriesDto = await _categoryService.GetAllCategoriesAsync();
         return Ok(categoriesDto);
     }
-    [HttpPut("id")]
+    [HttpPut("{id}")]
     public async Task<IActionResult> UpdateCategory (Guid id, [FromBody] UpdateCategoryDto categoryDto){
         await _categoryService.UpdateCategoryAsync(id, categoryDto);
         return NoContent();
     }
-    [HttpDelete("id")]
+    [HttpPatch("{id}")]
+    public Task<IActionResult> UpdateEquipamentStatus (Guid id){
+        throw new NotImplementedException();
+    }
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteCategory (Guid id){
         await _categoryService.DeleteCategoryAsync(id);
         return NoContent();

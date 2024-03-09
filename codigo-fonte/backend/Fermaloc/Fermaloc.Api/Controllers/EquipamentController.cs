@@ -7,7 +7,7 @@ namespace Fermaloc.Api;
 [Route("fermaloc/v1/equipamento")]
 public class EquipamentController : ControllerBase
 {
-    protected IEquipamentService _equipamentService;
+    private readonly IEquipamentService _equipamentService;
 
     public EquipamentController(IEquipamentService equipamentService)
     {
@@ -37,7 +37,7 @@ public class EquipamentController : ControllerBase
         return Ok(equipamentsDto);
     }
 
-    [HttpPut("id")]
+    [HttpPut("{id}")]
     public async Task<IActionResult> UpdateEquipament (Guid id, [FromForm] UpdateEquipamentDto equipamentDto, IFormFile? image){
         if(image == null){
             await _equipamentService.UpdateEquipamentAsync(id, equipamentDto, null);
@@ -52,7 +52,18 @@ public class EquipamentController : ControllerBase
         await _equipamentService.UpdateEquipamentAsync(id, equipamentDto, imageBytes);
         return NoContent();
     }
-    [HttpDelete("id")]
+
+    [HttpPatch("{id}/updateequipamentstatus")]
+    public async Task<IActionResult> UpdateEquipamentStatus (Guid id){
+        throw new NotImplementedException();
+    }
+
+    [HttpPatch("{id}/addclickcount")]
+    public Task<IActionResult> AddClickCountEquipament (Guid id){
+        throw new NotImplementedException();
+    }
+
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteEquipament (Guid id){
         await _equipamentService.DeleteEquipamentAsync(id);
         return NoContent();

@@ -10,6 +10,5 @@ public class BannerProfile : Profile
         CreateMap<Banner, ReadBannerDto>()
             .ForMember(readBannerDto => readBannerDto.AdministratorDto, opt => opt.MapFrom(banner => banner.Administrator));
         CreateMap<CreateBannerDto, Banner>();
-        CreateMap<UpdateBannerDto, Banner>();
     }
 }
