@@ -33,7 +33,9 @@ Portanto, a criação de um site para a empresa torna-se algo primordial para a 
 
 ## Relação com a Extensão Universitária
 
-A criação de uma aplicação web pelos alunos da PUC irá proporcionar uma melhora da identidade própria da empresa Fermaloc, além de contribuir para uma melhor divulgação dos seus serviços e também facilitar o contato do cliente com o vendedor.
+A universidade é uma instituição criada com objetivo de atender as necessidades do país, desenvolvendo profissionais capacitados para atender a diversas demandas. Dentre as formas de desenvolvimento, existe o projeto de extensão universitária. Esse projeto, como o nome sugere, se extende para além da fronteira da universidade, integrando a universidade com a comunidade, objetivando uma transformação na realidade social da população.
+
+A PUC Minas, ciente da importância desse projeto, utiliza como trabalho final de graduação um projeto envolvendo os alunos graduandos e as empresas externas à universidade. Para esse projeto, será proporcionado uma melhora da identidade própria da empresa Fermaloc, além de contribuir para uma melhor divulgação dos seus serviços e também facilitar o contato do cliente com o vendedor.
 
 ## Descrição do Parceiro
 
