@@ -6,6 +6,7 @@ public class Category
     public string Name { get; private set; }
     public string Description { get; private set; }
     public Guid AdministratorId { get; private set; }
+    public bool Status { get; set; }
     public virtual Administrator Administrator { get; set; }
     public virtual ICollection<Equipament> Equipaments { get; set; }
 }

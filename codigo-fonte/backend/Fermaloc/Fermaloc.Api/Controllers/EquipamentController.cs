@@ -1,6 +1,5 @@
 ﻿using Fermaloc.Application;
 using Microsoft.AspNetCore.Mvc;
-using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
 namespace Fermaloc.Api;
 
 [ApiController]
@@ -25,18 +24,37 @@ public class EquipamentController : ControllerBase
         var equipamentCreated = await _equipamentService.CreateEquipamentAsync(equipamentDto, imageBytes);
         return CreatedAtAction(nameof(GetEquipamentById), new { id = equipamentCreated.Id }, equipamentCreated);
     }
-
+    
     [HttpGet("{id}")]
     public async Task<IActionResult> GetEquipamentById(Guid id){
         var equipamentDto = await _equipamentService.GetEquipamentByIdAsync(id);
         return Ok(equipamentDto);
     }
+    
     [HttpGet()]
-    public async Task<IActionResult> GetAllEquipaments(){
+    public async Task<IActionResult> GetAllEquipaments([FromQuery] int skip){
         var equipamentsDto = await _equipamentService.GetAllEquipamentsAsync();
         return Ok(equipamentsDto);
     }
-
+    
+    [HttpGet("status")]
+    public async Task<IActionResult> GetEquipamentsByStatus([FromQuery] int skip, bool status){
+        var equipamentsDto = await _equipamentService.GetEquipamentsByStatusAsync(status);
+        return Ok(equipamentsDto);
+    }
+    
+    [HttpGet("statusandcategory")]
+    public async Task<IActionResult> GetEquipamentsByStatusAndCategory([FromQuery] int skip, bool status, Guid categoryId){
+        var equipamentsDto = await _equipamentService.GetEquipamentsByStatusAndCategoryAsync(status, categoryId);
+        return Ok(equipamentsDto);
+    }
+    
+    [HttpGet("search")]
+    public async Task<IActionResult> GetEquipamentsSearchNameEquipament([FromQuery] string nameEquipament){
+        var equipamentsDto = await _equipamentService.GetEquipamentsSearchNameEquipamentAsync(nameEquipament);
+        return Ok(equipamentsDto);
+    }
+    
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateEquipament (Guid id, [FromForm] UpdateEquipamentDto equipamentDto, IFormFile? image){
         if(image == null){
@@ -52,17 +70,19 @@ public class EquipamentController : ControllerBase
         await _equipamentService.UpdateEquipamentAsync(id, equipamentDto, imageBytes);
         return NoContent();
     }
-
-    [HttpPatch("{id}/updateequipamentstatus")]
+    
+    [HttpPut("{id}/updateequipamentstatus")]
     public async Task<IActionResult> UpdateEquipamentStatus (Guid id){
-        throw new NotImplementedException();
+        await _equipamentService.UpdateEquipamentStatusAsync(id);
+        return NoContent();
     }
-
-    [HttpPatch("{id}/addclickcount")]
-    public Task<IActionResult> AddClickCountEquipament (Guid id){
-        throw new NotImplementedException();
+    
+    [HttpPut("{id}/addclickcount")]
+    public async Task<IActionResult> AddClickCountEquipament (Guid id){
+        await _equipamentService.AddClickCountEquipamentAsync(id);
+        return NoContent();
     }
-
+    
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteEquipament (Guid id){
         await _equipamentService.DeleteEquipamentAsync(id);

@@ -24,11 +24,42 @@ public class EquipamentRepository : IEquipamentRepository
     }
     public async Task<IEnumerable<Equipament>> GetAllEquipamentsAsync()
     {
-        IEnumerable<Equipament> categories = await _context.Equipaments.ToListAsync();
-        return categories;
+        IEnumerable<Equipament> equipaments = await _context.Equipaments.ToListAsync();
+        return equipaments;
+    }
+    public async Task<IEnumerable<Equipament>> GetEquipamentsByStatusAsync(bool status)
+    {
+        IEnumerable<Equipament> equipaments = await _context.Equipaments.Where(e => e.Status == status).ToListAsync();
+        return equipaments;
+    }
+    public async Task<IEnumerable<Equipament>> GetEquipamentsByStatusAndCategoryAsync(bool status, Guid categoryId)
+    {
+        IEnumerable<Equipament> equipaments = await _context.Equipaments.Where(e => e.Status == status && e.CategoryId == categoryId).ToListAsync();
+        return equipaments;
+    }
+    public async Task<IEnumerable<Equipament>> GetEquipamentsSearchNameEquipamentAsync(string nameEquipament)
+    {
+        IEnumerable<Equipament> equipaments = await _context.Equipaments.Where(e => e.Name.Contains(nameEquipament)).ToListAsync();
+        return equipaments;
     }
     public async Task<Equipament> UpdateEquipamentAsync(Equipament equipament)
     {
+        _context.Equipaments.Update(equipament);
+        await _context.SaveChangesAsync();
+        return equipament;
+    }
+    public async Task<Equipament> UpdateEquipamentStatusAsync(Guid id)
+    {
+        Equipament equipament = await _context.Equipaments.FindAsync(id);
+        equipament.Status = !equipament.Status;
+        _context.Equipaments.Update(equipament);
+        await _context.SaveChangesAsync();
+        return equipament;
+    }
+    public async Task<Equipament> AddClickCountEquipamentAsync(Guid id)
+    {
+        Equipament equipament = await _context.Equipaments.FindAsync(id);
+        equipament.NumberOfClicks += 1;
         _context.Equipaments.Update(equipament);
         await _context.SaveChangesAsync();
         return equipament;

@@ -13,10 +13,10 @@ public class CategoryService : ICategoryService
         _categoryRepository = categoryRepository;
         _mapper = mapper;
     }
-
     public async Task<ReadCategoryDto> CreateCategoryAsync(CreateCategoryDto categoryDto)
     {
         var category = _mapper.Map<Category>(categoryDto);
+        category.Status = true;
         var categoryCreated = await _categoryRepository.CreateCategoryAsync(category);
         return _mapper.Map<ReadCategoryDto>(categoryCreated);
     }
@@ -32,12 +32,23 @@ public class CategoryService : ICategoryService
         IEnumerable<ReadCategoryDto> readCategoriesDto = _mapper.Map<IEnumerable<ReadCategoryDto>>(categories);
         return readCategoriesDto;
     }
+    public async Task<IEnumerable<ReadCategoryDto>> GetCategoriesByStatusAsync(bool status)
+    {
+        var categories = await _categoryRepository.GetCategoriesByStatusAsync(status);
+        IEnumerable<ReadCategoryDto> readCategoriesDto = _mapper.Map<IEnumerable<ReadCategoryDto>>(categories);
+        return readCategoriesDto;
+    }
     public async Task<ReadCategoryDto> UpdateCategoryAsync(Guid id, UpdateCategoryDto categoryDto)
     {
         var category = await _categoryRepository.GetCategoryByIdAsync(id);
         _mapper.Map(categoryDto, category);
         var categoryUpdated = await _categoryRepository.UpdateCategoryAsync(category);
         return _mapper.Map<ReadCategoryDto>(categoryUpdated);
+    }
+    public async Task<ReadCategoryDto> UpdateCategoryStatusAsync(Guid id)
+    {
+        var equipamentUpdated = await _categoryRepository.UpdateCategoryStatusAsync(id);
+        return _mapper.Map<ReadCategoryDto>(equipamentUpdated);
     }
     public async Task<ReadCategoryDto> DeleteCategoryAsync(Guid id)
     {
