@@ -39,7 +39,7 @@ msbuild.wrn
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-./codigo-fonte/frontend/fermaloc/node_modules
+node_modules
 /.pnp
 .pnp.js
 
