@@ -1,3 +1,4 @@
+using Fermaloc.Api;
 using Fermaloc.Infra.IoC;
 
 static void RegisterServices(IServiceCollection services, IConfiguration configuration)
@@ -26,7 +27,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<LoginExceptionMiddleware>();
+app.UseMiddleware<InvalidDataExceptionMiddleware>();
+app.UseMiddleware<NotFoundExceptionMiddleware>();
+
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

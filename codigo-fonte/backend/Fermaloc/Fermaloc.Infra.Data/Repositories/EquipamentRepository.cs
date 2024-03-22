@@ -19,8 +19,8 @@ public class EquipamentRepository : IEquipamentRepository
     }
     public async Task<Equipament> GetEquipamentByIdAsync(Guid id)
     {
-        Equipament equipament = await _context.Equipaments.FindAsync(id);
-        return equipament;
+            Equipament equipament = await _context.Equipaments.FindAsync(id);
+            return equipament;
     }
     public async Task<IEnumerable<Equipament>> GetAllEquipamentsAsync()
     {
@@ -48,25 +48,20 @@ public class EquipamentRepository : IEquipamentRepository
         await _context.SaveChangesAsync();
         return equipament;
     }
-    public async Task<Equipament> UpdateEquipamentStatusAsync(Guid id)
+    public async Task<Equipament> UpdateEquipamentStatusAsync(Equipament equipament)
     {
-        Equipament equipament = await _context.Equipaments.FindAsync(id);
-        equipament.Status = !equipament.Status;
         _context.Equipaments.Update(equipament);
         await _context.SaveChangesAsync();
         return equipament;
     }
-    public async Task<Equipament> AddClickCountEquipamentAsync(Guid id)
+    public async Task<Equipament> AddClickCountEquipamentAsync(Equipament equipament)
     {
-        Equipament equipament = await _context.Equipaments.FindAsync(id);
-        equipament.NumberOfClicks += 1;
         _context.Equipaments.Update(equipament);
         await _context.SaveChangesAsync();
         return equipament;
     }
-    public async Task<Equipament> DeleteEquipamentAsync(Guid id)
+    public async Task<Equipament> DeleteEquipamentAsync(Equipament equipament)
     {
-        Equipament equipament = await _context.Equipaments.FindAsync(id);
         _context.Equipaments.Remove(equipament);
         await _context.SaveChangesAsync();
         return equipament;

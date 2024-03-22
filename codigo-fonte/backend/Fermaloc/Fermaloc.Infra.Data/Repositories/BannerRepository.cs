@@ -28,9 +28,8 @@ public class BannerRepository : IBannerRepository
         await _context.SaveChangesAsync();
         return banner;
     }
-    public async Task<Banner> DeleteBannerAsync(Guid id)
+    public async Task<Banner> DeleteBannerAsync(Banner banner)
     {
-        Banner banner = await _context.Banners.FindAsync(id);
         _context.Banners.Remove(banner);
         await _context.SaveChangesAsync();
         return banner;

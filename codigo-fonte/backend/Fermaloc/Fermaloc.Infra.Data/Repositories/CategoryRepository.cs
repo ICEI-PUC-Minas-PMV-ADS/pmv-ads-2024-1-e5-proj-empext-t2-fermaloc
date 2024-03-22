@@ -38,15 +38,8 @@ public class CategoryRepository : ICategoryRepository
         await _context.SaveChangesAsync();
         return category;
     }
-    public async Task<Category> UpdateCategoryStatusAsync(Guid id)
+    public async Task<Category> UpdateCategoryStatusAsync(Category category)
     {
-        var category = await _context.Categories.Include(c => c.Equipaments).FirstOrDefaultAsync(c => c.Id == id);
-        category.Status = !category.Status;
-        if(!category.Status){
-            foreach(var equipament in category.Equipaments){
-                equipament.Status = category.Status;
-            }
-        }
         _context.Categories.Update(category);
         if(category.Equipaments.Count != 0)
         {
@@ -55,9 +48,8 @@ public class CategoryRepository : ICategoryRepository
         await _context.SaveChangesAsync();
         return category;
     }
-    public async Task<Category> DeleteCategoryAsync(Guid id)
+    public async Task<Category> DeleteCategoryAsync(Category category)
     {
-        Category category = await _context.Categories.FindAsync(id);
         _context.Categories.Remove(category);
         await _context.SaveChangesAsync();
         return category;

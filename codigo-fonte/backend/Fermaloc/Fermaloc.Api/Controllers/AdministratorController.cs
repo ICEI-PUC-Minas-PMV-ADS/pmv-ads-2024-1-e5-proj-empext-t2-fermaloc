@@ -20,10 +20,16 @@ public class AdministratorController : ControllerBase
         var administratorCreated = await _administratorService.CreateAdministratorAsync(administratorDto);
         return CreatedAtAction(nameof(GetAdministrator), new { id = administratorCreated.Id }, administratorCreated);
     }
+    
+    [HttpPost("login")]
+    public async Task<IActionResult> Login ([FromBody] LoginRequestDto loginRequestDto){
+        var loginResponseDto = await _administratorService.Login(loginRequestDto);
+        return Ok(loginResponseDto);
+    }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetAdministrator(Guid id){
-        var administratorDto = await _administratorService.GetAdministratorAsync(id);
+        var administratorDto = await _administratorService.GetAdministratorByIdAsync(id);
         return Ok(administratorDto);
     }
     

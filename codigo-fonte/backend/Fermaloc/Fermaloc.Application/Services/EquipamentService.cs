@@ -24,6 +24,9 @@ public class EquipamentService : IEquipamentService
     public async Task<ReadEquipamentDto> GetEquipamentByIdAsync(Guid id)
     {
         var equipament = await _equipamentRepository.GetEquipamentByIdAsync(id);
+        if(equipament == null){
+            throw new NotFoundException("Equipamento não encontrado");
+        }          
         var equipamentDto = _mapper.Map<ReadEquipamentDto>(equipament);
         return equipamentDto;
     }
@@ -54,6 +57,9 @@ public class EquipamentService : IEquipamentService
     public async Task<ReadEquipamentDto> UpdateEquipamentAsync(Guid id, UpdateEquipamentDto equipamentDto, byte[]? image)
     {
         var equipament = await _equipamentRepository.GetEquipamentByIdAsync(id);
+        if(equipament == null){
+            throw new NotFoundException("Equipamento não encontrado");
+        }          
         _mapper.Map(equipamentDto, equipament);
         if(image is not null){
             equipament.Image = image;
@@ -63,18 +69,32 @@ public class EquipamentService : IEquipamentService
     }
     public async Task<ReadEquipamentDto> UpdateEquipamentStatusAsync(Guid id)
     {
-        var equipamentUpdated = await _equipamentRepository.UpdateEquipamentStatusAsync(id);
+        var equipament = await _equipamentRepository.GetEquipamentByIdAsync(id);
+        if(equipament == null){
+            throw new NotFoundException("Equipamento não encontrado");
+        }          
+        equipament.Status = !equipament.Status;
+        var equipamentUpdated = await _equipamentRepository.UpdateEquipamentStatusAsync(equipament);
         return _mapper.Map<ReadEquipamentDto>(equipamentUpdated);
     }
     public async Task<ReadEquipamentDto> AddClickCountEquipamentAsync(Guid id)
     {
-        var equipamentUpdated = await _equipamentRepository.AddClickCountEquipamentAsync(id);
+        var equipament = await _equipamentRepository.GetEquipamentByIdAsync(id);
+        if(equipament == null){
+            throw new NotFoundException("Equipamento não encontrado");
+        }          
+        equipament.NumberOfClicks += 1;
+        var equipamentUpdated = await _equipamentRepository.AddClickCountEquipamentAsync(equipament);
         return _mapper.Map<ReadEquipamentDto>(equipamentUpdated);
     }
     public async Task<ReadEquipamentDto> DeleteEquipamentAsync(Guid id)
     {
-        var equipament = await _equipamentRepository.DeleteEquipamentAsync(id);
-        return _mapper.Map<ReadEquipamentDto>(equipament);
+        var equipament = await _equipamentRepository.GetEquipamentByIdAsync(id);
+        if(equipament == null){
+            throw new NotFoundException("Equipamento não encontrado");
+        }           
+        var equipamentDeleted = await _equipamentRepository.DeleteEquipamentAsync(equipament);
+        return _mapper.Map<ReadEquipamentDto>(equipamentDeleted);
     }
 
 }

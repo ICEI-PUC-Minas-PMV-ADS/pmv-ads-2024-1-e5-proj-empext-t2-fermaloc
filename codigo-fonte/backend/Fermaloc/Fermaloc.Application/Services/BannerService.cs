@@ -24,19 +24,29 @@ public class BannerService : IBannerService
     public async Task<ReadBannerDto> GetBannerByIdAsync(Guid id)
     {
         var banner = await _bannerRepository.GetBannerByIdAsync(id);
+        if(banner == null){
+            throw new NotFoundException("Banner não encontrado");
+        }        
         var bannerDto = _mapper.Map<ReadBannerDto>(banner);
         return bannerDto;
     }
     public async Task<ReadBannerDto> UpdateBannerAsync(Guid id, byte[] image)
     {
         var banner = await _bannerRepository.GetBannerByIdAsync(id);
+        if(banner == null){
+            throw new NotFoundException("Banner não encontrado");
+        }
         banner.Image = image;
         var bannerUpdated = await _bannerRepository.UpdateBannerAsync(banner);
         return _mapper.Map<ReadBannerDto>(bannerUpdated);
     }
     public async Task<ReadBannerDto> DeleteBannerAsync(Guid id)
     {
-        var banner = await _bannerRepository.DeleteBannerAsync(id);
-        return _mapper.Map<ReadBannerDto>(banner);
+        var banner = await _bannerRepository.GetBannerByIdAsync(id);
+        if(banner == null){
+            throw new NotFoundException("Banner não encontrado");
+        }        
+        var bannerDeleted = await _bannerRepository.DeleteBannerAsync(banner);
+        return _mapper.Map<ReadBannerDto>(bannerDeleted);
     }
 }

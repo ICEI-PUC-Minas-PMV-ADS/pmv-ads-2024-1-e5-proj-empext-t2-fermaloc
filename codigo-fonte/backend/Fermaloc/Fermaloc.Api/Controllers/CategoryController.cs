@@ -1,4 +1,5 @@
 ﻿using Fermaloc.Application;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace Fermaloc.Api;
 

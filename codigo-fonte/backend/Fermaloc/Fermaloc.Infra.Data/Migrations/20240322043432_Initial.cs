@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Fermaloc.Infra.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class Iniital : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,7 +19,9 @@ namespace Fermaloc.Infra.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    Name = table.Column<string>(type: "varchar(30)", maxLength: 30, nullable: false)
+                    Name = table.Column<string>(type: "varchar(80)", maxLength: 80, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Email = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Password = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -63,7 +65,8 @@ namespace Fermaloc.Infra.Data.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Description = table.Column<string>(type: "TEXT", maxLength: 300, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    AdministratorId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci")
+                    AdministratorId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    Status = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -86,8 +89,9 @@ namespace Fermaloc.Infra.Data.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Description = table.Column<string>(type: "TEXT", maxLength: 300, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    EquipamentCode = table.Column<int>(type: "int", nullable: false),
                     NumberOfClicks = table.Column<int>(type: "int", nullable: false),
-                    Active = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Status = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     Image = table.Column<byte[]>(type: "LONGBLOB", maxLength: 26214400, nullable: false),
                     AdministratorId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     CategoryId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci")

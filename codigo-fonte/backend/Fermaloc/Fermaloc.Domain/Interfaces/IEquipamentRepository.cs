@@ -9,7 +9,7 @@ public interface IEquipamentRepository
     Task<IEnumerable<Equipament>> GetEquipamentsByStatusAndCategoryAsync(bool status, Guid categoryId);
     Task<IEnumerable<Equipament>> GetEquipamentsSearchNameEquipamentAsync(string nameEquipament);
     Task<Equipament> UpdateEquipamentAsync (Equipament equipament);
-    Task<Equipament> UpdateEquipamentStatusAsync (Guid id);
-    Task<Equipament> AddClickCountEquipamentAsync (Guid id);
-    Task<Equipament>  DeleteEquipamentAsync (Guid id);
+    Task<Equipament> UpdateEquipamentStatusAsync (Equipament equipament);
+    Task<Equipament> AddClickCountEquipamentAsync (Equipament equipament);
+    Task<Equipament>  DeleteEquipamentAsync (Equipament equipament);
 }

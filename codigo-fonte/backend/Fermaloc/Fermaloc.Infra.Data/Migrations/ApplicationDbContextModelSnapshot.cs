@@ -36,10 +36,15 @@ namespace Fermaloc.Infra.Data.Migrations
                         .HasMaxLength(14)
                         .HasColumnType("varchar(14)");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("varchar(30)");
+                        .HasMaxLength(80)
+                        .HasColumnType("varchar(80)");
 
                     b.Property<string>("Password")
                         .IsRequired()
