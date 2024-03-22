@@ -6,11 +6,13 @@ import Product from "./pages/User/Product/index.js";
 import Products from "./pages/User/Products/index.js";
 import NavBar from "./components/NavBar/index.js";
 import Footer from "./components/Footer/index.js";
+import NotFound from "./pages/NotFound/index.js";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    errorElement: <NotFound/>
   },
   {
     path: "/produtos",

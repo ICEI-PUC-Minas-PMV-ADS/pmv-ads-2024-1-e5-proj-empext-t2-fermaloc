@@ -10,7 +10,6 @@ static void RegisterServices(IServiceCollection services, IConfiguration configu
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 RegisterServices(builder.Services, builder.Configuration);
 
 builder.Services.AddControllers();
@@ -30,6 +29,8 @@ if (app.Environment.IsDevelopment())
 app.UseMiddleware<LoginExceptionMiddleware>();
 app.UseMiddleware<InvalidDataExceptionMiddleware>();
 app.UseMiddleware<NotFoundExceptionMiddleware>();
+
+app.UseCors("AllowSpecificOrigin");
 
 app.UseHttpsRedirection();
 

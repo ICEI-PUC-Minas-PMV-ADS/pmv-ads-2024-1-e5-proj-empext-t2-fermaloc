@@ -25,7 +25,7 @@ public class DependencyContainer
                 {
                 options.AddPolicy("AllowSpecificOrigin", builder =>
                 {
-                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                        builder.WithOrigins("http://localhost:3000").WithMethods("GET", "POST", "UPDATE", "DELETE").AllowAnyHeader();
                 });
                 });
 
