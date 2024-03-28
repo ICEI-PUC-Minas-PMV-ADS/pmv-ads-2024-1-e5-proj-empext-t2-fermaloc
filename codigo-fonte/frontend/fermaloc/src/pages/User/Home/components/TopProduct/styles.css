@@ -1,0 +1,9 @@
+.imageProduct{
+    width: 300px;
+}
+
+.topProductContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

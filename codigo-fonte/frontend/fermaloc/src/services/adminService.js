@@ -1,7 +1,12 @@
-import url from '../api/url';
-import axios from 'axios';
+import axios from "axios";
 
-export async function getAdmin(id) {
-    const response = await axios.get(`${url}/fermaloc/v1/administrador/${id}`);
+async function getAdmin(id) {
+  try {
+    const response = await axios.get(`administrador/${id}`);
     return response.data;
+  } catch (err) {
+    console.error(err.response.data.message);
+  }
 }
+
+export { getAdmin };

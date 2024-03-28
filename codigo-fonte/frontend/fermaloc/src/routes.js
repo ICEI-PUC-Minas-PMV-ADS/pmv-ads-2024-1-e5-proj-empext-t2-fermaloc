@@ -1,4 +1,3 @@
-// RENOMEAR A PÁGINA APP.JS DEPOIS PARA ROUTER.JS
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./pages/Admin/Login/index.js";
 import Home from "./pages/User/Home/index.js";
@@ -12,7 +11,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    errorElement: <NotFound/>
+    errorElement: <NotFound />,
   },
   {
     path: "/produtos",

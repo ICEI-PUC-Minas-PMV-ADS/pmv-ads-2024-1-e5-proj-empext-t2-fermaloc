@@ -1,13 +1,16 @@
 import api from "../api/api";
 
-export async function login(loginDTO) {
+async function login(loginDTO) {
   try {
-    const response = await await api.post(
-      `/fermaloc/v1/administrador/login`,
-      loginDTO
-    );
+    const response = await api.post(`administrador/login`, loginDTO);
     console.log(response.data);
   } catch (err) {
     console.error(err.response.data.message);
   }
 }
+
+function logout() {
+  localStorage.removeItem("token");
+}
+
+export { login, logout };
