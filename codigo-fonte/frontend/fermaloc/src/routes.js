@@ -30,9 +30,7 @@ const router = createBrowserRouter([
 function Routes() {
   return (
     <>
-      <NavBar />
       <RouterProvider router={router} />
-      <Footer />
     </>
   );
 }

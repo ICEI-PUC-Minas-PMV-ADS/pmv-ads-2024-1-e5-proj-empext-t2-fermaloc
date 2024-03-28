@@ -3,6 +3,9 @@ import "./styles.css";
 import { getBannerById } from "../../../services/bannerService.js";
 import { getTopProducts } from "../../../services/productService.js";
 import TopProduct from "./components/TopProduct/index.js";
+import { useLocation } from "react-router-dom";
+import NavBar from "../../../components/NavBar/index.js";
+import Footer from "../../../components/Footer/index.js";
 
 export default function Home() {
   const [banner, setBanner] = useState(null);
@@ -16,7 +19,7 @@ export default function Home() {
 
     async function fetchTopProducts() {
       const topProductsData = await getTopProducts();
-      console.log(topProductsData)
+      console.log(topProductsData);
       setTopProducts(topProductsData.slice(0, 3));
     }
 
@@ -26,26 +29,38 @@ export default function Home() {
     fetchTopProducts();
   }, []);
 
+  const location = useLocation();
+
   return (
-    <div className="container">
-      <div className="bannerContainer">
-        <img
-          src={`data:image/png;base64,${banner}`}
-          alt="Banner"
-          className="imgBanner"
-        />
-      </div>
-      <div>
-        <h1>Parceiros</h1>
-      </div>
-      <div className="topProductsContainer">
-        <h1>Principais produtos</h1>
-        <div className="topProductsComponentsContainer">
-          {topProducts.map((product) => {
-            return <TopProduct name={product.name} image={product.image} id={product.id}/>;
-          })}
+    <>
+      {location.pathname !== "/admin/login" && <NavBar />}
+      <div className="container">
+        <div className="bannerContainer">
+          <img
+            src={`data:image/png;base64,${banner}`}
+            alt="Banner"
+            className="imgBanner"
+          />
+        </div>
+        <div>
+          <h1>Parceiros</h1>
+        </div>
+        <div className="topProductsContainer">
+          <h1>Principais produtos</h1>
+          <div className="topProductsComponentsContainer">
+            {topProducts.map((product) => {
+              return (
+                <TopProduct
+                  name={product.name}
+                  image={product.image}
+                  id={product.id}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
+      {location.pathname !== "/admin/login" && <Footer />}
+    </>
   );
 }
