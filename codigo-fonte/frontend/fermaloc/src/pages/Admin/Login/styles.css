@@ -1,6 +1,6 @@
 .wrapper {
     width: 420;
-    background: purple linear-gradient(120deg, #3498db, #8e44ad);
+    background: #302782;
     border: 2px solid rgba(255, 255, 255, .2);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     color: #fff;
@@ -28,7 +28,7 @@
     outline: none;
     border-radius: 40px;
     font-size: 16px;
-    color: black;
+    color: #fff;
     padding: 20px 45px 20px 20px;
 }
 
