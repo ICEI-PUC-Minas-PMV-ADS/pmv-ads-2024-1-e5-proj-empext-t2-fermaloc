@@ -27,9 +27,20 @@ public class EquipamentRepository : IEquipamentRepository
         IEnumerable<Equipament> equipaments = await _context.Equipaments.ToListAsync();
         return equipaments;
     }
+    public async Task<IEnumerable<Equipament>> GetActiveEquipamentsOrderByNumberOfClicksAsync()
+    {
+        IEnumerable<Equipament> equipaments = await _context.Equipaments.Where(e => e.Status == true).OrderByDescending(e => e.NumberOfClicks).ToListAsync();
+        return equipaments;
+    }
     public async Task<IEnumerable<Equipament>> GetEquipamentsByStatusAsync(bool status)
     {
         IEnumerable<Equipament> equipaments = await _context.Equipaments.Where(e => e.Status == status).ToListAsync();
+        return equipaments;
+    }
+    public async Task<IEnumerable<Equipament>> GetActiveSimilarEquipamentsByCategoryAsync (Guid productId, Guid categoryId)
+    {
+        var random = new Random();
+        IEnumerable<Equipament> equipaments = await _context.Equipaments.Where(e => e.Status == true && e.CategoryId == categoryId && e.Id != productId).OrderBy(e => random.Next()).Take(3).ToListAsync();
         return equipaments;
     }
     public async Task<IEnumerable<Equipament>> GetEquipamentsByStatusAndCategoryAsync(bool status, Guid categoryId)

@@ -44,7 +44,7 @@ public class CategoryController : ControllerBase
         return NoContent();
     }
     
-    [HttpPut("{id}/updatecategorystatus")]
+    [HttpPut("alterarstatus/{id}")]
     public async Task<IActionResult> UpdateCategoryStatus (Guid id){
         await _categoryService.UpdateCategoryStatusAsync(id);
         return NoContent();

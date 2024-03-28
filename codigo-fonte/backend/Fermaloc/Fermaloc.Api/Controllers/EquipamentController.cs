@@ -36,6 +36,18 @@ public class EquipamentController : ControllerBase
         var equipamentsDto = await _equipamentService.GetAllEquipamentsAsync();
         return Ok(equipamentsDto);
     }
+
+    [HttpGet("topequipamentos")]
+    public async Task<IActionResult> GetActiveEquipamentsOrderByNumberOfClicks([FromQuery] int skip){
+        var equipamentsDto = await _equipamentService.GetActiveEquipamentsOrderByNumberOfClicksAsync();
+        return Ok(equipamentsDto);
+    }
+
+    [HttpGet("equipamentossimilares")]
+    public async Task<IActionResult> GetActiveSimilarEquipamentsByCategory([FromQuery]Guid productId ,Guid categoryId){
+        var equipamentsDto = await _equipamentService.GetActiveSimilarEquipamentsByCategoryAsync(productId, categoryId);
+        return Ok(equipamentsDto);
+    }
     
     [HttpGet("status")]
     public async Task<IActionResult> GetEquipamentsByStatus([FromQuery] int skip, bool status){
@@ -43,13 +55,13 @@ public class EquipamentController : ControllerBase
         return Ok(equipamentsDto);
     }
     
-    [HttpGet("statusandcategory")]
+    [HttpGet("statusaecategoria")]
     public async Task<IActionResult> GetEquipamentsByStatusAndCategory([FromQuery] int skip, bool status, Guid categoryId){
         var equipamentsDto = await _equipamentService.GetEquipamentsByStatusAndCategoryAsync(status, categoryId);
         return Ok(equipamentsDto);
     }
     
-    [HttpGet("search")]
+    [HttpGet("pesquisa")]
     public async Task<IActionResult> GetEquipamentsSearchNameEquipament([FromQuery] string nameEquipament){
         var equipamentsDto = await _equipamentService.GetEquipamentsSearchNameEquipamentAsync(nameEquipament);
         return Ok(equipamentsDto);
@@ -70,14 +82,13 @@ public class EquipamentController : ControllerBase
         await _equipamentService.UpdateEquipamentAsync(id, equipamentDto, imageBytes);
         return NoContent();
     }
-    
-    [HttpPut("{id}/updateequipamentstatus")]
+    [HttpPut("/alterarstatus{id}")]
     public async Task<IActionResult> UpdateEquipamentStatus (Guid id){
         await _equipamentService.UpdateEquipamentStatusAsync(id);
         return NoContent();
     }
     
-    [HttpPut("{id}/addclickcount")]
+    [HttpPut("addcontagemvisita/{id}")]
     public async Task<IActionResult> AddClickCountEquipament (Guid id){
         await _equipamentService.AddClickCountEquipamentAsync(id);
         return NoContent();

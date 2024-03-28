@@ -36,9 +36,22 @@ public class EquipamentService : IEquipamentService
         IEnumerable<ReadEquipamentDto> readCategoriesDto = _mapper.Map<IEnumerable<ReadEquipamentDto>>(equipaments);
         return readCategoriesDto;
     }
+    public async Task<IEnumerable<ReadEquipamentDto>> GetActiveEquipamentsOrderByNumberOfClicksAsync()
+    {
+        var equipaments = await _equipamentRepository.GetActiveEquipamentsOrderByNumberOfClicksAsync();
+        IEnumerable<ReadEquipamentDto> readCategoriesDto = _mapper.Map<IEnumerable<ReadEquipamentDto>>(equipaments);
+        return readCategoriesDto;
+    }
+    
     public async Task<IEnumerable<ReadEquipamentDto>> GetEquipamentsByStatusAsync(bool status)
     {
         var equipaments = await _equipamentRepository.GetEquipamentsByStatusAsync(status);
+        IEnumerable<ReadEquipamentDto> readCategoriesDto = _mapper.Map<IEnumerable<ReadEquipamentDto>>(equipaments);
+        return readCategoriesDto;
+    }
+    public async Task<IEnumerable<ReadEquipamentDto>> GetActiveSimilarEquipamentsByCategoryAsync(Guid productId, Guid categoryId)
+    {
+        var equipaments = await _equipamentRepository.GetActiveSimilarEquipamentsByCategoryAsync(productId, categoryId);
         IEnumerable<ReadEquipamentDto> readCategoriesDto = _mapper.Map<IEnumerable<ReadEquipamentDto>>(equipaments);
         return readCategoriesDto;
     }
@@ -96,5 +109,4 @@ public class EquipamentService : IEquipamentService
         var equipamentDeleted = await _equipamentRepository.DeleteEquipamentAsync(equipament);
         return _mapper.Map<ReadEquipamentDto>(equipamentDeleted);
     }
-
 }
