@@ -47,7 +47,7 @@ export default function Home() {
           />
         </div>
         <div>
-          <h1>Parceiros</h1>
+          <h1 className='us'>Parceiros</h1>
           <div className='logopartners'>
              <img src={makita} alt="logo"/>
              <img src={dewalt} alt="logo"/>
@@ -70,6 +70,7 @@ export default function Home() {
           </div>
           <div className="quemsomos">
           <div>
+            <h1 className='us'> Quem  somos </h1>
             <p>
               A Fermaloc é uma empresa que atua no ramo de ferramentas elétricas
               

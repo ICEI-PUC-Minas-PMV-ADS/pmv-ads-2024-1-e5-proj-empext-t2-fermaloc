@@ -50,3 +50,8 @@ display:flex;
 flex-direction: row;
 
 }
+
+.us{
+    display: flex;
+    justify-content: center;
+}
