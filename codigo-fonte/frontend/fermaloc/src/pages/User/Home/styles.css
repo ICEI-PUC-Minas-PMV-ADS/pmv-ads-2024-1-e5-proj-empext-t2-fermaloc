@@ -9,6 +9,7 @@
 
 .imgBanner{
     width: 100%;
+    height: 300px;
 }
 
 .bannerContainer{
@@ -29,9 +30,7 @@
 }
 
 .logopartners img{ 
-  
     width: 150px; 
-    
 }
 
 .logopartners{
