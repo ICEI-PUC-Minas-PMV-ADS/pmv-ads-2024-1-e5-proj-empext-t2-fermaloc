@@ -24,7 +24,7 @@ export default function Home() {
     }
 
     //tera que remover esse id posteriormente, temos que ver uma melhor forma de deifnir qual banner ira ficar na home, talvez mais um endpont para que o admin escolha.
-    const id = "08dc4eb0-fa0f-40e7-82f1-7e82cca58ef9";
+    const id = "08dc500d-3334-4bc0-80ff-d0ecc6bd8439";
     fetchBanner(id);
     fetchTopProducts();
   }, []);

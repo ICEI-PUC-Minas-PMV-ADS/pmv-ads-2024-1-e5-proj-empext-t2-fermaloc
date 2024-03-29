@@ -97,3 +97,8 @@
 .register-link a:hover {
     text-decoration: underline;
 }
+
+.wrapper .logologin  img { 
+   
+    width: 250px; 
+}

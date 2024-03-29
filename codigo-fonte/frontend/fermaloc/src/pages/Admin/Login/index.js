@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { login } from '../../../services/authenticationService.js';
 import "./styles.css";
 import { MdEmail, MdLock } from "react-icons/md";
+import logo from "../../../assets/imgs/logofer.jpg";
+
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -17,11 +19,15 @@ export default function Login() {
       await login(loginDto);
     }
   return (
-    <div>
+
+    <div >
         {/* Código HTML */}
           <div className="wrapper">
             <form action="">
 
+             <div className='logologin'>
+             <img src={logo} alt="logo"/>
+            </div>
               <h1>Login</h1>
 
               <div className="input-box">
