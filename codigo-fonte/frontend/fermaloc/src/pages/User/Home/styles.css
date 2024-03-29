@@ -39,3 +39,14 @@
     flex-direction: row;
     gap: 5px;
 }
+
+.boneco img{
+    width:200px;
+
+}
+
+.quemsomos{
+display:flex;
+flex-direction: row;
+
+}

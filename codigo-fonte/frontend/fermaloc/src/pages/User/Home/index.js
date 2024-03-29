@@ -9,6 +9,7 @@ import Footer from "../../../components/Footer/index.js";
 import makita from "../../../assets/imgs/makitalogo.jpg";
 import dewalt from "../../../assets/imgs/logodewalt.png";
 import bosch from "../../../assets/imgs/boschlogo.png";
+import mascote from "../../../assets/imgs/mascote.png";
 
 export default function Home() {
   const [banner, setBanner] = useState(null);
@@ -67,6 +68,17 @@ export default function Home() {
               );
             })}
           </div>
+          <div className="quemsomos">
+          <div>
+            <p>
+              A Fermaloc é uma empresa que atua no ramo de ferramentas elétricas
+              
+            </p>
+          </div>
+            <div className="boneco">
+          <img src={mascote} alt="logo"/>
+        </div>
+        </div>
         </div>
       </div>
       {location.pathname !== "/admin/login" && <Footer />}
