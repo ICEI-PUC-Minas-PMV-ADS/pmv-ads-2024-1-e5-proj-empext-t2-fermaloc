@@ -6,6 +6,9 @@ import TopProduct from "./components/TopProduct/index.js";
 import { useLocation } from "react-router-dom";
 import NavBar from "../../../components/NavBar/index.js";
 import Footer from "../../../components/Footer/index.js";
+import makita from "../../../assets/imgs/makitalogo.jpg";
+import dewalt from "../../../assets/imgs/logodewalt.png";
+import bosch from "../../../assets/imgs/boschlogo.png";
 
 export default function Home() {
   const [banner, setBanner] = useState(null);
@@ -44,6 +47,12 @@ export default function Home() {
         </div>
         <div>
           <h1>Parceiros</h1>
+          <div className='logopartners'>
+             <img src={makita} alt="logo"/>
+             <img src={dewalt} alt="logo"/>
+             <img src={bosch} alt="logo"/>
+            </div>
+            
         </div>
         <div className="topProductsContainer">
           <h1>Principais produtos</h1>

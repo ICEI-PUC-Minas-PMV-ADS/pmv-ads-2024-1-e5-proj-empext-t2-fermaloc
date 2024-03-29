@@ -27,3 +27,16 @@
     justify-content: space-around;
     align-items: center;
 }
+
+.logopartners img{ 
+  
+    width: 150px; 
+    
+}
+
+.logopartners{
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5px;
+}
