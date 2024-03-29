@@ -82,19 +82,19 @@
     font-weight: 700;
 }
 
-.wrapper .register-link {
+.wrapper .acesso-home {
     font-size: 14.5px;
     text-align: center;
     margin: 20px 0 15px;
 }
 
-.register-link a {
+.acesso-home a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
 }
 
-.register-link a:hover {
+.acesso-home a:hover {
     text-decoration: underline;
 }
 
