@@ -73,6 +73,7 @@ Comunição da equipe: Microsoft Teams, WhatsApp, Discord
 | RF-006 | Disponibilizar a visualização dos produtos de acordo com a categoria a todos os usuários       | ALTA       |
 | RF-007 | Disponibilizar a comunicação direta com o empresário por meio do Whatsapp                      | ALTA       |
 | RF-008 | Disponibilizar um relatório dos produtos que mais redirecionaram os clientes para o Whatsapp   | MÉDIO      |
+| RF-009 | Permitir que o usuário administrador peça o reset de senha                                     | MÉDIO      |
 
 ### Requisitos não Funcionais
 
