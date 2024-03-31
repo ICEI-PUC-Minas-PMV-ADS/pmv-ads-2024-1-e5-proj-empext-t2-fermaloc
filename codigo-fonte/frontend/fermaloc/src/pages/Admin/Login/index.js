@@ -4,11 +4,13 @@ import { login } from '../../../services/authenticationService.js';
 import "./styles.css";
 import { MdEmail, MdLock } from "react-icons/md";
 import logo from "../../../assets/imgs/logofer.jpg";
+import { Link } from "react-router-dom";
 
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    
 
     async function submitForm(e) {
       e.preventDefault();
@@ -52,8 +54,11 @@ export default function Login() {
 
               <button className='' type="submit" onClick={(e) => submitForm(e)}>Login</button>
 
-              <div className="register-link">
-                <p>Não tem uma conta? <a href="#">Registre-se</a></p>
+              <div className="acesso-home">
+
+                <p>
+                  Ir para 
+                  <Link to="/"> tela inicial</Link></p>
                 
               </div>
 
