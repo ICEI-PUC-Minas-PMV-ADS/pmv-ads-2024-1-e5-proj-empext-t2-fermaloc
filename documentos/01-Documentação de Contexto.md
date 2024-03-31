@@ -33,9 +33,16 @@ Portanto, a criação de um site para a empresa torna-se algo primordial para a 
 
 ## Relação com a Extensão Universitária
 
-A universidade é uma instituição criada com objetivo de atender as necessidades do país, desenvolvendo profissionais capacitados para atender a diversas demandas. Dentre as formas de desenvolvimento, existe a prática extensionista universitária com desenvolvimento de um projeto sociotécnico inovador. Essa prática, como o nome sugere, se extende para além da fronteira da universidade, integrando a universidade com a comunidade, objetivando uma transformação na realidade social da população com inovações que certamente vão fazer diferenças em um negócio.
 
-A PUC Minas, ciente da importância desse projeto, propões um envolvimento dos alunos graduandos e as empresas externas à universidade. Para esse projeto, será proporcionado uma melhora da identidade própria da empresa Fermaloc, além de contribuir para uma melhor divulgação dos seus serviços e também facilitar o contato do cliente com o vendedor.
+A prática extensionista é um momento de parceria entre a Universidade e a sociedade, é um passo importante onde o mundo acadêmico acessa a comunidade e assim o conhecimento adquirido tem a importância do seu valor utilizado além das salas de aula. Em contrapartida vemos como o conhecimento é importante para a sociedade, causando mudanças por onde passa, enriquecendo ambientes e melhorando vidas.
+
+Para o aluno, é o momento de colocar em prática o conhecimento adquirido através dos estudos realizados na PUC Minas, após anos de dedicação. 
+Para a empresa parceira, ela encontrará profissionais capacitados para atender sua demanda através de um projeto sociotécnico inovador, e assim trazer soluções para o desafio que foi proposto.
+
+Neste projeto será desenvolvido uma melhora da identidade da empresa Fermaloc, melhor divulgação de serviços e produtos através de um sistema com qualidade de navegabilidade, clareza de informações e interação de clientes
+e vendedores.
+
+
 
 ## Descrição do Parceiro
 
