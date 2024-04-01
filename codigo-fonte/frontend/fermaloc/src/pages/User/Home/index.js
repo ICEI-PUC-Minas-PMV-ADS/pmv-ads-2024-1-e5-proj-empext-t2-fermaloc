@@ -28,7 +28,8 @@ export default function Home() {
     }
 
     //tera que remover esse id posteriormente, temos que ver uma melhor forma de deifnir qual banner ira ficar na home, talvez mais um endpont para que o admin escolha.
-    const id = "08dc500d-3334-4bc0-80ff-d0ecc6bd8439";
+    //FAVOR NÃO MUDAR A ID
+    const id = "08dc4eb0-fa0f-40e7-82f1-7e82cca58ef9";
     fetchBanner(id);
     fetchTopProducts();
   }, []);
@@ -47,13 +48,12 @@ export default function Home() {
           />
         </div>
         <div>
-          <h1 className='us'>Parceiros</h1>
-          <div className='logopartners'>
-             <img src={makita} alt="logo"/>
-             <img src={dewalt} alt="logo"/>
-             <img src={bosch} alt="logo"/>
-            </div>
-            
+          <h1 className="us">Parceiros</h1>
+          <div className="logopartners">
+            <img src={makita} alt="logo" />
+            <img src={dewalt} alt="logo" />
+            <img src={bosch} alt="logo" />
+          </div>
         </div>
         <div className="topProductsContainer">
           <h1>Principais produtos</h1>
@@ -68,18 +68,18 @@ export default function Home() {
               );
             })}
           </div>
+          <h1> Quem somos </h1>
           <div className="quemsomos">
-          <div>
-            <h1 className='us'> Quem  somos </h1>
-            <p>
-              A Fermaloc é uma empresa que atua no ramo de ferramentas elétricas
-              
-            </p>
-          </div>
+            <div>
+              <p>
+                A Fermaloc é uma empresa que atua no ramo de ferramentas
+                elétricas
+              </p>
+            </div>
             <div className="boneco">
-          <img src={mascote} alt="logo"/>
-        </div>
-        </div>
+              <img src={mascote} alt="logo" />
+            </div>
+          </div>
         </div>
       </div>
       {location.pathname !== "/admin/login" && <Footer />}
