@@ -3,9 +3,9 @@ import Login from "./pages/Admin/Login/index.js";
 import Home from "./pages/User/Home/index.js";
 import Product from "./pages/User/Product/index.js";
 import Products from "./pages/User/Products/index.js";
-import NavBar from "./components/NavBar/index.js";
-import Footer from "./components/Footer/index.js";
 import NotFound from "./pages/NotFound/index.js";
+import AboutUs from "./pages/User/Aboutus/index.js";
+
 
 const router = createBrowserRouter([
   {
@@ -24,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/admin/login",
     element: <Login />,
+  },
+  {
+    path: "/aboutus",
+    element: <AboutUs/>,
   },
 ]);
 

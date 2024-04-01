@@ -12,7 +12,7 @@ export default function NavBar() {
     </div>
     <ul> <li> <Link to='/' style={{textDecoration: "none", color:'white'}}><p>Home</p></Link></li>
      <li><Link to='/produtos'  style={{textDecoration: "none", color:'white'}}><p>Produtos</p></Link></li> 
-     <li><Link to='/#quemsomos'  style={{textDecoration: "none", color:'white'}}><p>Quem Somos</p></Link></li> </ul>
+     <li><Link to='/aboutus'  style={{textDecoration: "none", color:'white'}}><p>Quem Somos</p></Link></li> </ul>
     </div>
   )
 }
