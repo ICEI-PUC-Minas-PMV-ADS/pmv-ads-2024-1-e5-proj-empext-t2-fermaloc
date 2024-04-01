@@ -44,4 +44,11 @@ public class AdministratorController : ControllerBase
         await _administratorService.DeleteAdministratorAsync(id);
         return NoContent();
     }
+
+
+    [HttpPost("resetpassword")]
+    public async Task<IActionResult> ResetAdministratorPassword ([FromBody] string email){
+        await _administratorService.ResetPassword(email);
+        return NoContent();
+    }
 }

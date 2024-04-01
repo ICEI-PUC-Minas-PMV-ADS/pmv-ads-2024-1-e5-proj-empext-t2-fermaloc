@@ -7,12 +7,14 @@ public class AdministratorService : IAdministratorService
 {
     private readonly IAdministratorRepository _administratorRepository;
     private readonly IAuthenticateService _authenticateService;
+    private readonly IEmailService _emailService;
     private readonly IMapper _mapper;
 
-    public AdministratorService(IAdministratorRepository administratorRepository, IMapper mapper, IAuthenticateService authenticateService)
+    public AdministratorService(IAdministratorRepository administratorRepository, IMapper mapper, IAuthenticateService authenticateService, IEmailService emailService)
     {
         _administratorRepository = administratorRepository;
         _mapper = mapper;
+        _emailService = emailService;
         _authenticateService = authenticateService;
     }
 
@@ -68,7 +70,13 @@ public class AdministratorService : IAdministratorService
             LoginResponseDto loginResponseDto = new(token);
             return loginResponseDto;
         }
-        throw new LoginException("Dados de login invalidos");
-        
+        throw new LoginException("Dados de login invalidos");   
+    }
+    public async Task ResetPassword (string email){
+        var administrator = await _administratorRepository.GetAdministratorByEmailAsync(email);
+        var newPassword = "12345678";
+        administrator.Password = _authenticateService.HashPassword(newPassword);
+        await _emailService.ResetPassword(email, newPassword);
+        await _administratorRepository.UpdateAdministratorAsync(administrator);
     }
 }

@@ -10,7 +10,7 @@ public class Administrator
     public Guid Id { get; private set; }
     public string Name { get; private set; }
     public string Email { get; set; }
-    public string  Password { get; private set; }
+    public string  Password { get; set; }
     public string CNPJ { get; private set; }
     public string Role { get; private set; }
 

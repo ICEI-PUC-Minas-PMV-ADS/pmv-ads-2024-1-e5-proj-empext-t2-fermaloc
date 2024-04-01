@@ -60,7 +60,8 @@ public class DependencyContainer
                 services.AddScoped<IBannerService, BannerService>();
                 services.AddScoped<ICategoryService, CategoryService>();
                 services.AddScoped<IEquipamentService, EquipamentService>();
-
+                
+                services.AddTransient<IEmailService, EmailService>();
                 return services;
         }
 }

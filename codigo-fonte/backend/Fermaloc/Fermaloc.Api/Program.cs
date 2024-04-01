@@ -29,6 +29,7 @@ if (app.Environment.IsDevelopment())
 app.UseMiddleware<LoginExceptionMiddleware>();
 app.UseMiddleware<InvalidDataExceptionMiddleware>();
 app.UseMiddleware<NotFoundExceptionMiddleware>();
+app.UseMiddleware<SmtpExceptionMiddleware>();
 
 app.UseCors("AllowSpecificOrigin");
 
