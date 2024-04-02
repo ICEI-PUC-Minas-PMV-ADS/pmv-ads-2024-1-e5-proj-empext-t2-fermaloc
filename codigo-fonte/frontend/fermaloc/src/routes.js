@@ -4,8 +4,7 @@ import Home from "./pages/User/Home/index.js";
 import Product from "./pages/User/Product/index.js";
 import Products from "./pages/User/Products/index.js";
 import NotFound from "./pages/NotFound/index.js";
-import AboutUs from "./pages/User/Aboutus/index.js";
-
+import AboutUs from "./pages/User/AboutUs/index.js";
 
 const router = createBrowserRouter([
   {
@@ -27,16 +26,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/aboutus",
-    element: <AboutUs/>,
+    element: <AboutUs />,
   },
 ]);
 
 function Routes() {
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default Routes;

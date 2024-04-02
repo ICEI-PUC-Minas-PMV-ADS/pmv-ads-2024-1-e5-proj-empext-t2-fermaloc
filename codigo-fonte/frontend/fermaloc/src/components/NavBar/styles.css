@@ -1,27 +1,36 @@
-.general{
-    padding: 0;
-    margin: 0;
-    width: 100%;
+nav{
+    width: 100vw;
     height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
     background-color:#302782;
+    
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 16px;
 }
+
 .navlogo img{
     width: 120px; 
 }
 
-.general ul{
+nav ul{
 list-style: none;
 
 }
-.general ul li{
+nav ul li{
  display: inline-block;   
  padding: 10px;
+}
+
+nav ul li:hover{
+    text-decoration: underline;
+    text-decoration-color: #ffff;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 8px;
+    transition: 0.3s;
 }

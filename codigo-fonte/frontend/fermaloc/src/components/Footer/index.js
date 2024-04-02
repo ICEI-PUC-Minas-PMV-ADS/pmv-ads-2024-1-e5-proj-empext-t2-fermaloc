@@ -4,7 +4,6 @@ import cartaomascote from "../../assets/imgs/mascoteteste.png";
 export default function Footer() {
   return (
     <footer>
-      
       <div className="dados">
         <h1>Contato</h1>
         <p>Telefone: (31) 3333-3333</p>

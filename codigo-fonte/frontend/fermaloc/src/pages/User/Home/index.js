@@ -3,13 +3,12 @@ import "./styles.css";
 import { getBannerById } from "../../../services/bannerService.js";
 import { getTopProducts } from "../../../services/productService.js";
 import TopProduct from "./components/TopProduct/index.js";
-import { useLocation } from "react-router-dom";
+import { useLocation, Navigate, useNavigate } from "react-router-dom";
 import NavBar from "../../../components/NavBar/index.js";
 import Footer from "../../../components/Footer/index.js";
 import makita from "../../../assets/imgs/makitalogo.jpg";
 import dewalt from "../../../assets/imgs/logodewalt.png";
 import bosch from "../../../assets/imgs/boschlogo.png";
-
 
 export default function Home() {
   const [banner, setBanner] = useState(null);
@@ -35,6 +34,7 @@ export default function Home() {
   }, []);
 
   const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -47,9 +47,9 @@ export default function Home() {
             className="imgBanner"
           />
         </div>
-        <div>
-          <h1 className="us">Parceiros</h1>
-          <div className="logopartners">
+        <div className="partnersContainer">
+          <h1>Parceiros</h1>
+          <div className="logoPartners">
             <img src={makita} alt="logo" />
             <img src={dewalt} alt="logo" />
             <img src={bosch} alt="logo" />
@@ -64,10 +64,12 @@ export default function Home() {
                   name={product.name}
                   image={product.image}
                   id={product.id}
+                  key={product.id}
                 />
               );
             })}
           </div>
+          <button onClick={() => navigate("/produtos")} className="buttonSeeMore">VER MAIS</button>
         </div>
       </div>
       {location.pathname !== "/admin/login" && <Footer />}

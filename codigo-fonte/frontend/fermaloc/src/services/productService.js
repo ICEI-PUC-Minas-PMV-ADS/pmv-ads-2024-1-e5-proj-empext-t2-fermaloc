@@ -51,10 +51,10 @@ async function getProductByStatus(status, page = 1) {
   }
 }
 
-async function getProductByStatusAndCategory(status, categpryId, page = 1) {
+async function getProductByStatusAndCategory(status, categoryId, page = 1) {
   try {
     const response = await api.get(
-      `equipamento/status?skip=${page}&status=${status}&categoryId=${categpryId}`
+      `equipamento/statusaecategoria?skip=${page}&status=${status}&categoryId=${categoryId}`
     );
     return response.data;
   } catch (err) {
@@ -66,7 +66,7 @@ async function getProductByStatusAndCategory(status, categpryId, page = 1) {
 async function getProductBySearchedName(nameEquipament, page = 1) {
   try {
     const response = await api.get(
-      `equipamento/status?nameEquipament=${nameEquipament}`
+      `equipamento/pesquisa?nameEquipament=${nameEquipament}`
     );
     return response.data;
   } catch (err) {

@@ -1,1 +1,54 @@
 /* COmentário */
+.pageContainer{
+    margin-top: 60px;
+}
+
+.productsAndFiltersContainer{
+    display: flex;
+    align-items: start;
+}
+
+.filters{
+    padding: 20px;
+}
+
+.filters p{
+    font-weight: bolder;
+}
+
+.filterInput{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.filterInput button{
+    background-color: #fbb035;
+    border: none;
+    padding: 10px;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+}
+
+.filterInput input{
+    padding: 10px; 
+    border: none;
+    background-color: #d8d8d8;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.filters ul{
+    list-style-type: none;
+}
+
+.filters ul li{
+    margin: 10px 0px;
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
