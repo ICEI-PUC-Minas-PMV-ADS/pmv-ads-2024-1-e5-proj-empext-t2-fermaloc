@@ -1,8 +1,25 @@
 footer{
     background-color: #302782;
     width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height:250px;  
 }
 
 .map{
     border: none;
+}
+.dados{
+display: flex;
+justify-content: left;
+}
+.mapa{
+    display: flex;
+    justify-content: right;
+    
+}
+.mascote img{
+    display: flex;
+    height:230px;
 }
