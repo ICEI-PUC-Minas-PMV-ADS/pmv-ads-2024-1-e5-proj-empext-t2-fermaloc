@@ -8,7 +8,7 @@ import {
 import NavBar from "../../../components/NavBar/index.js";
 import Footer from "../../../components/Footer/index.js";
 import SimilarProduct from "./components/SimilarProduct/index.js";
-import { FaWhatsapp } from "react-icons/fa";
+import whatsapplogo from "../../../assets/imgs/whatsappLogo.png";
 
 export default function Product() {
   const { id } = useParams();
@@ -34,25 +34,26 @@ export default function Product() {
     <>
       {location.pathname !== "/admin/login" && <NavBar />}
       <div className="pageContainer">
-        {product.name && <h1>{product.name}</h1>}
+        {product.name && <h1>{product.name.toUpperCase()}</h1>}
+
         <div className="productDetailContainer">
-            <p className="description">{product.description}</p>
+          <p className="description">{product.description}</p>
+
           <img
             src={`data:image/png;base64,${product.image}`}
             alt="Banner"
             className="productDetailImage"
           />
         </div>
-
         <div className="contactContainer">
-              <h3>
-                ENTRE EM CONTATO COM UM DE NOSSOS VENDEDORES E SOLICITE UM
-                ORÇAMENTO!
-              </h3>
-              <button>
-                <FaWhatsapp style={{ fontSize: 40, color: "#00e676" }} />
-              </button>
-            </div>
+          <h3>
+            ENTRE EM CONTATO COM UM DE NOSSOS VENDEDORES E SOLICITE UM
+            ORÇAMENTO!
+          </h3>
+          <button>
+            <img src={whatsapplogo} />
+          </button>
+        </div>
 
         <div className="similarProductsContainer">
           <h1>Outros produtos parecidos</h1>
