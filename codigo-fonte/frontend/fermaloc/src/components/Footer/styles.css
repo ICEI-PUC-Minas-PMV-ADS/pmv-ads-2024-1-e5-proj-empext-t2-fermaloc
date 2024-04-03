@@ -6,6 +6,9 @@ footer{
     justify-content: space-between;
     height:250px;
     bottom: 0;
+    left:0;
+    position:static;
+   
 }
 
 .map{
