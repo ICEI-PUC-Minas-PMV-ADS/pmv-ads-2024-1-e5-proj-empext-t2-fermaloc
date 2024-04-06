@@ -1,29 +1,59 @@
 footer{
     background-color: #302782;
-    width: 100vw;
+    width: 100%;
+    height: 100px;
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    height:100px;
     justify-content: space-between;
-    height:250px;
+    position: fixed;
     bottom: 0;
     left:0;
-    position:static;
-   
 }
 
 .map{
     border: none;
+    
 }
 .dados{
 display: flex;
 justify-content: left;
+bottom: 0;
+color: azure;
+justify-content: space-between;
 }
-.mapa{
-    display: flex;
-    justify-content: right;
+.footer .mapa-responsive{
+    left:0;
+
+    top:0;
+
+    height:100px;
+
+    width:100%;
+
+    position:absolute;
     
 }
 .mascote img{
-    display: flex;
-    height:230px;
+    
+    height:160px;
 }
+
+.instagram img{
+    display: flex;
+    height: 40px;
+    border-right: 0;
+    padding-top: 20%;
+}
+
+p {
+    text-indent: 2em;
+    text-align: justify;
+    padding-top: 5%;
+}
+
+.whatsapp img{
+    display: flex;
+    width: 10px;
+    height:10px;
+    padding-top: 70%;}
