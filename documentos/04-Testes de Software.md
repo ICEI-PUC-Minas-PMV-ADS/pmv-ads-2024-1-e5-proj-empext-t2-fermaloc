@@ -34,14 +34,14 @@ Diante dos cenários apresentados e analisando os requisitos do projeto, foi rea
 
 ### CT-001
 ![Imagem do Vídeo](/Imgs/login_sucesso.png)
-![Vídeo](/Imgs/login_sucesso.mp4)
+<a href="https://www.youtube.com/watch?v=-2Pfg8ujfiM" title="Login sucesso">Video de sucesso no login</a>
 
 ### CT-002
 ![Imagem do Vídeo](/Imgs/login_falha.png)
-![Vídeo](/Imgs/llogin_falha.mp4)
+<a href="https://www.youtube.com/watch?v=-FxS9iOVSFA" title="Edição do banner">Video de falha no login</a>
 
 ### CT-003
-![Vídeo](/Imgs/Edição_do_banner.mp4)
+<a href="https://www.youtube.com/watch?v=5M55_UF-Nfw" title="Edição do banner">Video edidando o banner</a>
 
 ### CT-004
-![Vídeo](/Imgs/CRUD_Categorias.mp4)
+<a href="https://www.youtube.com/watch?v=7i8PA2yUyEM" title="CRUD categoria">Video fazendo o CRUD de uma categoria</a>
