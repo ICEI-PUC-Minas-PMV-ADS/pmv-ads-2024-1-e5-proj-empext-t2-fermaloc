@@ -29,25 +29,31 @@ public class EquipamentRepository : IEquipamentRepository
     }
     public async Task<IEnumerable<Equipament>> GetActiveEquipamentsOrderByNumberOfClicksAsync()
     {
-        IEnumerable<Equipament> equipaments = await _context.Equipaments.Where(e => e.Status == true).OrderByDescending(e => e.NumberOfClicks).ToListAsync();
+        IEnumerable<Equipament> equipaments = await _context.Equipaments.Where(e => e.Status == true).ToListAsync();
         return equipaments;
     }
+
+    public async Task<Equipament> GetEquipamentByCode(int code){
+        Equipament equipament = await _context.Equipaments.FirstOrDefaultAsync(e => e.EquipamentCode == code);
+        return equipament;
+    }
+
     public async Task<IEnumerable<Equipament>> GetEquipamentsByStatusAsync(bool status)
     {
         IEnumerable<Equipament> equipaments = await _context.Equipaments.Where(e => e.Status == status).ToListAsync();
         return equipaments;
     }
-public async Task<IEnumerable<Equipament>> GetActiveSimilarEquipamentsByCategoryAsync(Guid productId, Guid categoryId)
-{
-    var random = new Random();
-    IEnumerable<Equipament> equipaments = await _context.Equipaments
-        .Where(e => e.Status == true && e.CategoryId == categoryId && e.Id != productId)
-        .OrderBy(e => Guid.NewGuid())
-        .Take(3)
-        .ToListAsync();
+    public async Task<IEnumerable<Equipament>> GetActiveSimilarEquipamentsByCategoryAsync(Guid productId, Guid categoryId)
+    {
+        var random = new Random();
+        IEnumerable<Equipament> equipaments = await _context.Equipaments
+            .Where(e => e.Status == true && e.CategoryId == categoryId && e.Id != productId)
+            .OrderBy(e => Guid.NewGuid())
+            .Take(3)
+            .ToListAsync();
 
-    return equipaments;
-}
+        return equipaments;
+    }
     public async Task<IEnumerable<Equipament>> GetEquipamentsByStatusAndCategoryAsync(bool status, Guid categoryId)
     {
         IEnumerable<Equipament> equipaments = await _context.Equipaments.Where(e => e.Status == status && e.CategoryId == categoryId).ToListAsync();
@@ -65,12 +71,6 @@ public async Task<IEnumerable<Equipament>> GetActiveSimilarEquipamentsByCategory
         return equipament;
     }
     public async Task<Equipament> UpdateEquipamentStatusAsync(Equipament equipament)
-    {
-        _context.Equipaments.Update(equipament);
-        await _context.SaveChangesAsync();
-        return equipament;
-    }
-    public async Task<Equipament> AddClickCountEquipamentAsync(Equipament equipament)
     {
         _context.Equipaments.Update(equipament);
         await _context.SaveChangesAsync();

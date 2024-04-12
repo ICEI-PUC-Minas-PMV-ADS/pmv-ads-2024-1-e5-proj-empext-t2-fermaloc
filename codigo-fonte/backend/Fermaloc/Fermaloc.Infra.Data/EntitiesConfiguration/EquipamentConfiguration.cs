@@ -9,9 +9,9 @@ public class EquipamentConfiguration : IEntityTypeConfiguration<Equipament>
     public void Configure(EntityTypeBuilder<Equipament> builder)
     {
         builder.HasKey(e => e.Id);
-        builder.Property(e => e.Name).HasMaxLength(20).IsRequired();
-        builder.Property(e => e.Description).HasMaxLength(300).HasColumnType("TEXT").IsRequired();
-        builder.Property(e => e.Image).HasMaxLength(25 * 1024 * 1024).HasColumnType("LONGBLOB").IsRequired();
+        builder.Property(e => e.Name).HasMaxLength(150).IsRequired();
+        builder.Property(e => e.Description).HasMaxLength(1000).HasColumnType("TEXT").IsRequired();
+        builder.Property(e => e.Image).HasMaxLength(5 * 1024 * 1024).HasColumnType("LONGBLOB").IsRequired();
         builder
             .HasOne(e => e.Administrator)
             .WithMany(a => a.Equipaments)

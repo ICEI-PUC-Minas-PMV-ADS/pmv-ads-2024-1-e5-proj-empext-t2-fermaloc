@@ -22,7 +22,7 @@ public class LoginExceptionMiddleware
         }catch (Application.LoginException ex){
             _logger.LogError(ex, ex.Message);
             context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
 
             var response = _env.IsDevelopment() ? 
                 new ApiExeption(context.Response.StatusCode.ToString(), ex.Message, ex.StackTrace.ToString()) : 

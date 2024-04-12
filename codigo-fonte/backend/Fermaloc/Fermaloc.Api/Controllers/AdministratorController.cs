@@ -1,4 +1,5 @@
 ﻿using Fermaloc.Application;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -28,18 +29,21 @@ public class AdministratorController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [Authorize]
     public async Task<IActionResult> GetAdministrator(Guid id){
         var administratorDto = await _administratorService.GetAdministratorByIdAsync(id);
         return Ok(administratorDto);
     }
     
     [HttpPut("{id}")]
+    [Authorize]
     public async Task<IActionResult> UpdateAdministrator (Guid id, [FromBody] UpdateAdministratorDto administratorDto){
         await _administratorService.UpdateAdministratorAsync(id, administratorDto);
         return NoContent();
     }
     
     [HttpDelete("{id}")]
+    [Authorize]
     public async Task<IActionResult> DeleteAdministrator (Guid id){
         await _administratorService.DeleteAdministratorAsync(id);
         return NoContent();

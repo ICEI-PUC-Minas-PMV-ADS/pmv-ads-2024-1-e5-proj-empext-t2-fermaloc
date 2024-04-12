@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Text;
+using AutoMapper;
 using Fermaloc.Domain;
 
 namespace Fermaloc.Application;
@@ -74,9 +75,30 @@ public class AdministratorService : IAdministratorService
     }
     public async Task ResetPassword (string email){
         var administrator = await _administratorRepository.GetAdministratorByEmailAsync(email);
-        var newPassword = "12345678";
-        administrator.Password = _authenticateService.HashPassword(newPassword);
+        string newPassword = GenerateNewPassword();
+        administrator.SetPassword(newPassword);
+        
         await _emailService.ResetPassword(email, newPassword);
         await _administratorRepository.UpdateAdministratorAsync(administrator);
+    }
+
+    private static string GenerateNewPassword(){
+        int minLength = 8;
+        int maxLength = 100;
+        
+        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-+";
+        var random = new Random();
+        var password = new StringBuilder();
+
+        password.Append(chars[random.Next(26)]); 
+        password.Append(chars[random.Next(26 + 26)]); 
+        password.Append(chars[random.Next(26 + 26 + 10)]); 
+        password.Append(chars[random.Next(26 + 26 + 10 + 12)]);
+
+        for (int i = password.Length; i < minLength; i++)
+        {
+            password.Append(chars[random.Next(chars.Length)]);
+        }
+        return password.ToString(0, Math.Min(password.Length, maxLength));
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Fermaloc.Application;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace Fermaloc.Api;
 
@@ -15,7 +16,8 @@ public class BannerController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create ([FromForm] CreateBannerDto bannerDto, IFormFile image){
+    [Authorize]
+    public async Task<IActionResult> CreateBanner ([FromForm] CreateBannerDto bannerDto, IFormFile image){
         byte[]? imageBytes = null;
         using (var memoryStream = new MemoryStream())
         {
@@ -24,17 +26,18 @@ public class BannerController : ControllerBase
         }
 
         var administradorDto = await _bannerService.CreateBannerAsync(bannerDto, imageBytes);
-        return CreatedAtAction(nameof(GetAdministrator), new { id = administradorDto.Id }, administradorDto);
+        return CreatedAtAction(nameof(GetBanner), new { id = administradorDto.Id }, administradorDto);
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetAdministrator(Guid id){
+    public async Task<IActionResult> GetBanner(Guid id){
         var administradorDto = await _bannerService.GetBannerByIdAsync(id);
         return Ok(administradorDto);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateAdministrator (Guid id,IFormFile image){
+    [Authorize]
+    public async Task<IActionResult> UpdateBanner (Guid id,IFormFile image){
         byte[]? imageBytes = null;
         using (var memoryStream = new MemoryStream())
         {
@@ -47,7 +50,8 @@ public class BannerController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteAdministrator (Guid id){
+    [Authorize]
+    public async Task<IActionResult> DeleteBanner (Guid id){
         await _bannerService.DeleteBannerAsync(id);
         return NoContent();
     }

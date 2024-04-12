@@ -22,7 +22,6 @@ public class CategoryService : ICategoryService
         if(categoryAdministrator == null){
             throw new InvalidDataException("Administrador não encontrado");
         }
-        category.Status = true;
         var categoryCreated = await _categoryRepository.CreateCategoryAsync(category);
         return _mapper.Map<ReadCategoryDto>(categoryCreated);
     }
@@ -63,10 +62,10 @@ public class CategoryService : ICategoryService
         if(category == null){
             throw new NotFoundException("Categoira não encontrado");
         }          
-        category.Status = !category.Status;
+        category.SetStatus(!category.Status);
         if(!category.Status){
             foreach(var equipament in category.Equipaments){
-                equipament.Status = category.Status;
+                equipament.SetStatus(category.Status);
             }
         }
 

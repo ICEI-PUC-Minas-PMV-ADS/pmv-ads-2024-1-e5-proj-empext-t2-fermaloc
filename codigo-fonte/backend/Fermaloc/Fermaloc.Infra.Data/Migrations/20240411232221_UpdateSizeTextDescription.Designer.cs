@@ -4,6 +4,7 @@ using Fermaloc.Infra.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fermaloc.Infra.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240411232221_UpdateSizeTextDescription")]
+    partial class UpdateSizeTextDescription
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,7 +75,7 @@ namespace Fermaloc.Infra.Data.Migrations
 
                     b.Property<byte[]>("Image")
                         .IsRequired()
-                        .HasMaxLength(5242880)
+                        .HasMaxLength(26214400)
                         .HasColumnType("LONGBLOB");
 
                     b.HasKey("Id");
@@ -133,7 +136,7 @@ namespace Fermaloc.Infra.Data.Migrations
 
                     b.Property<byte[]>("Image")
                         .IsRequired()
-                        .HasMaxLength(5242880)
+                        .HasMaxLength(26214400)
                         .HasColumnType("LONGBLOB");
 
                     b.Property<string>("Name")

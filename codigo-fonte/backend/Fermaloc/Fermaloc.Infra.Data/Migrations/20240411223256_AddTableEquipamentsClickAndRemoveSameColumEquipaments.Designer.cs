@@ -4,6 +4,7 @@ using Fermaloc.Infra.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fermaloc.Infra.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240411223256_AddTableEquipamentsClickAndRemoveSameColumEquipaments")]
+    partial class AddTableEquipamentsClickAndRemoveSameColumEquipaments
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,7 +75,7 @@ namespace Fermaloc.Infra.Data.Migrations
 
                     b.Property<byte[]>("Image")
                         .IsRequired()
-                        .HasMaxLength(5242880)
+                        .HasMaxLength(26214400)
                         .HasColumnType("LONGBLOB");
 
                     b.HasKey("Id");
@@ -125,7 +128,7 @@ namespace Fermaloc.Infra.Data.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(1000)
+                        .HasMaxLength(700)
                         .HasColumnType("TEXT");
 
                     b.Property<int>("EquipamentCode")
@@ -133,7 +136,7 @@ namespace Fermaloc.Infra.Data.Migrations
 
                     b.Property<byte[]>("Image")
                         .IsRequired()
-                        .HasMaxLength(5242880)
+                        .HasMaxLength(26214400)
                         .HasColumnType("LONGBLOB");
 
                     b.Property<string>("Name")

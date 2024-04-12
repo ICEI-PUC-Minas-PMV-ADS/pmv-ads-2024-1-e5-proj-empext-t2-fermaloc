@@ -14,6 +14,5 @@ public interface IEquipamentService
     Task<IEnumerable<ReadEquipamentDto>> GetEquipamentsSearchNameEquipamentAsync(string nameEquipament);
     Task<ReadEquipamentDto> UpdateEquipamentAsync (Guid id, UpdateEquipamentDto equipamentDto, byte[]? image);
     Task<ReadEquipamentDto> UpdateEquipamentStatusAsync (Guid id);
-    Task<ReadEquipamentDto> AddClickCountEquipamentAsync (Guid id);
     Task<ReadEquipamentDto>  DeleteEquipamentAsync (Guid id);
 }

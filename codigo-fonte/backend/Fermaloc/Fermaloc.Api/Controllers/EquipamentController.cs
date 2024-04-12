@@ -1,4 +1,5 @@
 ﻿using Fermaloc.Application;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace Fermaloc.Api;
 
@@ -14,6 +15,7 @@ public class EquipamentController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize]
     public async Task<IActionResult> CreateEquipament ([FromForm] CreateEquipamentDto equipamentDto, IFormFile image){
         byte[]? imageBytes = null;
         using (var memoryStream = new MemoryStream())
@@ -68,6 +70,7 @@ public class EquipamentController : ControllerBase
     }
     
     [HttpPut("{id}")]
+    [Authorize]
     public async Task<IActionResult> UpdateEquipament (Guid id, [FromForm] UpdateEquipamentDto equipamentDto, IFormFile? image){
         if(image == null){
             await _equipamentService.UpdateEquipamentAsync(id, equipamentDto, null);
@@ -83,18 +86,14 @@ public class EquipamentController : ControllerBase
         return NoContent();
     }
     [HttpPut("/alterarstatus{id}")]
+    [Authorize]
     public async Task<IActionResult> UpdateEquipamentStatus (Guid id){
         await _equipamentService.UpdateEquipamentStatusAsync(id);
         return NoContent();
     }
     
-    [HttpPut("addcontagemvisita/{id}")]
-    public async Task<IActionResult> AddClickCountEquipament (Guid id){
-        await _equipamentService.AddClickCountEquipamentAsync(id);
-        return NoContent();
-    }
-    
     [HttpDelete("{id}")]
+    [Authorize]
     public async Task<IActionResult> DeleteEquipament (Guid id){
         await _equipamentService.DeleteEquipamentAsync(id);
         return NoContent();

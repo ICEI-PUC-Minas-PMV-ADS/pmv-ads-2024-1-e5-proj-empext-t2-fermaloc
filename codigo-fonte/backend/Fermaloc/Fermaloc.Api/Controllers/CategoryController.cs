@@ -15,6 +15,7 @@ public class CategoryController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize]
     public async Task<IActionResult> CreateCategory ([FromBody] CreateCategoryDto categoryDto){
         var categoryCreated = await _categoryService.CreateCategoryAsync(categoryDto);
         return CreatedAtAction(nameof(GetCategoryById), new { id = categoryCreated.Id }, categoryCreated);
@@ -39,18 +40,21 @@ public class CategoryController : ControllerBase
     }
     
     [HttpPut("{id}")]
+    [Authorize]
     public async Task<IActionResult> UpdateCategory (Guid id, [FromBody] UpdateCategoryDto categoryDto){
         await _categoryService.UpdateCategoryAsync(id, categoryDto);
         return NoContent();
     }
     
     [HttpPut("alterarstatus/{id}")]
+    [Authorize]
     public async Task<IActionResult> UpdateCategoryStatus (Guid id){
         await _categoryService.UpdateCategoryStatusAsync(id);
         return NoContent();
     }
     
     [HttpDelete("{id}")]
+    [Authorize]
     public async Task<IActionResult> DeleteCategory (Guid id){
         await _categoryService.DeleteCategoryAsync(id);
         return NoContent();

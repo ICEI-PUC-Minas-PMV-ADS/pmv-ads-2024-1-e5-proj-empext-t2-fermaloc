@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fermaloc.Application", "Fer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fermaloc.Domain", "Fermaloc.Domain\Fermaloc.Domain.csproj", "{AB936E70-8C1A-402D-BBEF-B0616CC3C1A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fermaloc.Infra.Tests", "Fermaloc.Infra.Tests\Fermaloc.Infra.Tests.csproj", "{91F43B0B-2158-4390-A40E-8B6F987CD0C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{AB936E70-8C1A-402D-BBEF-B0616CC3C1A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB936E70-8C1A-402D-BBEF-B0616CC3C1A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB936E70-8C1A-402D-BBEF-B0616CC3C1A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91F43B0B-2158-4390-A40E-8B6F987CD0C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F43B0B-2158-4390-A40E-8B6F987CD0C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F43B0B-2158-4390-A40E-8B6F987CD0C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F43B0B-2158-4390-A40E-8B6F987CD0C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

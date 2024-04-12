@@ -17,7 +17,7 @@ public class BannerService : IBannerService
     public async Task<ReadBannerDto> CreateBannerAsync(CreateBannerDto bannerDto, byte[] image)
     {
         var banner = _mapper.Map<Banner>(bannerDto);
-        banner.Image = image;
+        banner.SetImage(image);
         var bannerCreated = await _bannerRepository.CreateBannerAsync(banner);
         return _mapper.Map<ReadBannerDto>(bannerCreated);
     }
@@ -36,7 +36,7 @@ public class BannerService : IBannerService
         if(banner == null){
             throw new NotFoundException("Banner não encontrado");
         }
-        banner.Image = image;
+        banner.SetImage(image);
         var bannerUpdated = await _bannerRepository.UpdateBannerAsync(banner);
         return _mapper.Map<ReadBannerDto>(bannerUpdated);
     }

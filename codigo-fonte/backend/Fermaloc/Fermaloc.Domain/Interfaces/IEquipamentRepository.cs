@@ -12,6 +12,5 @@ public interface IEquipamentRepository
     Task<IEnumerable<Equipament>> GetEquipamentsSearchNameEquipamentAsync(string nameEquipament);
     Task<Equipament> UpdateEquipamentAsync (Equipament equipament);
     Task<Equipament> UpdateEquipamentStatusAsync (Equipament equipament);
-    Task<Equipament> AddClickCountEquipamentAsync (Equipament equipament);
     Task<Equipament>  DeleteEquipamentAsync (Equipament equipament);
 }
