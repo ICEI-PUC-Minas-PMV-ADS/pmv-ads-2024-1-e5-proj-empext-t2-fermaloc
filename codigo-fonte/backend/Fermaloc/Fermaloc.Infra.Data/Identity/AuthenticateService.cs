@@ -49,7 +49,8 @@ public class AuthenticateService : IAuthenticateService
                 {
                     new Claim(ClaimTypes.Name, administrator.Name),
                     new Claim(ClaimTypes.Role, administrator.Role),
-                    new Claim(ClaimTypes.Sid, administrator.Cnpj)
+                    new Claim(ClaimTypes.Sid, administrator.Cnpj),
+                    new Claim(ClaimTypes.NameIdentifier, administrator.Id.ToString()),
                 }),
                 Expires = DateTime.UtcNow.AddHours(8),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

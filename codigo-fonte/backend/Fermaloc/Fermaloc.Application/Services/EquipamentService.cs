@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Fermaloc.Domain;
+using Fermaloc.Domain.Validations;
 
 namespace Fermaloc.Application;
 
@@ -15,10 +16,18 @@ public class EquipamentService : IEquipamentService
     }
     public async Task<ReadEquipamentDto> CreateEquipamentAsync(CreateEquipamentDto equipamentDto, byte[] image)
     {
-        var equipament = _mapper.Map<Equipament>(equipamentDto);
-        equipament.SetImage(image);
-        var equipamentCreated = await _equipamentRepository.CreateEquipamentAsync(equipament);
-        return _mapper.Map<ReadEquipamentDto>(equipamentCreated);
+        try{
+            var equipament = _mapper.Map<Equipament>(equipamentDto);
+            equipament.SetImage(image);
+            var equipamentExits = await _equipamentRepository.GetEquipamentByEquipamentCodeAsync(equipamentDto.EquipamentCode);
+            if (equipamentExits == null){
+                var equipamentCreated = await _equipamentRepository.CreateEquipamentAsync(equipament);
+                return _mapper.Map<ReadEquipamentDto>(equipamentCreated);
+            }
+            throw new InvalidDataException("Já existe um equipamente com mesmo código criado");
+        }catch(DomainExceptionValidation ex){
+            throw new InvalidDataException(ex.Message);
+        }
     }
     public async Task<ReadEquipamentDto> GetEquipamentByIdAsync(Guid id)
     {
@@ -68,16 +77,21 @@ public class EquipamentService : IEquipamentService
     }
     public async Task<ReadEquipamentDto> UpdateEquipamentAsync(Guid id, UpdateEquipamentDto equipamentDto, byte[]? image)
     {
-        var equipament = await _equipamentRepository.GetEquipamentByIdAsync(id);
-        if(equipament == null){
-            throw new NotFoundException("Equipamento não encontrado");
-        }          
-        _mapper.Map(equipamentDto, equipament);
-        if(image is not null){
-            equipament.SetImage(image);
+        try{
+            var equipament = await _equipamentRepository.GetEquipamentByIdAsync(id);
+            if(equipament == null){
+                throw new NotFoundException("Equipamento não encontrado");
+            }          
+            _mapper.Map(equipamentDto, equipament);
+            if(image is not null){
+                equipament.SetImage(image);
+            }
+            var equipamentUpdated = await _equipamentRepository.UpdateEquipamentAsync(equipament);
+            return _mapper.Map<ReadEquipamentDto>(equipamentUpdated);
+        }catch(DomainExceptionValidation ex){
+            throw new InvalidDataException(ex.Message);
         }
-        var equipamentUpdated = await _equipamentRepository.UpdateEquipamentAsync(equipament);
-        return _mapper.Map<ReadEquipamentDto>(equipamentUpdated);
+
     }
     public async Task<ReadEquipamentDto> UpdateEquipamentStatusAsync(Guid id)
     {

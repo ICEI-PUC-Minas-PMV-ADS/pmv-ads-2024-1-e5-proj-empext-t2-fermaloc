@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Fermaloc.Domain;
+using Fermaloc.Domain.Validations;
 
 namespace Fermaloc.Application;
 
@@ -17,13 +18,17 @@ public class CategoryService : ICategoryService
     }
     public async Task<ReadCategoryDto> CreateCategoryAsync(CreateCategoryDto categoryDto)
     {
-        var category = _mapper.Map<Category>(categoryDto);
-        var categoryAdministrator = await _administratorRepository.GetAdministratorByIdAsync(categoryDto.AdministratorId);
-        if(categoryAdministrator == null){
-            throw new InvalidDataException("Administrador não encontrado");
+        try{
+            var category = _mapper.Map<Category>(categoryDto);
+            var categoryAdministrator = await _administratorRepository.GetAdministratorByIdAsync(categoryDto.AdministratorId);
+            if(categoryAdministrator == null){
+                throw new InvalidDataException("Administrador não encontrado");
+            }
+            var categoryCreated = await _categoryRepository.CreateCategoryAsync(category);
+            return _mapper.Map<ReadCategoryDto>(categoryCreated);
+        }catch(DomainExceptionValidation ex){
+            throw new InvalidDataException(ex.Message);
         }
-        var categoryCreated = await _categoryRepository.CreateCategoryAsync(category);
-        return _mapper.Map<ReadCategoryDto>(categoryCreated);
     }
     public async Task<ReadCategoryDto> GetCategoryByIdAsync(Guid id)
     {
@@ -48,14 +53,19 @@ public class CategoryService : ICategoryService
     }
     public async Task<ReadCategoryDto> UpdateCategoryAsync(Guid id, UpdateCategoryDto categoryDto)
     {
-        var category = await _categoryRepository.GetCategoryByIdAsync(id);
-        if(category == null){
-            throw new NotFoundException("Categoira não encontrado");
-        }          
-        _mapper.Map(categoryDto, category);
-        var categoryUpdated = await _categoryRepository.UpdateCategoryAsync(category);
-        return _mapper.Map<ReadCategoryDto>(categoryUpdated);
+        try{
+            var category = await _categoryRepository.GetCategoryByIdAsync(id);
+            if(category == null){
+                throw new NotFoundException("Categoira não encontrado");
+            }          
+            _mapper.Map(categoryDto, category);
+            var categoryUpdated = await _categoryRepository.UpdateCategoryAsync(category);
+            return _mapper.Map<ReadCategoryDto>(categoryUpdated);
+        }catch(DomainExceptionValidation ex){
+            throw new InvalidDataException(ex.Message);
+        }
     }
+    
     public async Task<ReadCategoryDto> UpdateCategoryStatusAsync(Guid id)
     {
         var category = await _categoryRepository.GetCategoryByIdAsync(id);

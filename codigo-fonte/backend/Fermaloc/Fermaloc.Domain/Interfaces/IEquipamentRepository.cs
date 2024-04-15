@@ -4,6 +4,7 @@ public interface IEquipamentRepository
 {
     Task<Equipament> CreateEquipamentAsync (Equipament equipament);
     Task<Equipament> GetEquipamentByIdAsync (Guid id);
+    Task<Equipament> GetEquipamentByEquipamentCodeAsync (int code);
     Task<IEnumerable<Equipament>> GetAllEquipamentsAsync();
     Task<IEnumerable<Equipament>> GetActiveEquipamentsOrderByNumberOfClicksAsync();
     Task<IEnumerable<Equipament>> GetEquipamentsByStatusAsync(bool status);

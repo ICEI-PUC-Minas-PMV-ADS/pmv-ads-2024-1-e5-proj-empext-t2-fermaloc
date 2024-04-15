@@ -51,8 +51,8 @@ public class AdministratorController : ControllerBase
 
 
     [HttpPost("resetpassword")]
-    public async Task<IActionResult> ResetAdministratorPassword ([FromBody] string email){
-        await _administratorService.ResetPassword(email);
+    public async Task<IActionResult> ResetAdministratorPassword ([FromBody] ResetPasswordDto resetPasswordDto){
+        await _administratorService.ResetPassword(resetPasswordDto.Email);
         return NoContent();
     }
 }

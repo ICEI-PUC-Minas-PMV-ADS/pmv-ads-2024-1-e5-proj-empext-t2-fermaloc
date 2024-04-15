@@ -19,8 +19,12 @@ public class EquipamentRepository : IEquipamentRepository
     }
     public async Task<Equipament> GetEquipamentByIdAsync(Guid id)
     {
-            Equipament equipament = await _context.Equipaments.FindAsync(id);
-            return equipament;
+        Equipament equipament = await _context.Equipaments.FindAsync(id);
+        return equipament;
+    }
+    public async Task<Equipament> GetEquipamentByEquipamentCodeAsync (int code){
+        Equipament equipament= await _context.Equipaments.FirstOrDefaultAsync(x => x.EquipamentCode == code);
+        return equipament;
     }
     public async Task<IEnumerable<Equipament>> GetAllEquipamentsAsync()
     {

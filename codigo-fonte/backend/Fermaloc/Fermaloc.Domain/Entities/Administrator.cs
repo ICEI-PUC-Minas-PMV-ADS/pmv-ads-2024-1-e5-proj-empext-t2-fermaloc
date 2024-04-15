@@ -29,18 +29,18 @@ public class Administrator
     
     private void  ValidateDomain(string name, string email, string password, string cnpj, string role)
     {
+        DomainExceptionValidation.ValidateRequiredValue(name == null, "Nome");
+        DomainExceptionValidation.ValidateRequiredValue(email == null, "Email");
+        DomainExceptionValidation.ValidateRequiredValue(password == null, "Senha");
+        DomainExceptionValidation.ValidateRequiredValue(cnpj == null, "CNPJ");
+        DomainExceptionValidation.ValidateRequiredValue(role == null, "Role");
+        
         DomainExceptionValidation.ValidateString(name, 80, 3, "Nome");
         DomainExceptionValidation.ValidateString(email, 256, 7, "Email");
         DomainExceptionValidation.ValidateString(cnpj, 14, 14, "CNPJ");
         DomainExceptionValidation.ValidateString(role, 5, 5, "Role");
         DomainExceptionValidation.ValidatePassword(password);
         DomainExceptionValidation.ValidateEmail(email);
-        
-        DomainExceptionValidation.ValidateRequiredValue(name == null, "Nome");
-        DomainExceptionValidation.ValidateRequiredValue(email == null, "Email");
-        DomainExceptionValidation.ValidateRequiredValue(password == null, "Senha");
-        DomainExceptionValidation.ValidateRequiredValue(cnpj == null, "CNPJ");
-                DomainExceptionValidation.ValidateRequiredValue(role == null, "Role");
         
         Name = name;
         Email = email;
@@ -50,14 +50,14 @@ public class Administrator
     }
 
     public void SetPassword(string password){
-        DomainExceptionValidation.ValidatePassword(password);
         DomainExceptionValidation.ValidateRequiredValue(password == null, "Senha");
+        DomainExceptionValidation.ValidatePassword(password);
         Password = password;
     }
 
     public void SetRole(string role){
-        DomainExceptionValidation.ValidatePassword(role);
         DomainExceptionValidation.ValidateRequiredValue(role == null, "Role");
+        DomainExceptionValidation.ValidatePassword(role);
         Password = role;
     }
 }

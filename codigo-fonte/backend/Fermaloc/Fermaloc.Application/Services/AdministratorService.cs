@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using AutoMapper;
 using Fermaloc.Domain;
+using Fermaloc.Domain.Validations;
 
 namespace Fermaloc.Application;
 
@@ -21,10 +22,15 @@ public class AdministratorService : IAdministratorService
 
     public async Task<ReadAdministratorDto> CreateAdministratorAsync(CreateAdministratorDto administratorDto)
     {
-        administratorDto.Password = _authenticateService.HashPassword(administratorDto.Password);
-        var administrator = _mapper.Map<Administrator>(administratorDto);
-        var administratorCreated = await _administratorRepository.CreateAdministratorAsync(administrator);
-        return _mapper.Map<ReadAdministratorDto>(administratorCreated);
+        try{
+            administratorDto.Password = _authenticateService.HashPassword(administratorDto.Password);
+            var administrator = _mapper.Map<Administrator>(administratorDto);
+            var administratorCreated = await _administratorRepository.CreateAdministratorAsync(administrator);
+            return _mapper.Map<ReadAdministratorDto>(administratorCreated);
+        }catch(DomainExceptionValidation ex){
+            throw new InvalidDataException(ex.Message);
+        }
+
     }
 
     public async Task<ReadAdministratorDto> GetAdministratorByIdAsync(Guid id)
@@ -39,13 +45,18 @@ public class AdministratorService : IAdministratorService
 
     public async Task<ReadAdministratorDto> UpdateAdministratorAsync(Guid id, UpdateAdministratorDto administratorDto)
     {
-        var administrator = await _administratorRepository.GetAdministratorByIdAsync(id);
-        if(administrator == null){
-            throw new NotFoundException("Administrador não encontrado");
+        try{
+            var administrator = await _administratorRepository.GetAdministratorByIdAsync(id);
+            if(administrator == null){
+                throw new NotFoundException("Administrador não encontrado");
+            }
+            _mapper.Map(administratorDto, administrator);
+            var administratorUpdated = await _administratorRepository.UpdateAdministratorAsync(administrator);
+            return _mapper.Map<ReadAdministratorDto>(administratorUpdated);
+        }catch(DomainExceptionValidation ex){
+            throw new InvalidDataException(ex.Message);
         }
-        _mapper.Map(administratorDto, administrator);
-        var administratorUpdated = await _administratorRepository.UpdateAdministratorAsync(administrator);
-        return _mapper.Map<ReadAdministratorDto>(administratorUpdated);
+
     }
 
     public async Task<ReadAdministratorDto> DeleteAdministratorAsync(Guid id)
@@ -76,29 +87,36 @@ public class AdministratorService : IAdministratorService
     public async Task ResetPassword (string email){
         var administrator = await _administratorRepository.GetAdministratorByEmailAsync(email);
         string newPassword = GenerateNewPassword();
-        administrator.SetPassword(newPassword);
+        var hashedPassword = _authenticateService.HashPassword(newPassword);
+        administrator.SetPassword(hashedPassword);
         
         await _emailService.ResetPassword(email, newPassword);
         await _administratorRepository.UpdateAdministratorAsync(administrator);
     }
 
     private static string GenerateNewPassword(){
-        int minLength = 8;
-        int maxLength = 100;
-        
-        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-+";
+
+        const string charUpperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const string charLowerCase = "abcdefghijklmnopqrstuvwxyz";
+        const string charNumbersCase = "0123456789";
+        const string charSpecial = "!@#$%^&*()-+";
+
         var random = new Random();
         var password = new StringBuilder();
+        
+        password.Append(charUpperCase[random.Next(26)]);
+        password.Append(charLowerCase[random.Next(26)]); 
+        password.Append(charNumbersCase[random.Next(10)]); 
+        password.Append(charSpecial[random.Next(12)]); 
 
-        password.Append(chars[random.Next(26)]); 
-        password.Append(chars[random.Next(26 + 26)]); 
-        password.Append(chars[random.Next(26 + 26 + 10)]); 
-        password.Append(chars[random.Next(26 + 26 + 10 + 12)]);
-
-        for (int i = password.Length; i < minLength; i++)
-        {
-            password.Append(chars[random.Next(chars.Length)]);
-        }
-        return password.ToString(0, Math.Min(password.Length, maxLength));
+    for (int i = password.Length; i < 8; i++)
+    {
+        var charSet = charUpperCase + charLowerCase + charNumbersCase + charSpecial;
+        password.Append(charSet[random.Next(charSet.Length)]);
     }
+
+        return password.ToString();
+
+    }
+
 }
