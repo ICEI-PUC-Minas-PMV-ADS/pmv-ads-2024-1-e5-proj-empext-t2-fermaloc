@@ -1,3 +1,44 @@
-.similarProductImage{
-    width: 200px;
+.similarProduct {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 4vh 0;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
+}
+
+.similarProduct:hover {
+    cursor: pointer;
+}
+
+.similarProduct:hover .similarProductbackground {
+    -webkit-transform: skew(-15deg) translateX(0);
+    -ms-transform:     skew(-15deg) translateX(0);
+    transform:         skew(-15deg) translateX(0);
+}
+
+.similarProductImage {
+    width: 250px;
+    z-index: 2;
+}
+
+.similarProductbackground {
+    position: absolute;
+    width: 150%;
+    height: 100%;
+    background-color: #302782;
+    z-index: 1;
+
+    -webkit-transform: skew(-15deg) translateX(-400px);
+    -ms-transform:     skew(-15deg) translateX(-400px);
+    transform:         skew(-15deg) translateX(-400px);
+
+    transition: transform 0.2s ease-in-out;
+}
+
+.similarProductbackground.--delayed {
+    background-color: #F1A833;
+    transition: transform 0.2s 0.18s ease-in-out;   
 }

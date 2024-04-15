@@ -1,78 +1,73 @@
 import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+
+// Estilização
 import "./styles.css";
-import { getBannerById } from "../../../services/bannerService.js";
+
+// Imagens
+import makita from "../../../assets/imgs/logos/makita.png";
+import dewalt from "../../../assets/imgs/logos/dewalt.png";
+import bosch from "../../../assets/imgs/logos/bosch.png";
+
+// Serviços
 import { getTopProducts } from "../../../services/productService.js";
+
+// Componentes
 import TopProduct from "./components/TopProduct/index.js";
-import { useLocation, Navigate, useNavigate } from "react-router-dom";
-import NavBar from "../../../components/NavBar/index.js";
-import Footer from "../../../components/Footer/index.js";
-import makita from "../../../assets/imgs/makitalogo.jpg";
-import dewalt from "../../../assets/imgs/logodewalt.png";
-import bosch from "../../../assets/imgs/boschlogo.png";
+import Title from "../../../components/Title/index.js";
 
 export default function Home() {
-  const [banner, setBanner] = useState(null);
-  const [topProducts, setTopProducts] = useState([]);
+    const [topProducts, setTopProducts] = useState([]);
 
-  useEffect(() => {
-    async function fetchBanner(id) {
-      const bannerData = await getBannerById(id);
-      setBanner(bannerData.image);
-    }
+    useEffect(() => {
+        async function fetchTopProducts() {
+            const topProductsData = await getTopProducts();
+            console.log(topProductsData);
+            setTopProducts(topProductsData.slice(0, 3));
+        }
 
-    async function fetchTopProducts() {
-      const topProductsData = await getTopProducts();
-      console.log(topProductsData);
-      setTopProducts(topProductsData.slice(0, 3));
-    }
+        fetchTopProducts();
+    }, []);
 
-    //tera que remover esse id posteriormente, temos que ver uma melhor forma de deifnir qual banner ira ficar na home, talvez mais um endpont para que o admin escolha.
-    //FAVOR NÃO MUDAR A ID
-    const id = "08dc4eb0-fa0f-40e7-82f1-7e82cca58ef9";
-    fetchBanner(id);
-    fetchTopProducts();
-  }, []);
-
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  return (
-    <>
-      {location.pathname !== "/admin/login" && <NavBar />}
-      <div className="container">
-        <div className="bannerContainer">
-          <img
-            src={`data:image/png;base64,${banner}`}
-            alt="Banner"
-            className="imgBanner"
-          />
-        </div>
-        <div className="partnersContainer">
-          <h1>Parceiros</h1>
-          <div className="logoPartners">
-            <img src={makita} alt="logo" />
-            <img src={dewalt} alt="logo" />
-            <img src={bosch} alt="logo" />
-          </div>
-        </div>
-        <div className="topProductsContainer">
-          <h1>Principais produtos</h1>
-          <div className="topProductsComponentsContainer">
-            {topProducts.map((product) => {
-              return (
-                <TopProduct
-                  name={product.name}
-                  image={product.image}
-                  id={product.id}
-                  key={product.id}
-                />
-              );
-            })}
-          </div>
-          <button onClick={() => navigate("/produtos")} className="buttonSeeMore">VER MAIS</button>
-        </div>
-      </div>
-      {location.pathname !== "/admin/login" && <Footer />}
-    </>
-  );
+    return (
+        <>
+            <div className="container">
+                <div className="topProductsContainer">
+                    <Title title="Principais Produtos" />
+                    <div className="topProductsComponentsContainer">
+                        {topProducts.map((product) => {
+                            return (
+                                <TopProduct
+                                    name={product.name}
+                                    image={product.image}
+                                    id={product.id}
+                                    key={product.id}
+                                />
+                            );
+                        })}
+                    </div>
+                    <Link
+                        to="/produtos"
+                        style={{ textDecoration: "underline", color: "black" }}
+                    >
+                        Ver Mais
+                    </Link>
+                </div>
+            </div>
+            <div className="partnersContainer">
+                <Title title="Parceiros" />
+                <div className="logoPartners">
+                    <div className="logoPartner">
+                        <img src={makita} alt="Logo Makita" />
+                    </div>
+                    <div className="logoPartner">
+                        <img src={dewalt} alt="Logo DeWalt" />
+                    </div>
+                    <div className="logoPartner">
+                        <img src={bosch} alt="Logo Bosch" />
+                    </div>
+                </div>
+            </div>
+        </>
+    );
 }

@@ -1,16 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+// Estilização
 import "./styles.css";
-import { Link, useNavigate } from "react-router-dom";
 
 export default function SimilarProduct({ image, id }) {
-  const nativate = useNavigate()
     return (
-    <Link onClick={() => nativate(`/produtos/${id}`)}>
-      <img
-        src={`data:image/png;base64,${image}`}
-        alt="Banner"
-        className="similarProductImage"
-      />
-    </Link>
-  );
+        <Link to={`/produtos/${id}`} className="similarProduct">
+            <img
+                src={`data:image/png;base64,${image}`}
+                alt="Banner"
+                className="similarProductImage"
+            />
+            <div className="similarProductbackground" />
+            <div className="similarProductbackground --delayed" />
+        </Link>
+    );
 }

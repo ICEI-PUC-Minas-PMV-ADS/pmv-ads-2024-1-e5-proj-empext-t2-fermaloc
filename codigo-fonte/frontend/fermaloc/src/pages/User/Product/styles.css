@@ -1,14 +1,18 @@
-/* COmentário */
+/* Comentário */
+
+main {
+    padding: 2vh 0;
+}
 
 .pageContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 60px;
-    width: 100vw;
+    justify-content: center;
+    gap: 2vh;
 }
 
-.pageContainer h1{
+.pageContainer h1 {
     text-align: center;
     padding: 20px;
 }
@@ -17,21 +21,49 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
-    justify-content: space-evenly;
+    justify-content: center;
+    color: #FFFCFC;
+    margin-left: -10vw;
 }
 
-.productDetailImage{
+.productDetailImage {
+    height: 50vh;
     width: 450px;
 }
 
-.description{
-    width: 450px;
+.description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 20vw;
+    height: 50vh;
+}
+
+.description .descriptionText {
     line-height: 1.6;
     text-align: justify;
+    z-index: 2;
+    margin-left: 5vw;
+    position: absolute;
+    width: 120%;
+    margin-left: 6vw;
 }
 
-.similarProductsContainer{
+.description .descriptionBackground {
+    position: absolute;
+    width: 150%;
+    height: 100%;
+    z-index: 1;
+    background-color: #302782;
+    right: -8vw;
+
+    -webkit-transform: skew(-5deg);
+    -ms-transform:     skew(-5deg);
+    transform:         skew(-5deg);
+}
+
+.similarProductsContainer {
     width: 100%;
     margin-top: 30px;
 }
@@ -44,8 +76,8 @@
 .similarProductsImageContainer{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 40px;
+    justify-content: center;
+    gap: 4vh;
 }
 
 .contactContainer{

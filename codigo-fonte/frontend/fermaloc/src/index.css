@@ -8,14 +8,14 @@
 
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
+    min-height: 100vh;
     font-family: 'Poppings', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
-    min-height: 100vh;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'COurier New', monospace;
+    background-color: #F2F2F2;
+    overflow-x: hidden;
 }

@@ -1,9 +1,50 @@
-.imageProduct{
-    width: 300px;
-}
-
-.topProductContainer{
+.topProductContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #FFFCFC;
+    width: 15vw;
+    min-height: 40vh;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.imageProduct {
+    width: 90%;
+}
+
+.topProductContainer:hover .topProductFooter div {
+    -webkit-transform: skew(-15deg) translateX(0);
+    -ms-transform:     skew(-15deg) translateX(0);
+    transform:         skew(-15deg) translateX(0);
+}
+
+.topProductFooter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1.5vh 0;
+    background-color: #302782;
+    color: #FFFCFC;
+    margin-top: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.topProductFooter span {
+    z-index: 2;
+}
+
+.topProductFooter div {
+    width: 110%;
+    height: 100%;
+    z-index: 1;
+    background-color: #fbb035;
+    position: absolute;
+
+    -webkit-transform: skew(-15deg) translateX(-20vw);
+    -ms-transform:     skew(-15deg) translateX(-20vw);
+    transform:         skew(-15deg) translateX(-20vw);
+
+    transition: transform 0.2s ease-in-out;
 }

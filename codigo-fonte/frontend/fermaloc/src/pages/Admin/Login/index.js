@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import useAuthentication from "../../../hooks/useAuthentication";
-import styles from "./styles.module.css";
+import { login } from "../../../services/authenticationService.js";
+import "./styles.css";
 import { MdEmail, MdLock } from "react-icons/md";
 import logo from "../../../assets/imgs/logofer.jpg";
 import { Link } from "react-router-dom";
@@ -9,8 +9,6 @@ import { Link } from "react-router-dom";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {login} = useAuthentication();
-
 
   async function submitForm(e) {
     e.preventDefault();
@@ -21,16 +19,16 @@ export default function Login() {
     await login(loginDto);
   }
   return (
-    <div className={styles.page}>
+    <div>
       {/* Código HTML */}
-      <div className={styles.wrapper}>
+      <div className="wrapper">
         <form action="">
-          <div className={styles.logologin}>
+          <div className="logologin">
             <img src={logo} alt="logo" />
           </div>
           <h1>Login</h1>
 
-          <div className={styles.inputBox}>
+          <div className="input-box">
             <input
               type="text"
               placeholder="Email"
@@ -38,10 +36,10 @@ export default function Login() {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <MdEmail className={styles.icon} />
+            <MdEmail className="icon" />
           </div>
 
-          <div className={styles.inputBox}>
+          <div className="input-box">
             <input
               type="password"
               placeholder="Password"
@@ -52,7 +50,7 @@ export default function Login() {
             <MdLock className="icon" />
           </div>
 
-          <div className={styles.rememberForgot}>
+          <div className="remember-forgot">
             <label>
               <input type="checkbox" name="remember" /> Lembre-me
             </label>
@@ -63,7 +61,7 @@ export default function Login() {
             Login
           </button>
 
-          <div className={styles.acessoHome}>
+          <div className="acesso-home">
             <p>
               Ir para
               <Link to="/"> tela inicial</Link>
