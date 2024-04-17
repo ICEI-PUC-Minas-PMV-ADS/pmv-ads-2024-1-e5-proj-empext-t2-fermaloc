@@ -27,21 +27,21 @@ public class BannerService : IBannerService
         }
 
     }
-    public async Task<ReadBannerDto> GetBannerByIdAsync(Guid id)
+    public async Task<ReadBannerDto> GetBannerAsync()
     {
-        var banner = await _bannerRepository.GetBannerByIdAsync(id);
+        var banner = await _bannerRepository.GetBannerAsync();
         if(banner == null){
-            throw new NotFoundException("Banner não encontrado");
+            throw new NotFoundException("Nenhum banner encontrado");
         }        
         var bannerDto = _mapper.Map<ReadBannerDto>(banner);
         return bannerDto;
     }
-    public async Task<ReadBannerDto> UpdateBannerAsync(Guid id, byte[] image)
+    public async Task<ReadBannerDto> UpdateBannerAsync(byte[] image)
     {
         try{
-            var banner = await _bannerRepository.GetBannerByIdAsync(id);
+            var banner = await _bannerRepository.GetBannerAsync();
             if(banner == null){
-                throw new NotFoundException("Banner não encontrado");
+                throw new NotFoundException("Nenhum banner encontrado");
             }
             banner.SetImage(image);
             var bannerUpdated = await _bannerRepository.UpdateBannerAsync(banner);
@@ -50,11 +50,11 @@ public class BannerService : IBannerService
             throw new InvalidDataException(ex.Message);
         }
     }
-    public async Task<ReadBannerDto> DeleteBannerAsync(Guid id)
+    public async Task<ReadBannerDto> DeleteBannerAsync()
     {
-        var banner = await _bannerRepository.GetBannerByIdAsync(id);
+        var banner = await _bannerRepository.GetBannerAsync();
         if(banner == null){
-            throw new NotFoundException("Banner não encontrado");
+            throw new NotFoundException("Nenhum banner encontrado");
         }        
         var bannerDeleted = await _bannerRepository.DeleteBannerAsync(banner);
         return _mapper.Map<ReadBannerDto>(bannerDeleted);

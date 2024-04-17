@@ -74,6 +74,42 @@ async function getProductBySearchedName(nameEquipament, page = 1) {
   }
 }
 
+async function postProduct(formData){
+  try {
+    console.log(formData)
+    const response = await api.post(`equipamento/`, formData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    }}
+  );
+    return response.data;
+  } catch (err) {
+    console.error(err.response.data.errors);
+  }
+}
+
+async function putProduct(formData, productId){
+  try {
+    const response = await api.put(`equipamento/${productId}`, formData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    }}
+  );
+    return response.data;
+  } catch (err) {
+    console.error(err.response.data.errors);
+  }
+}
+
+async function changeStatusProduct(productId){
+  try {
+    const response = await api.put(`equipamento/alterarstatus/${productId}`);
+    return response.data;
+  } catch (err) {
+    console.error(err.response.data.errors);
+  }
+}
+
 export {
   getProducts,
   getProductById,
@@ -82,4 +118,7 @@ export {
   getProductByStatusAndCategory,
   getTopProducts,
   getSimalarProducts,
+  postProduct,
+  putProduct,
+  changeStatusProduct
 };

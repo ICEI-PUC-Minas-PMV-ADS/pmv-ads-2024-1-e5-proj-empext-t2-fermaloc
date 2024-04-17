@@ -1,16 +1,12 @@
 import api from "../api/api";
 
-async function login(loginDTO) {
+async function loginService(loginDTO) {
   try {
     const response = await api.post(`administrador/login`, loginDTO);
-    console.log(response.data);
+    return response
   } catch (err) {
-    console.error(err.response.data.message);
+    alert(err.response.data.message);
   }
 }
 
-function logout() {
-  localStorage.removeItem("token");
-}
-
-export { login, logout };
+export { loginService };

@@ -1,0 +1,9 @@
+.productContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgProduc{
+    width: 150px;
+}

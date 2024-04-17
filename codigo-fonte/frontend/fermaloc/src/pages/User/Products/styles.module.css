@@ -1,12 +1,13 @@
 /* COmentário */
-
-.productsAndFiltersContainer{
+.page{
     display: flex;
-    align-items: start;
+    align-items: flex-start;
+    min-height: 100vh
 }
 
 .filters{
     padding: 20px;
+    width: 240px;
 }
 
 .filters p{
@@ -35,10 +36,18 @@
 
 .filters ul{
     list-style-type: none;
+    padding-inline-start: 0;
 }
 
 .filters ul li{
     margin: 10px 0px;
+    display:  flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.filters ul li:hover{
+    color: #fbb035;
 }
 
 .products{

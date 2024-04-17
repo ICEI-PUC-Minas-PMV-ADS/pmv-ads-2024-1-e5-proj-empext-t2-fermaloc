@@ -85,7 +85,7 @@ public class EquipamentController : ControllerBase
         await _equipamentService.UpdateEquipamentAsync(id, equipamentDto, imageBytes);
         return NoContent();
     }
-    [HttpPut("/alterarstatus{id}")]
+    [HttpPut("alterarstatus/{id}")]
     [Authorize]
     public async Task<IActionResult> UpdateEquipamentStatus (Guid id){
         await _equipamentService.UpdateEquipamentStatusAsync(id);

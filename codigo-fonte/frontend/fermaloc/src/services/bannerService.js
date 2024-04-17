@@ -1,21 +1,25 @@
 import api from "../api/api";
 
-async function getBanners() {
+async function getBanner() {
   try {
     const response = await api.get(`banner`);
     return response.data;
   } catch (err) {
-    console.error(err.response.data.message);
+    console.error(err);
   }
 }
 
-async function getBannerById(id) {
+async function putBanner(formData) {
   try {
-    const response = await api.get(`banner/${id}`);
+    const response = await api.put(`banner`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
     return response.data;
   } catch (err) {
-    console.error(err.response.data.message);
+    console.error(err);
   }
 }
 
-export { getBanners, getBannerById };
+export { getBanner, putBanner };

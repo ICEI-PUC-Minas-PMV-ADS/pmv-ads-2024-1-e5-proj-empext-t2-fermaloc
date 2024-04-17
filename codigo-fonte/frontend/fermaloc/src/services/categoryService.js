@@ -9,6 +9,15 @@ async function getCategories() {
   }
 }
 
+async function getActiveCategories() {
+  try {
+    const response = await api.get(`categoria/status?status=true`);
+    return response.data;
+  } catch (err) {
+    console.error(err.response.data.message);
+  }
+}
+
 async function getCategoryById(id) {
   try {
     const response = await api.get(`categoria/${id}`);
@@ -18,4 +27,45 @@ async function getCategoryById(id) {
   }
 }
 
-export { getCategories, getCategoryById };
+async function postCategory({ name, description, status, administratorId }) {
+  try {
+    const response = await api.post(`categoria/`, {
+      name,
+      description,
+      status,
+      administratorId,
+    });
+    return response.data;
+  } catch (err) {
+    console.error(err.response.data.errors);
+  }
+}
+
+async function putCategory({ name, description, status, administratorId, categoryId }) {
+  try {
+    const response = await api.put(`categoria/${categoryId}`, {
+      name,
+      description,
+      status,
+      administratorId,
+    });
+    return response.data;
+  } catch (err) {
+    console.error(err.response.data.errors);
+  }
+}
+
+async function changeStatusCategory(categoryId) {
+  try {
+    const response = await api.put(`categoria/alterarstatus/${categoryId}`);
+    return response.data;
+  } catch (err) {
+    console.error(err.response.data.errors);
+  }
+}
+
+
+
+
+
+export { getCategories, getCategoryById, postCategory, putCategory, changeStatusCategory, getActiveCategories};

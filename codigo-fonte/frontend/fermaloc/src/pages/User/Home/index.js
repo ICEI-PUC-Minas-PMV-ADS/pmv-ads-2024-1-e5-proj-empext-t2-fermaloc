@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // Estilização
-import "./styles.css";
+import styles from "./styles.module.css";
 
 // Imagens
 import makita from "../../../assets/imgs/logos/makita.png";
@@ -17,57 +17,57 @@ import TopProduct from "./components/TopProduct/index.js";
 import Title from "../../../components/Title/index.js";
 
 export default function Home() {
-    const [topProducts, setTopProducts] = useState([]);
+  const [topProducts, setTopProducts] = useState([]);
 
-    useEffect(() => {
-        async function fetchTopProducts() {
-            const topProductsData = await getTopProducts();
-            console.log(topProductsData);
-            setTopProducts(topProductsData.slice(0, 3));
-        }
+  useEffect(() => {
+    async function fetchTopProducts() {
+      const topProductsData = await getTopProducts();
+      console.log(topProductsData);
+      setTopProducts(topProductsData.slice(0, 3));
+    }
 
-        fetchTopProducts();
-    }, []);
+    fetchTopProducts();
+  }, []);
 
-    return (
-        <>
-            <div className="container">
-                <div className="topProductsContainer">
-                    <Title title="Principais Produtos" />
-                    <div className="topProductsComponentsContainer">
-                        {topProducts.map((product) => {
-                            return (
-                                <TopProduct
-                                    name={product.name}
-                                    image={product.image}
-                                    id={product.id}
-                                    key={product.id}
-                                />
-                            );
-                        })}
-                    </div>
-                    <Link
-                        to="/produtos"
-                        style={{ textDecoration: "underline", color: "black" }}
-                    >
-                        Ver Mais
-                    </Link>
-                </div>
-            </div>
-            <div className="partnersContainer">
-                <Title title="Parceiros" />
-                <div className="logoPartners">
-                    <div className="logoPartner">
-                        <img src={makita} alt="Logo Makita" />
-                    </div>
-                    <div className="logoPartner">
-                        <img src={dewalt} alt="Logo DeWalt" />
-                    </div>
-                    <div className="logoPartner">
-                        <img src={bosch} alt="Logo Bosch" />
-                    </div>
-                </div>
-            </div>
-        </>
-    );
+  return (
+    <div className={styles.page}>
+      <div className={styles.container}>
+        <div className={styles.topProductsContainer}>
+          <Title title="Principais Produtos" />
+          <div className={styles.topProductsComponentsContainer}>
+            {topProducts.map((product) => {
+              return (
+                <TopProduct
+                  name={product.name}
+                  image={product.image}
+                  id={product.id}
+                  key={product.id}
+                />
+              );
+            })}
+          </div>
+          <Link
+            to="/produtos"
+            style={{ textDecoration: "underline", color: "black" }}
+          >
+            Ver Mais
+          </Link>
+        </div>
+      </div>
+      <div className={styles.partnersContainer}>
+        <Title title="Parceiros" />
+        <div className={styles.logoPartners}>
+          <div className={styles.logoPartner}>
+            <img src={makita} alt="Logo Makita" />
+          </div>
+          <div className={styles.logoPartner}>
+            <img src={dewalt} alt="Logo DeWalt" />
+          </div>
+          <div className={styles.logoPartner}>
+            <img src={bosch} alt="Logo Bosch" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

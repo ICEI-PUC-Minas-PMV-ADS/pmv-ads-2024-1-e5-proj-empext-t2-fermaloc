@@ -1,4 +1,5 @@
 ﻿using Fermaloc.Domain;
+using Microsoft.EntityFrameworkCore;
 namespace Fermaloc.Infra.Data;
 
 public class BannerRepository : IBannerRepository
@@ -16,9 +17,9 @@ public class BannerRepository : IBannerRepository
         await _context.SaveChangesAsync();
         return banner;
     }
-    public async Task<Banner> GetBannerByIdAsync(Guid id)
+    public async Task<Banner> GetBannerAsync()
     {
-        Banner banner = await _context.Banners.FindAsync(id);
+        Banner banner = await _context.Banners.FirstAsync();
         return banner;
     }
 

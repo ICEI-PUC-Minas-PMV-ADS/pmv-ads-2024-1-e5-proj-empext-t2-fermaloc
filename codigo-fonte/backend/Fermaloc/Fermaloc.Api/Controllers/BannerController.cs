@@ -29,15 +29,15 @@ public class BannerController : ControllerBase
         return CreatedAtAction(nameof(GetBanner), new { id = administradorDto.Id }, administradorDto);
     }
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetBanner(Guid id){
-        var administradorDto = await _bannerService.GetBannerByIdAsync(id);
+    [HttpGet()]
+    public async Task<IActionResult> GetBanner(){
+        var administradorDto = await _bannerService.GetBannerAsync();
         return Ok(administradorDto);
     }
 
-    [HttpPut("{id}")]
+    [HttpPut()]
     [Authorize]
-    public async Task<IActionResult> UpdateBanner (Guid id,IFormFile image){
+    public async Task<IActionResult> UpdateBanner (IFormFile image){
         byte[]? imageBytes = null;
         using (var memoryStream = new MemoryStream())
         {
@@ -45,14 +45,14 @@ public class BannerController : ControllerBase
             imageBytes = memoryStream.ToArray();
         }
 
-        await _bannerService.UpdateBannerAsync(id, imageBytes);
+        await _bannerService.UpdateBannerAsync(imageBytes);
         return NoContent();
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete()]
     [Authorize]
-    public async Task<IActionResult> DeleteBanner (Guid id){
-        await _bannerService.DeleteBannerAsync(id);
+    public async Task<IActionResult> DeleteBanner (){
+        await _bannerService.DeleteBannerAsync();
         return NoContent();
     }
 }

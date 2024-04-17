@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.css";
+import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
 
 export default function TopProduct({ image, name, id }) {
@@ -8,14 +8,14 @@ export default function TopProduct({ image, name, id }) {
             to={`/produtos/${id}`}
             style={{ textDecoration: "none", color: "black" }}
         >
-            <div className="topProductContainer">
+            <div className={styles.topProductContainer}>
                 <img
                     src={`data:image/png;base64,${image}`}
                     alt={`${name}`}
-                    className="imageProduct"
+                    className={styles.imageProduct}
                 />
                 <h2>{name}</h2>
-                <div className="topProductFooter">
+                <div className={styles.topProductFooter}>
                     <div />
                     <span>Sobre</span>
                 </div>

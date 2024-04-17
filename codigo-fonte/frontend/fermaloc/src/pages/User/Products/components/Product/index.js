@@ -1,15 +1,15 @@
-import React from 'react'
-import "./styles.css";
+import React from "react";
+import style from "./styles.module.css";
 
-export default function Product({image, name, id}) {
+export default function Product({ image, name, id }) {
   return (
-    <div>
-    <img
-      src={`data:image/png;base64,${image}`}
-      alt="produto"
-      className="imgProduc"
-    />
-    <p>{name}</p>
-  </div>
-  )
+    <div className={style.productContainer}>
+      <img
+        src={`data:image/png;base64,${image}`}
+        alt="produto"
+        className={style.imgProduc}
+      />
+      <p>{name}</p>
+    </div>
+  );
 }

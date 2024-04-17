@@ -1,4 +1,7 @@
 /* Comentário */
+.page{
+    min-height: 100vh;
+}
 
 .container{
     display: flex;

@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import { FaEdit } from "react-icons/fa";
-import styles from "./styles.module.css";
-import EditCategoryForm from "../EditCategoryForm";
+import EditProductForm from "../EditProductForm/index.js";
+import styles from "./styles.module.css"
 
-export default function Category({ category }) {
+export default function Product({product}) {
   const [viewEditForm, setViewEditForm] = useState(false);
 
   return (
     !viewEditForm ? (
       <div className={styles.container}>
-        <p>{category.name}</p>
+        <p>{product.name}</p>
         <FaEdit onClick={() => setViewEditForm(true)} />
       </div>
     ) : (
-      <EditCategoryForm category={category} setViewEditForm={setViewEditForm}/>
+      <EditProductForm product={product} setViewEditForm={setViewEditForm}/>
     )
   );
 }

@@ -5,16 +5,16 @@ import { loginService } from "../services/authenticationService";
 
 const useAuthentication = () => {
   const [authenticated, setAuthenticated] = useState(false);
-  const [userId, setUserId] = useState("");
 
   const navigate = useNavigate();
   const location = useLocation();
 
   const getAdminId = () => {
     const token = localStorage.getItem("token");
+    let userId = ""
     if (token) {
       const decoded = jwtDecode(token);
-      setUserId(decoded.nameid)
+      userId = decoded.nameid
       return userId
     }
     return userId;
