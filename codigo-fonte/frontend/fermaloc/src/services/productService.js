@@ -40,7 +40,7 @@ async function getProductById(id) {
   }
 }
 
-async function getProductByStatus(status, page = 1) {
+async function getProductByStatus(status = true, page = 1) {
   try {
     const response = await api.get(
       `equipamento/status?skip=${page}&status=${status}`
@@ -74,34 +74,35 @@ async function getProductBySearchedName(nameEquipament, page = 1) {
   }
 }
 
-async function postProduct(formData){
+async function postProduct(formData) {
   try {
-    console.log(formData)
+    console.log(formData);
     const response = await api.post(`equipamento/`, formData, {
-    headers: {
-      "Content-Type": "multipart/form-data",
-    }}
-  );
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
     return response.data;
   } catch (err) {
     console.error(err.response.data.errors);
   }
 }
 
-async function putProduct(formData, productId){
+async function putProduct(formData, productId) {
   try {
     const response = await api.put(`equipamento/${productId}`, formData, {
-    headers: {
-      "Content-Type": "multipart/form-data",
-    }}
-  );
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    console.log(response)
     return response.data;
   } catch (err) {
     console.error(err.response.data.errors);
   }
 }
 
-async function changeStatusProduct(productId){
+async function changeStatusProduct(productId) {
   try {
     const response = await api.put(`equipamento/alterarstatus/${productId}`);
     return response.data;
@@ -120,5 +121,5 @@ export {
   getSimalarProducts,
   postProduct,
   putProduct,
-  changeStatusProduct
+  changeStatusProduct,
 };

@@ -3,7 +3,7 @@ import InputForm from "../../../../../components/InputForm/index.js";
 import TextAreaForm from "../../../../../components/TextAreaForm/index.js";
 import SelectStatusForm from "../../../../../components/SelectStatusForm/index.js";
 import { postProduct } from "../../../../../services/productService.js";
-import { getActiveCategories } from "../../../../../services/categoryService.js";
+import { getCategoriesByStatus } from "../../../../../services/categoryService.js";
 import useAuthentication from "../../../../../hooks/useAuthentication.js";
 import InputImageForm from "../../../../../components/InputImageForm/index.js";
 import InputSelectForm from "../../../../../components/InputSelectForm/index.js";
@@ -21,24 +21,24 @@ export default function NewProductForm() {
 
   useEffect(() => {
     async function fetchCategories() {
-      const categoriesData = await getActiveCategories();
+      const categoriesData = await getCategoriesByStatus();
       setCategories(categoriesData);
     }
     fetchCategories();
   }, []);
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
-    const administratorId = getAdminId()
+    const administratorId = getAdminId();
     const formData = new FormData();
-    formData.append("Name", name)
-    formData.append("Description", description)
-    formData.append("EquipamentCode", parseInt(equipamentCode))
-    formData.append("Status", status)
-    formData.append("AdministratorId", administratorId)
-    formData.append("CategoryId", categoryId)
-    formData.append("image", image)
-    postProduct(formData);
+    formData.append("Name", name);
+    formData.append("Description", description);
+    formData.append("EquipamentCode", parseInt(equipamentCode));
+    formData.append("Status", status);
+    formData.append("AdministratorId", administratorId);
+    formData.append("CategoryId", categoryId);
+    formData.append("image", image);
+    await postProduct(formData);
 
     setName("");
     setDescription("");
@@ -47,7 +47,6 @@ export default function NewProductForm() {
     setImage(null);
     setStatus(true);
   };
-
 
   return (
     <form onSubmit={submitForm} encType="multipart/form-data">
@@ -68,7 +67,11 @@ export default function NewProductForm() {
         onChange={setEquipamentCode}
       />
       <SelectStatusForm value={status} onChange={setStatus} />
-      <InputSelectForm options={categories} selectedOption={categoryId} onChange={setCategoryId}/>
+      <InputSelectForm
+        options={categories}
+        selectedOption={categoryId}
+        onChange={setCategoryId}
+      />
       <InputImageForm handleImageChange={(e) => setImage(e.target.files[0])} />
       <button type="submit">Enviar</button>
     </form>

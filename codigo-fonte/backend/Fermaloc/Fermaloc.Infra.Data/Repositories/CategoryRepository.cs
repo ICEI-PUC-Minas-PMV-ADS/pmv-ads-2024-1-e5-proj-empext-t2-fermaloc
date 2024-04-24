@@ -35,6 +35,10 @@ public class CategoryRepository : ICategoryRepository
     public async Task<Category> UpdateCategoryAsync(Category category)
     {
         _context.Categories.Update(category);
+        if(category.Equipaments.Count != 0 && category.Status == false)
+        {
+            _context.Equipaments.UpdateRange(category.Equipaments);
+        }
         await _context.SaveChangesAsync();
         return category;
     }

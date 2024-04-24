@@ -6,7 +6,7 @@ import {
   putProduct,
   changeStatusProduct,
 } from "../../../../../services/productService.js";
-import { getActiveCategories } from "../../../../../services/categoryService.js";
+import { getCategoriesByStatus } from "../../../../../services/categoryService.js";
 import InputImageForm from "../../../../../components/InputImageForm/index.js";
 import InputSelectForm from "../../../../../components/InputSelectForm/index.js";
 
@@ -21,13 +21,13 @@ export default function EditProductForm({ product, setViewEditForm }) {
 
   useEffect(() => {
     async function fetchCategories() {
-      const categoriesData = await getActiveCategories();
+      const categoriesData = await getCategoriesByStatus();
       setCategories(categoriesData);
     }
     fetchCategories();
   }, []);
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("Name", name);
@@ -36,13 +36,13 @@ export default function EditProductForm({ product, setViewEditForm }) {
     formData.append("Status", status);
     formData.append("CategoryId", categoryId);
     formData.append("image", image);
-    putProduct(formData, product.id);
+    await putProduct(formData, product.id);
     setImage(null);
     setViewEditForm(false);
   };
 
-  const changeStatus = () => {
-    const productUpdated = changeStatusProduct(product.id);
+  const changeStatus = async () => {
+    const productUpdated = await changeStatusProduct(product.id);
     setViewEditForm(false);
   };
 

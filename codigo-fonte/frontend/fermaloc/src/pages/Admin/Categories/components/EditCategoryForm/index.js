@@ -15,10 +15,10 @@ export default function EditCategoryForm({ category, setViewEditForm }) {
 
   const { getAdminId } = useAuthentication();
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
     const administratorId = getAdminId();
-    const categoryUpdated = putCategory({
+    const categoryUpdated = await putCategory({
       name,
       description,
       status,
@@ -28,8 +28,8 @@ export default function EditCategoryForm({ category, setViewEditForm }) {
     setViewEditForm(false);
   };
 
-  const changeStatus = () => {
-    const categoryUpdated = changeStatusCategory(category.id);
+  const changeStatus = async () => {
+    const categoryUpdated = await changeStatusCategory(category.id);
     setViewEditForm(false);
   };
 

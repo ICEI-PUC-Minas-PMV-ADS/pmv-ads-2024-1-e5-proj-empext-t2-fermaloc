@@ -7,10 +7,10 @@ import styles from "./styles.module.css";
 
 // Services
 import {
-  getProducts,
+  getProductByStatus,
   getProductByStatusAndCategory,
 } from "../../../services/productService.js";
-import { getActiveCategories } from "../../../services/categoryService.js";
+import { getCategoriesByStatus } from "../../../services/categoryService.js";
 
 // Components
 import Product from "./components/Product/index.js";
@@ -21,8 +21,8 @@ export default function Products() {
 
   useEffect(() => {
     async function fetchProductsAndCategories() {
-      const productsData = await getProducts();
-      const categoriesData = await getActiveCategories();
+      const productsData = await getProductByStatus();
+      const categoriesData = await getCategoriesByStatus();
       setProducts(productsData);
       setCategories(categoriesData);
     }

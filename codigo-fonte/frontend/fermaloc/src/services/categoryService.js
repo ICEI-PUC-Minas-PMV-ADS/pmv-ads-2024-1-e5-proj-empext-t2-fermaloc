@@ -9,9 +9,9 @@ async function getCategories() {
   }
 }
 
-async function getActiveCategories() {
+async function getCategoriesByStatus(status = true) {
   try {
-    const response = await api.get(`categoria/status?status=true`);
+    const response = await api.get(`categoria/status?status=${status}`);
     return response.data;
   } catch (err) {
     console.error(err.response.data.message);
@@ -68,4 +68,4 @@ async function changeStatusCategory(categoryId) {
 
 
 
-export { getCategories, getCategoryById, postCategory, putCategory, changeStatusCategory, getActiveCategories};
+export { getCategories, getCategoryById, postCategory, putCategory, changeStatusCategory, getCategoriesByStatus};

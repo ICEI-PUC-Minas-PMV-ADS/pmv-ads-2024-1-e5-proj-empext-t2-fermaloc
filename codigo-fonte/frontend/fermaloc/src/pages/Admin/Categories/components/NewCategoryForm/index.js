@@ -13,10 +13,10 @@ export default function NewCategoryForm() {
 
   const { getAdminId } = useAuthentication();
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
     const administratorId = getAdminId();
-    const categoryCreated = postCategory({name, description, status, administratorId})
+    const categoryCreated = await postCategory({name, description, status, administratorId})
     setName("");
     setDescription("");
     setStatus(true);

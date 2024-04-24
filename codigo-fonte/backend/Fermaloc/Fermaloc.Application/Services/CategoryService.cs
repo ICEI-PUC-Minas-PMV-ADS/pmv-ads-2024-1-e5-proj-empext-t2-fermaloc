@@ -59,6 +59,11 @@ public class CategoryService : ICategoryService
                 throw new NotFoundException("Categoira não encontrado");
             }          
             _mapper.Map(categoryDto, category);
+            if(category.Status == false){
+                foreach(var equipament in category.Equipaments){
+                    equipament.SetStatus(category.Status);
+                }
+            }
             var categoryUpdated = await _categoryRepository.UpdateCategoryAsync(category);
             return _mapper.Map<ReadCategoryDto>(categoryUpdated);
         }catch(DomainExceptionValidation ex){

@@ -5,11 +5,11 @@ import InputImageForm from "../../../../../components/InputImageForm/index.js";
 export default function EditBannerForm({ setViewEditForm }) {
   const [image, setImage] = useState(null);
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("image", image);
-    putBanner(formData);
+    await putBanner(formData);
     setImage(null);
     setViewEditForm(false);
   };
