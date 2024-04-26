@@ -75,8 +75,8 @@ async function getProductBySearchedName(nameEquipament, page = 1) {
 }
 
 async function postProduct(formData) {
+  console.log(formData.get("EquipamentCode"))
   try {
-    console.log(formData);
     const response = await api.post(`equipamento/`, formData, {
       headers: {
         "Content-Type": "multipart/form-data",
@@ -89,6 +89,7 @@ async function postProduct(formData) {
 }
 
 async function putProduct(formData, productId) {
+  console.log(formData.get("EquipamentCode"))
   try {
     const response = await api.put(`equipamento/${productId}`, formData, {
       headers: {

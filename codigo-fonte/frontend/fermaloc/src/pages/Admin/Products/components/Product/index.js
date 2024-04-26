@@ -12,6 +12,7 @@ export default function Product({product}) {
         <p>{product.name}</p>
         <FaEdit onClick={() => setViewEditForm(true)} />
       </div>
+
     ) : (
       <EditProductForm product={product} setViewEditForm={setViewEditForm}/>
     )

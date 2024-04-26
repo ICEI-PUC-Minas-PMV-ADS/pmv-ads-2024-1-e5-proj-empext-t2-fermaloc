@@ -32,7 +32,7 @@ export default function EditProductForm({ product, setViewEditForm }) {
     const formData = new FormData();
     formData.append("Name", name);
     formData.append("Description", description);
-    formData.append("EquipamentCode", parseInt(equipamentCode));
+    formData.append("EquipamentCode", equipamentCode.toString());
     formData.append("Status", status);
     formData.append("CategoryId", categoryId);
     formData.append("image", image);

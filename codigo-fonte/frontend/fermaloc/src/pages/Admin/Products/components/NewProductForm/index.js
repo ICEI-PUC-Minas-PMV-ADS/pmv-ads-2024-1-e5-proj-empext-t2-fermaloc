@@ -33,11 +33,11 @@ export default function NewProductForm() {
     const formData = new FormData();
     formData.append("Name", name);
     formData.append("Description", description);
-    formData.append("EquipamentCode", parseInt(equipamentCode));
+    formData.append("EquipamentCode", equipamentCode.toString());
     formData.append("Status", status);
-    formData.append("AdministratorId", administratorId);
     formData.append("CategoryId", categoryId);
     formData.append("image", image);
+    formData.append("AdministratorId", administratorId);
     await postProduct(formData);
 
     setName("");

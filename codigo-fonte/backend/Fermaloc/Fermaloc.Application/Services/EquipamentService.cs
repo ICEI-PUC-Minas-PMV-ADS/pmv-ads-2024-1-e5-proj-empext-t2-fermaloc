@@ -19,7 +19,7 @@ public class EquipamentService : IEquipamentService
         try{
             var equipament = _mapper.Map<Equipament>(equipamentDto);
             equipament.SetImage(image);
-            var equipamentExits = await _equipamentRepository.GetEquipamentByEquipamentCodeAsync(equipamentDto.EquipamentCode);
+            var equipamentExits = await _equipamentRepository.GetEquipamentByEquipamentCodeAsync(Int32.Parse(equipamentDto.EquipamentCode));
             if (equipamentExits == null){
                 var equipamentCreated = await _equipamentRepository.CreateEquipamentAsync(equipament);
                 return _mapper.Map<ReadEquipamentDto>(equipamentCreated);
