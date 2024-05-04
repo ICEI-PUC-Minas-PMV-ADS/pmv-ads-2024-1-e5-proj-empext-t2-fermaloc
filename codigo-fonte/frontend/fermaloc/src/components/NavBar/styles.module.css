@@ -133,7 +133,7 @@ nav ul {
     align-items: center;
     justify-content: center;
     height: 4vh;
-    min-width: 6vw;
+    min-width: 150px;
     overflow-y: hidden;
 }
 

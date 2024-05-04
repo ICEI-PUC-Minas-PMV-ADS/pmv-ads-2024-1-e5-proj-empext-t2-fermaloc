@@ -1,3 +1,21 @@
 .page{
-    min-height: 100vh;
+    word-wrap: break-word;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo {
+    display: flex;
+    width: 100vw;
+    align-items: start;
+    justify-content: space-around;
+}
+
+.texto {
+    display: flex;
+    width: 1000vw;
+    align-items: start;
+    justify-content: space-around;
+    gap: 2vh;
 }

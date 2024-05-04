@@ -68,20 +68,22 @@ const routes = [
 function RoutesComponent() {
   return (
     <BrowserRouter>
-      <NavBar />
-      <main>
-        <Routes>
-          {routes.map((route) => (
-            <Route
-              key={route.id}
-              path={route.path}
-              element={route.element}
-              errorElement={route.errorElement}
-            />
-          ))}
-        </Routes>
-      </main>
-      <Footer />
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', width:'100vw' }}>
+        <NavBar />
+        <main style={{flex: 1, overflow: 'auto'}}>
+          <Routes>
+            {routes.map((route) => (
+              <Route
+                key={route.id}
+                path={route.path}
+                element={route.element}
+                errorElement={route.errorElement}
+              />
+            ))}
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }
