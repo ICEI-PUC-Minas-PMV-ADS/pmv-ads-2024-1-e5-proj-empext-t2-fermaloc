@@ -2,12 +2,17 @@ import React from "react";
 import useAuthentication from "../../../hooks/useAuthentication";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
+import NavBarAdmin from "../../../components/NavBar_Admin";
+
 
 export default function HomeAdmin() {
   const { authenticated } = useAuthentication();
   return <>{authenticated && 
-  
-  <div className={styles.classButton}>
+<div>
+
+  {/* <NavBarAdmin /> */}
+
+  {/* <div className={styles.classButton}>
     <div>
       <Link to="/admin/banners">Banners</Link>
     </div>
@@ -18,7 +23,8 @@ export default function HomeAdmin() {
       <Link to="/admin/produtos">Products</Link>
     </div>
 
-  </div>
+  </div> */}
+</div>
 
   
   }</>;

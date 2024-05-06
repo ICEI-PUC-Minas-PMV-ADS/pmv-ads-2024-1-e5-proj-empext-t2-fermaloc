@@ -11,9 +11,9 @@ import instagram from "../../assets/imgs/instagram.png";
 export default function Footer() {
   const location = useLocation();
 
-  if (location.pathname.trim() === "/login" || location.pathname.trim() === "/admin/home" || location.pathname.trim() === "/admin/categorias" || location.pathname.trim() === "/admin/produtos" || location.pathname.trim() === "/admin/banners") {
-    return undefined;
-  }
+  // if (location.pathname.trim() === "/login" || location.pathname.trim() === "/admin/home" || location.pathname.trim() === "/admin/categorias" || location.pathname.trim() === "/admin/produtos" || location.pathname.trim() === "/admin/banners") {
+  //   return undefined;
+  // }
 
   return (
     <footer>

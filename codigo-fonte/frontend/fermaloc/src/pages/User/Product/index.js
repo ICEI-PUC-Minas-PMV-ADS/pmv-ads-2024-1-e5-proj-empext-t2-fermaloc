@@ -22,13 +22,13 @@ export default function Product() {
   useEffect(() => {
     async function fetchProductAndSimilarProducts(id) {
       const productData = await getProductById(id);
-      const simiularProductsData = await getSimalarProducts(
+      const similarProductsData = await getSimalarProducts(
         id,
         productData.categoryDto.id
       );
       setProduct(productData);
-      console.log(simiularProductsData);
-      setSimilarProducts(simiularProductsData);
+      console.log(similarProductsData);
+      setSimilarProducts(similarProductsData);
     }
     fetchProductAndSimilarProducts(id);
   }, [id]);

@@ -15,8 +15,11 @@ import HomeAdmin from "./pages/Admin/Home/index.js";
 import CategoriesAdmin from "./pages/Admin/Categories/index.js";
 import BannersAdmin from "./pages/Admin/Banners/index.js";
 import ProductsAdmin from "./pages/Admin/Products/index.js";
+import { Children } from "react";
+import RoutesAdminComponents from "./pages/Admin/index.js";
+import NavBarAdmin from "./components/NavBar_Admin/index.js";
 
-const routes = [
+const routesUsers = [
   {
     id: 1,
     path: "/",
@@ -38,6 +41,10 @@ const routes = [
     path: "/aboutus",
     element: <AboutUs />,
   },
+] 
+
+const routesAdmin = [
+  
   {
     id: 5,
     path: "/login",
@@ -63,24 +70,45 @@ const routes = [
     path: "/admin/banners",
     element: <BannersAdmin />,
   },
+  {
+    id: 10,
+    path: "/admin",
+    element: <RoutesAdminComponents />,
+  },
 ];
 
 function RoutesComponent() {
   return (
     <BrowserRouter>
       <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', width:'100vw' }}>
-        <NavBar />
+        {/* <NavBar/> */}
         <main style={{flex: 1, overflow: 'auto'}}>
-          <Routes>
-            {routes.map((route) => (
-              <Route
-                key={route.id}
-                path={route.path}
-                element={route.element}
-                errorElement={route.errorElement}
-              />
+          
+          {/* <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+            </Route>
+          </Routes> */}
+
+          <div>
+        
+            <Routes>
+            {routesAdmin.map((route) => (
+                <Route path="/" element={<RoutesAdminComponents />}>
+                  <Route
+                    key={route.id}
+                    index={route.path === "/admin/home"}
+                    element={route.element}
+                    path={route.path}
+                    errorElement={route.errorElement}
+                  />
+               </Route>
             ))}
-          </Routes>
+            </Routes>
+          </div>
+          
         </main>
         <Footer />
       </div>

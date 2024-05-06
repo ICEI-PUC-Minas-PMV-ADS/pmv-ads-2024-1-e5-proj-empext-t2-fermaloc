@@ -10,7 +10,7 @@ import { getBanner } from "../../services/bannerService.js";
 // Imagem
 import logonavbar from "../../assets/imgs/logonavbar.png";
 
-export default function NavBar() {
+export default function NavBarAdmin() {
   const [banner, setBanner] = useState(null);
 
   useEffect(() => {
@@ -23,15 +23,15 @@ export default function NavBar() {
 
   const location = useLocation();
 
-  if (
-    location.pathname.trim() === "/login" ||
-    location.pathname.trim() === "/admin/home" ||
-    location.pathname.trim() === "/admin/categorias" ||
-    location.pathname.trim() === "/admin/produtos" ||
-    location.pathname.trim() === "/admin/banners"
-  ) {
-    return undefined;
-  }
+  // if (
+  //   location.pathname.trim() === "/login" ||
+  //   location.pathname.trim() === "/admin/home" ||
+  //   location.pathname.trim() === "/admin/categorias" ||
+  //   location.pathname.trim() === "/admin/produtos" ||
+  //   location.pathname.trim() === "/admin/banners"
+  // ) {
+  //   return <p>Texto</p>;
+  // }
 
   return (
     <header>
@@ -46,7 +46,7 @@ export default function NavBar() {
         <Link to="/" className={styles.navlogo}>
           <img src={logonavbar} alt="logo" />
         </Link>
-        <div className={styles.navSearch}>
+        {/* <div className={styles.navSearch}>
           <div className={styles.navSearchInput}>
             <div />
             <input type="text" />
@@ -65,7 +65,7 @@ export default function NavBar() {
               </g>
             </svg>
           </button>
-        </div>
+        </div> */}
         {location.pathname.trim() === "/" ||
         location.pathname.trim() === "/produtos" ? (
           <img
@@ -76,15 +76,27 @@ export default function NavBar() {
         ) : undefined}
         <ul>
           <li className={styles.navLink}>
-            <Link to="/produtos">
+            <Link to="/admin/home">
+              <div />
+              <p>Home</p>
+            </Link>
+          </li>
+          <li className={styles.navLink}>
+            <Link to="/admin/banners">
+              <div />
+              <p>Banners</p>
+            </Link>
+          </li>
+          <li className={styles.navLink}>
+            <Link to="/admin/produtos">
               <div />
               <p>Produtos</p>
             </Link>
           </li>
           <li className={styles.navLink}>
-            <Link to="/aboutus">
+            <Link to="/admin/categorias">
               <div />
-              <p>Quem Somos</p>
+              <p>Categorias</p>
             </Link>
           </li>
         </ul>
