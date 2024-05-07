@@ -7,6 +7,7 @@ import { getCategoriesByStatus } from "../../../../../services/categoryService.j
 import useAuthentication from "../../../../../hooks/useAuthentication.js";
 import InputImageForm from "../../../../../components/InputImageForm/index.js";
 import InputSelectForm from "../../../../../components/InputSelectForm/index.js";
+import styles from "./styles.module.css";
 
 export default function NewProductForm() {
   const [categories, setCategories] = useState([]);
@@ -73,7 +74,7 @@ export default function NewProductForm() {
         onChange={setCategoryId}
       />
       <InputImageForm handleImageChange={(e) => setImage(e.target.files[0])} />
-      <button type="submit">Enviar</button>
+      <div className={styles.page}><button type="submit">Enviar</button></div>
     </form>
   );
 }

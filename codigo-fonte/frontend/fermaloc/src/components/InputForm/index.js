@@ -9,12 +9,14 @@ export default function InputForm({
   type = "text",
 }) {
   return (
+    <div className={styles.inputBox}>
+    <div className={styles.page}>
     <input
       onChange={(e) => onChange(e.target.value)}
       value={value}
       placeholder={placeholder}
       maxLength={maxLength}
       type={type}
-    />
+    /></div></div>
   );
 }

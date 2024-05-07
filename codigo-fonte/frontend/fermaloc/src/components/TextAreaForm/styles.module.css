@@ -11,18 +11,20 @@
     overflow-x: hidden;
 }
 
-.page input{
+.page textarea{
     border: 1px solid #e0e0e0;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    height: 2rem;
+    height: 10rem;
     width: 36rem;
-    padding-left: 10px;
-    margin: 10px 0 20px;
+    padding: 10px;
+    
     border-radius: 5px;
     font-size: 16px;
+    font-family: inherit;
+    resize: none;
 }
 
-.page input:focus {
+.page textarea:focus {
     outline: none;
     border: 2px solid #757575;
     background-color: rgba(163, 211, 255, 0.5);

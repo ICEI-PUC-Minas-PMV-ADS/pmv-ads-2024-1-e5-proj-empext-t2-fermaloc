@@ -32,7 +32,7 @@ export default function NewCategoryForm() {
       />
       <TextAreaForm value={description} onChange={setDescription} maxLength={300}/>
       <SelectStatusForm value={status} onChange={setStatus}/>
-      <button type="submit">Enviar</button>
+      <div className={styles.page}><button type="submit">Enviar</button></div>
     </form>
   );
 }

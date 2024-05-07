@@ -8,7 +8,7 @@ export default function Category({ category }) {
 
   return (
     !viewEditForm ? (
-      <div className={styles.container}>
+      <div className={styles.page}>
         <p>{category.name}</p>
         <FaEdit onClick={() => setViewEditForm(true)} />
       </div>

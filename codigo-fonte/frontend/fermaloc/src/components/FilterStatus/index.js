@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./styles.module.css";
 
 export default function FilterStatus({ handleFilter }) {
   const [ativo, setAtivo] = useState(true);
@@ -12,7 +13,7 @@ export default function FilterStatus({ handleFilter }) {
 
 
   return (
-    <div>
+    <div className={styles.page}>
       <input
         type="radio"
         id="ativo"

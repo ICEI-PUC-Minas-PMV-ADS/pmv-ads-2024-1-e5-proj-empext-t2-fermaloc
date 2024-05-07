@@ -26,9 +26,9 @@ export default function ProductsAdmin() {
 
   return (
     authenticated && (
-      <div>
-        <div>
-          <h1>Produtos</h1>
+      <div><div>
+        <div className={styles.page}>
+          <h1>Produtos</h1></div>
           <FilterStatus handleFilter={handleFilter}/>
           {products.length > 0 ? (
             products.map((product) => {

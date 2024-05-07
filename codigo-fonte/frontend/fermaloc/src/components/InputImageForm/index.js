@@ -1,7 +1,9 @@
 import React from 'react'
+import styles from "./styles.module.css";
 
 export default function InputImageForm({handleImageChange}) {
   return (
-    <input type='file' onChange={handleImageChange} accept="image/*" />
+    <div className={styles.page}>
+    <input type='file' onChange={handleImageChange} accept="image/*" /></div>
   )
 }

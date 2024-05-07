@@ -1,7 +1,9 @@
 import React from "react";
+import styles from "./styles.module.css";
 
 export default function InputSelectForm({ options, selectedOption, onChange }) {
   return (
+    <div className={styles.page}>
     <select value={selectedOption ? selectedOption : ""} onChange={(e) => onChange(e.target.value)}>
       <option value="">Selecione uma opção</option>
       {options.length > 0 ? (
@@ -13,6 +15,6 @@ export default function InputSelectForm({ options, selectedOption, onChange }) {
       ) : (
         <option disabled>Nenhuma categoria cadastrada ou ativa</option>
       )}
-    </select>
+    </select></div>
   );
 }

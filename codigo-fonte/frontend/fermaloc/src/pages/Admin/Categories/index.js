@@ -4,6 +4,7 @@ import { getCategoriesByStatus } from "../../../services/categoryService.js";
 import Category from "./components/Category/index.js";
 import NewCategoryForm from "./components/NewCategoryForm/index.js";
 import FilterStatus from "../../../components/FilterStatus/index.js";
+import styles from "./styles.module.css";
 
 export default function CategoriesAdmin() {
   const [categories, setCategories] = useState([]);
@@ -27,7 +28,8 @@ export default function CategoriesAdmin() {
     authenticated && (
       <div>
         <div>
-          <h1>Categorias</h1>
+        <div className={styles.page}>
+          <h1>Categorias</h1></div>
           <FilterStatus handleFilter={handleFilter}/>
           {categories.length > 0 ? (
             categories.map((category) => {

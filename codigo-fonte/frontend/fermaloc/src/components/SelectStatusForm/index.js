@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "./styles.module.css";
 
 export default function SelectStatusForm({ value, onChange }) {
   return (
-    <div>
+    <div className={styles.page}>
       <label>
         <input
           type="radio"
