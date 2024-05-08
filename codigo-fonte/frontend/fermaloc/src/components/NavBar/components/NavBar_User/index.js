@@ -1,39 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // Estilização
 import styles from "./styles.module.css";
 
 // Serviço
-import { getBanner } from "../../services/bannerService.js";
+import { getBanner } from "../../../../services/bannerService.js";
 
-// Imagem
-import logonavbar from "../../assets/imgs/logonavbar.png";
 
-export default function NavBar() {
-  const [banner, setBanner] = useState(null);
 
-  useEffect(() => {
-    async function fetchBanner() {
-      const bannerData = await getBanner();
-      setBanner(bannerData.image);
-    }
-    fetchBanner();
-  }, []);
+export default function NavBar_User({location, logonavbar}) {
+  
+    const [banner, setBanner] = useState(null);
 
-  const location = useLocation();
-
-  if (
-    location.pathname.trim() === "/login" ||
-    location.pathname.trim() === "/admin/home" ||
-    location.pathname.trim() === "/admin/categorias" ||
-    location.pathname.trim() === "/admin/produtos" ||
-    location.pathname.trim() === "/admin/banners"
-  ) {
-    return undefined;
-  }
-
-  return (
+    useEffect(() => {
+      async function fetchBanner() {
+        const bannerData = await getBanner();
+        setBanner(bannerData.image);
+      }
+      fetchBanner();
+    }, []);
+  
+    return (
     <header>
       <nav
         style={
@@ -90,5 +78,7 @@ export default function NavBar() {
         </ul>
       </nav>
     </header>
-  );
+  )
 }
+
+
