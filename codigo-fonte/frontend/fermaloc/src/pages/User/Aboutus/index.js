@@ -24,6 +24,7 @@ export default function AboutUs() {
         referrerpolicy="no-referrer-when-downgrade"
         className="map"
         title="map"
+        style={{border:"none"}}
       ></iframe>
     </div>
   );

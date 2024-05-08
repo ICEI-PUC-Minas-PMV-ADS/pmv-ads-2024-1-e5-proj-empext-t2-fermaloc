@@ -34,7 +34,7 @@ export default function NavBar_User({location, logonavbar}) {
         <Link to="/" className={styles.navlogo}>
           <img src={logonavbar} alt="logo" />
         </Link>
-        <div className={styles.navSearch}>
+        {location.pathname.trim()==="/"|| location.pathname.trim()==="/aboutus"?undefined:<div className={styles.navSearch}>
           <div className={styles.navSearchInput}>
             <div />
             <input type="text" />
@@ -53,9 +53,8 @@ export default function NavBar_User({location, logonavbar}) {
               </g>
             </svg>
           </button>
-        </div>
-        {location.pathname.trim() === "/" ||
-        location.pathname.trim() === "/produtos" ? (
+        </div>}
+        {location.pathname.trim() === "/"  ? (
           <img
             src={`data:image/png;base64,${banner}`}
             alt="Banner"
