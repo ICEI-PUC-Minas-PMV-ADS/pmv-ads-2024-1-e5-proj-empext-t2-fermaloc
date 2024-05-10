@@ -70,7 +70,7 @@ function RoutesComponent() {
     <BrowserRouter>
       <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', width:'100vw' }}>
         <NavBar />
-        <main style={{flex: 1, overflow: 'auto'}}>
+        <main style={{flex: 1, marginTop: "100px"}}>
           <Routes>
             {routes.map((route) => (
               <Route

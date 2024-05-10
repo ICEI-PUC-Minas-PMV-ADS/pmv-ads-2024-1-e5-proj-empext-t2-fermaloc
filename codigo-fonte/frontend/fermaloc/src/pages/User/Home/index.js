@@ -11,6 +11,7 @@ import bosch from "../../../assets/imgs/logos/bosch.png";
 
 // Serviços
 import { getTopProducts } from "../../../services/productService.js";
+import { getBanner } from "../../../services/bannerService.js";
 
 // Componentes
 import TopProduct from "./components/TopProduct/index.js";
@@ -18,19 +19,30 @@ import Title from "../../../components/Title/index.js";
 
 export default function Home() {
   const [topProducts, setTopProducts] = useState([]);
+  const [banner, setBanner] = useState(null);
 
   useEffect(() => {
-    async function fetchTopProducts() {
+    async function fetchTopProductsAndBanner() {
       const topProductsData = await getTopProducts();
+      const bannerData = await getBanner();
+      setBanner(bannerData.image);
       console.log(topProductsData);
       setTopProducts(topProductsData.slice(0, 3));
     }
 
-    fetchTopProducts();
+    fetchTopProductsAndBanner();
   }, []);
 
   return (
     <div className={styles.page}>
+      <div className={styles.bannerContainer}>
+        <img
+          src={`data:image/png;base64,${banner}`}
+          alt="Banner"
+          className={styles.imgBanner}
+        />
+      </div>
+
       <div className={styles.container}>
         <div className={styles.topProductsContainer}>
           <Title title="Principais Produtos" />

@@ -1,8 +1,9 @@
 .page{
     word-wrap: break-word;
-    padding: 8px;
+    margin: 0 40px 0 40px;
     display: flex;
     flex-direction: column;
+
 }
 
 .titulo {

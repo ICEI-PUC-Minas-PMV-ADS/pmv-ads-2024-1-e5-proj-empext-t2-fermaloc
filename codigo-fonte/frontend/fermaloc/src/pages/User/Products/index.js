@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa6";
+import { IoSearchOutline } from "react-icons/io5";
 
 // Estilização
 import styles from "./styles.module.css";
@@ -9,6 +10,7 @@ import styles from "./styles.module.css";
 import {
   getProductByStatus,
   getProductByStatusAndCategory,
+  getProductBySearchedName,
 } from "../../../services/productService.js";
 import { getCategoriesByStatus } from "../../../services/categoryService.js";
 
@@ -18,6 +20,7 @@ import Product from "./components/Product/index.js";
 export default function Products() {
   const [products, setProducts] = useState([{}]);
   const [categories, setCategories] = useState([{}]);
+  const [filterInput, setFilterInput] = useState("");
 
   useEffect(() => {
     async function fetchProductsAndCategories() {
@@ -36,9 +39,24 @@ export default function Products() {
     console.log(productsData);
   }
 
+  async function filterProductsByName(name) {
+    const productsData = await getProductBySearchedName(name);
+    setProducts(productsData);
+    setFilterInput("");
+  }
+
   return (
     <div className={styles.page}>
       <aside className={styles.filters}>
+        <div  className={styles.filterInput}>
+          <input
+            onChange={(e) => setFilterInput(e.target.value)}
+            placeholder="Pesquisa"
+          />
+          <button onClick={() => filterProductsByName(filterInput)}>
+            <IoSearchOutline />
+          </button>
+        </div>
         <p>Categorias:</p>
         <ul>
           {categories.map((category) => {

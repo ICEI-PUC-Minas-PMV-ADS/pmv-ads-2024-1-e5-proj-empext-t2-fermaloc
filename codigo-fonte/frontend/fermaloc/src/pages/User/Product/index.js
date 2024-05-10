@@ -48,20 +48,18 @@ export default function Product() {
         </div>
       </div>
       <div className={styles.similarProductsContainer}>
-        <h1>Outros produtos parecidos</h1>
+        {similarProducts.length > 0 && <h1>Outros produtos parecidos</h1>}
         <div className={styles.similarProductsImageContainer}>
-          {similarProducts.length > 0 ? (
-            similarProducts.map((similarProduct) => {
-              return (
-                <SimilarProduct
-                  image={similarProduct.image}
-                  id={similarProduct.id}
-                />
-              );
-            })
-          ) : (
-            <h3>Nenhum produto similar encontrado!</h3>
-          )}
+          {similarProducts.length > 0
+            ? similarProducts.map((similarProduct) => {
+                return (
+                  <SimilarProduct
+                    image={similarProduct.image}
+                    id={similarProduct.id}
+                  />
+                );
+              })
+            : undefined}
         </div>
       </div>
     </div>
