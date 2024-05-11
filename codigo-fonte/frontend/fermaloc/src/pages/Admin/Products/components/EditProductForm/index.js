@@ -27,8 +27,27 @@ export default function EditProductForm({ product, setViewEditForm }) {
     fetchCategories();
   }, []);
 
+  const validateForm = () => {
+    if (
+      name.trim() === "" ||
+      description.trim() === "" ||
+      equipamentCode <= 0 ||
+      categoryId.trim() === "" ||
+      !image
+    ) {
+      alert(
+        "Por favor, preencha todos os campos antes de enviar o formulário."
+      );
+      return false;
+    }
+    return true;
+  };
+
   const submitForm = async (e) => {
     e.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
     const formData = new FormData();
     formData.append("Name", name);
     formData.append("Description", description);
@@ -39,11 +58,13 @@ export default function EditProductForm({ product, setViewEditForm }) {
     await putProduct(formData, product.id);
     setImage(null);
     setViewEditForm(false);
+    window.location.reload();
   };
 
   const changeStatus = async () => {
     const productUpdated = await changeStatusProduct(product.id);
     setViewEditForm(false);
+    window.location.reload();
   };
 
   return (

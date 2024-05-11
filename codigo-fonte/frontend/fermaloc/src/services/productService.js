@@ -84,7 +84,8 @@ async function postProduct(formData) {
     });
     return response.data;
   } catch (err) {
-    console.error(err.response.data.errors);
+    console.error(err.response.data.message);
+    alert(err.response.data.message)
   }
 }
 
@@ -99,7 +100,8 @@ async function putProduct(formData, productId) {
     console.log(response)
     return response.data;
   } catch (err) {
-    console.error(err.response.data.errors);
+    console.error(err.response.data.message);
+    alert(err.response.data.message)
   }
 }
 
@@ -108,7 +110,7 @@ async function changeStatusProduct(productId) {
     const response = await api.put(`equipamento/alterarstatus/${productId}`);
     return response.data;
   } catch (err) {
-    console.error(err.response.data.errors);
+    console.error(err.response.data.message);
   }
 }
 

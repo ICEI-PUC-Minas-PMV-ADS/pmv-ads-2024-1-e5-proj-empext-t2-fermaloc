@@ -12,6 +12,7 @@ export default function EditBannerForm({ setViewEditForm }) {
     await putBanner(formData);
     setImage(null);
     setViewEditForm(false);
+    window.location.reload();
   };
 
   return (

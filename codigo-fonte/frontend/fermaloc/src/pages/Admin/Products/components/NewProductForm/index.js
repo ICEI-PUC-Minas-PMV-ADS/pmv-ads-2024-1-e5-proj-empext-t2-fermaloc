@@ -28,8 +28,27 @@ export default function NewProductForm() {
     fetchCategories();
   }, []);
 
+  const validateForm = () => {
+    if (
+      name.trim() === "" ||
+      description.trim() === "" ||
+      equipamentCode <= 0 ||
+      categoryId.trim() === "" ||
+      !image
+    ) {
+      alert(
+        "Por favor, preencha todos os campos antes de enviar o formulário."
+      );
+      return false;
+    }
+    return true;
+  };
+
   const submitForm = async (e) => {
     e.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
     const administratorId = getAdminId();
     const formData = new FormData();
     formData.append("Name", name);
@@ -47,6 +66,7 @@ export default function NewProductForm() {
     setCategoryId();
     setImage(null);
     setStatus(true);
+    window.location.reload();
   };
 
   return (
@@ -74,7 +94,9 @@ export default function NewProductForm() {
         onChange={setCategoryId}
       />
       <InputImageForm handleImageChange={(e) => setImage(e.target.files[0])} />
-      <div className={styles.page}><button type="submit">Enviar</button></div>
+      <div className={styles.page}>
+        <button type="submit">Enviar</button>
+      </div>
     </form>
   );
 }

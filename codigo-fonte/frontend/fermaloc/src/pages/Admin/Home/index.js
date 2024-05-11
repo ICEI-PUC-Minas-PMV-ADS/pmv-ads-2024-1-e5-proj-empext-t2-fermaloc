@@ -5,21 +5,5 @@ import styles from "./styles.module.css";
 
 export default function HomeAdmin() {
   const { authenticated } = useAuthentication();
-  return <>{authenticated && 
-  
-  <div className={styles.classButton}>
-    <div>
-      <Link to="/admin/banners">Banners</Link>
-    </div>
-    <div>
-      <Link to="/admin/categorias">Categorias</Link>
-    </div>
-    <div>
-      <Link to="/admin/produtos">Products</Link>
-    </div>
-
-  </div>
-
-  
-  }</>;
+  return <>{authenticated && <div className={styles.classButton}></div>}</>;
 }

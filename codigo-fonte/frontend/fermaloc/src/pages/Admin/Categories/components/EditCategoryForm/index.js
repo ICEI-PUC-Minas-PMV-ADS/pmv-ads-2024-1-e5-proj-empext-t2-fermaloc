@@ -15,8 +15,19 @@ export default function EditCategoryForm({ category, setViewEditForm }) {
 
   const { getAdminId } = useAuthentication();
 
+  const validateForm = () => {
+    if (name.trim() === "" || description.trim() === "") {
+      alert("Por favor, preencha todos os campos antes de enviar o formulário.");
+      return false;
+    }
+    return true;
+  };
+
   const submitForm = async (e) => {
     e.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
     const administratorId = getAdminId();
     const categoryUpdated = await putCategory({
       name,
@@ -26,11 +37,13 @@ export default function EditCategoryForm({ category, setViewEditForm }) {
       categoryId: category.id,
     });
     setViewEditForm(false);
+    window.location.reload();
   };
 
   const changeStatus = async () => {
     const categoryUpdated = await changeStatusCategory(category.id);
     setViewEditForm(false);
+    window.location.reload();
   };
 
   return (

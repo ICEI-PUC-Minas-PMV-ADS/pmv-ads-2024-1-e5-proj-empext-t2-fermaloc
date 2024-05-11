@@ -37,7 +37,7 @@ async function postCategory({ name, description, status, administratorId }) {
     });
     return response.data;
   } catch (err) {
-    console.error(err.response.data.errors);
+    console.error(err.response.data.message);
   }
 }
 
@@ -51,7 +51,7 @@ async function putCategory({ name, description, status, administratorId, categor
     });
     return response.data;
   } catch (err) {
-    console.error(err.response.data.errors);
+    console.error(err.response.data.message);
   }
 }
 
@@ -60,7 +60,7 @@ async function changeStatusCategory(categoryId) {
     const response = await api.put(`categoria/alterarstatus/${categoryId}`);
     return response.data;
   } catch (err) {
-    console.error(err.response.data.errors);
+    console.error(err.response.data.message);
   }
 }
 

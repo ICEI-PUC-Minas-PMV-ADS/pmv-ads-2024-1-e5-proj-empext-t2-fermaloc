@@ -35,6 +35,7 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
+      
       <div className={styles.bannerContainer}>
         <img
           src={`data:image/png;base64,${banner}`}
@@ -66,7 +67,8 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <div className={styles.partnersContainer}>
+
+      {/* <div className={styles.partnersContainer}>
         <Title title="Parceiros" />
         <div className={styles.logoPartners}>
           <div className={styles.logoPartner}>
@@ -79,7 +81,8 @@ export default function Home() {
             <img src={bosch} alt="Logo Bosch" />
           </div>
         </div>
-      </div>
+      </div> */}
+
     </div>
   );
 }
