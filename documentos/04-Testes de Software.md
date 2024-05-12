@@ -25,10 +25,32 @@ Diante dos cenários apresentados e analisando os requisitos do projeto, foi rea
 
 | Caso de Teste       | CT-004 – Permitir ao administrador adicionar, editar e excluir categorias de classificação dos produtos           |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| Requisito Associado | RF-003 – Permitir ao administrador atualizar o banner do site.                                                    |
-| Objetivo do Teste   | Verificar se, após efetuar o login no sistema, o administrador realizará a atualização do banner.                 |
+| Requisito Associado | RF-004 – Permitir ao administrador adicionar, editar e excluir categorias de classificação dos produtos.                                                    |
+| Objetivo do Teste   | Verificar se, após efetuar o login no sistema, o administrador adicionará, editará e excluirá categorias de classificação dos produtos.                 |
 | Passos              | 1) Acessar a tela de login; 2) Inserir as informação de "Email" e "Password"; 3) Selecionar a opção "Categorias"; |
-| Critério de Êxito   |                                                                                                                   |
+| Critério de Êxito   |  Após preencher o formulário, as categorias dos produtos serão atualizados.                                                                                                                 |
+
+| Caso de Teste       | CT-005 – Permitir ao administrador adicionar, editar e excluir os produtos do catálogo                                                                  |
+| ------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Requisito Associado | RF-003 – Permitir ao administrador adicionar, editar e excluir os produtos do catálogo.                             |
+| Objetivo do Teste   | Verificar se, após efetuar o login no sistema, o administrador adicionará, editará e excluirá os produtos do catálogo.                                                    |
+| Passos              | 1) Acessar a tela de login; 2) Inserir as informação de "Email" e "Password"; 3) Selecionar a opção "Produtos". |
+| Critério de Êxito   | Após preencher o formulário, os produtos serão atualizados.  
+
+| Caso de Teste       | CT-006 – Disponibilizar a visualização do catálogo de produtos a todos os usuários                                                                 |
+| ------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Requisito Associado | RF-005 – Disponibilizar a visualização do catálogo de produtos a todos os usuários.                            |
+| Objetivo do Teste   | Verificar se a visualização dos produtos cadastrados está disponível para todos os usuários.                                                    |
+| Passos              | 1) Acessar a tela inicial da aplicação; 2) Clicar em "Ver mais". |
+| Critério de Êxito   | O usuário consegue visualizar os produtos cadastrados.
+
+| Caso de Teste       | CT-007 – Disponibilizar a visualização dos produtos de acordo com a categoria a todos os usuários                                                                 |
+| ------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Requisito Associado | RF-006 – Disponibilizar a visualização dos produtos de acordo com a categoria a todos os usuários.                            |
+| Objetivo do Teste   | Verificar se a visualização dos produtos de acordo com a categoria está disponível para todos os usuários.                                                    |
+| Passos              | 1) Acessar a tela inicial da aplicação; 2) Clicar em "Ver mais"; 3) Clicar na categoria desejada.|
+| Critério de Êxito   | O usuário consegue visualizar os produtos cadastrados de acordo com a categoria.
+
 
 # Evidências de Testes de Software
 
@@ -45,3 +67,8 @@ Diante dos cenários apresentados e analisando os requisitos do projeto, foi rea
 
 ### CT-004
 <a href="https://www.youtube.com/watch?v=7i8PA2yUyEM" title="CRUD categoria">Video fazendo o CRUD de uma categoria</a>
+
+### CT-005
+
+### CT-006 e CT-007
+<a href="https://youtu.be/lta58_TIcMU" title="Visualização dos Produtos">Vídeo visualizando todos os produtos e a divisão de acordo com a categoria</a>
