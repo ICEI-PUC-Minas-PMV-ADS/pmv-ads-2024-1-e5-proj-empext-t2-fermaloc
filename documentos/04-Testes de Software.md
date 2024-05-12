@@ -69,6 +69,6 @@ Diante dos cenários apresentados e analisando os requisitos do projeto, foi rea
 <a href="https://www.youtube.com/watch?v=7i8PA2yUyEM" title="CRUD categoria">Video fazendo o CRUD de uma categoria</a>
 
 ### CT-005
-
+<a href="https://youtu.be/oIGZaIHFJvg" title="CRUD de produtos">Vídeo fazendo o CRUD de produto</a>
 ### CT-006 e CT-007
 <a href="https://youtu.be/lta58_TIcMU" title="Visualização dos Produtos">Vídeo visualizando todos os produtos e a divisão de acordo com a categoria</a>
