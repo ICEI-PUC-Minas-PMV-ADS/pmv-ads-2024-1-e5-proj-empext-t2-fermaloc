@@ -1,0 +1,19 @@
+header{
+    flex-shrink: 0;
+    height: 60px;
+    background-color:#302782;
+    z-index: 5;
+    width: 100vw; 
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+    position: fixed;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    color: white;
+    list-style: none;
+    gap: 20px;
+}

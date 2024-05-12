@@ -4,30 +4,21 @@ footer{
     width: 100%;
     justify-content: space-between;
     height: 100px;
-}
-
-.map{
-    border: none;
+    flex-shrink: 0;
+    position: relative;
 }
 
 .dados{
-display: flex;
-justify-content: left;
-bottom: 0;
-color: azure;
-justify-content: space-between;
-}
-.footer .mapa-responsive{
-    left:0;
-    top:0;
-    height:100px;
-    width:100%;
-    position:absolute;
+    display: flex;
+    justify-content: left;
+    bottom: 0;
+    color: azure;
+    justify-content: space-between;
 }
 
 .mascote img{
     height:160px;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     right: 35px;
 }
@@ -49,4 +40,5 @@ justify-content: space-between;
     display: flex;
     width: 10px;
     height:10px;
-    padding-top: 70%;}
+    padding-top: 70%;
+}

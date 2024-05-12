@@ -174,29 +174,6 @@ nav ul {
     color: #FFFCFC;
 } */
 
-
-
-nav{
-    width: 100vw;
-    height: 60px; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
-    background-color:#302782;
-    z-index: 5;
-    
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    padding: 16px;
-
-    color: white;
-    list-style: none;
-    gap: 20px;
-}
-
 .navlogo img{
     width: 120px; 
 }

@@ -20,7 +20,7 @@ import Product from "./components/Product/index.js";
 export default function Products() {
   const [products, setProducts] = useState([{}]);
   const [categories, setCategories] = useState([{}]);
-  const [filterInput, setFilterInput] = useState("");
+  const [filterInput, setFilterInput] = useState(" ");
 
   useEffect(() => {
     async function fetchProductsAndCategories() {
@@ -48,7 +48,7 @@ export default function Products() {
   return (
     <div className={styles.page}>
       <aside className={styles.filters}>
-        <div  className={styles.filterInput}>
+        <div className={styles.filterInput}>
           <input
             onChange={(e) => setFilterInput(e.target.value)}
             placeholder="Pesquisa"

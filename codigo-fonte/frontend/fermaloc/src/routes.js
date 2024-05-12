@@ -1,10 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-// Components
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 
-// Pages
 import Login from "./pages/Admin/Login/index.js";
 import Home from "./pages/User/Home/index.js";
 import Product from "./pages/User/Product/index.js";
@@ -68,9 +66,17 @@ const routes = [
 function RoutesComponent() {
   return (
     <BrowserRouter>
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', width:'100vw' }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          height: "100vh",
+          
+        }}
+      >
         <NavBar />
-        <main style={{flex: 1, marginTop: "100px"}}>
+       
+        <main style={{ flex: "1 0 auto", margin: "100px 40px 80px 40px"}}>
           <Routes>
             {routes.map((route) => (
               <Route
@@ -82,6 +88,7 @@ function RoutesComponent() {
             ))}
           </Routes>
         </main>
+
         <Footer />
       </div>
     </BrowserRouter>

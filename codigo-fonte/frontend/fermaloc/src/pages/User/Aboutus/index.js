@@ -1,18 +1,43 @@
 import React from "react";
 
-// Estilização
-import styles from "./styles.module.css";
-
 export default function AboutUs() {
   return (
-    <div className={styles.page}>
-      <h2 style={{marginBottom: '8px'}}> Quem somos </h2>
-      <div style={{marginBottom: '8px', display: 'flex', flexDirection: 'column', gap: '4px'}}>
-        <p>Somos a empresa FERMALOC e desde 2008 atuamos no mercado com a prestação de serviços na área de manutenção de máquinas e ferramentas elétricas e locação de máquinas.</p>
-        <p>Fornecemos serviços de manutenção em esmerilhadeira, martelete, furadeira, serra mármore, inversora de solda e demais ferramentas elétricas.</p>
-        <p>Em 2021 a FERMALOC se tornou uma empresa autorizada da MAKITA, podendo assim oferecer um serviço de manutenção e venda de peças originais com melhor qualidade e preço para seus clientes. E em 2023, nos tornamos também autorizada da DEWALT, BLACK & DECKER e STANLEY.</p>
-        <p>Fornecemos também serviços de locação de betoneira, compactador, escora, andaime, esmerilhadeira, serra clipper, guincho, roçadeira e outras máquinas.</p>
-        <p>Sendo assim, nos colocamos a inteira disposição para prestar-lhes serviços especializados de manutenção e/ou locação de máquinas e ferramentas na certeza de oferecer-lhes um serviço de qualidade.</p>
+    <>
+      <h2 style={{ marginBottom: "8px" }}> Quem somos </h2>
+      <div
+        style={{
+          marginBottom: "8px",
+          display: "flex",
+          flexDirection: "column",
+          gap: "4px",
+        }}
+      >
+        <p>
+          Somos a empresa FERMALOC e desde 2008 atuamos no mercado com a
+          prestação de serviços na área de manutenção de máquinas e ferramentas
+          elétricas e locação de máquinas.
+        </p>
+        <p>
+          Fornecemos serviços de manutenção em esmerilhadeira, martelete,
+          furadeira, serra mármore, inversora de solda e demais ferramentas
+          elétricas.
+        </p>
+        <p>
+          Em 2021 a FERMALOC se tornou uma empresa autorizada da MAKITA, podendo
+          assim oferecer um serviço de manutenção e venda de peças originais com
+          melhor qualidade e preço para seus clientes. E em 2023, nos tornamos
+          também autorizada da DEWALT, BLACK & DECKER e STANLEY.
+        </p>
+        <p>
+          Fornecemos também serviços de locação de betoneira, compactador,
+          escora, andaime, esmerilhadeira, serra clipper, guincho, roçadeira e
+          outras máquinas.
+        </p>
+        <p>
+          Sendo assim, nos colocamos a inteira disposição para prestar-lhes
+          serviços especializados de manutenção e/ou locação de máquinas e
+          ferramentas na certeza de oferecer-lhes um serviço de qualidade.
+        </p>
         <p>Sempre à disposição.</p>
       </div>
       <iframe
@@ -22,10 +47,9 @@ export default function AboutUs() {
         allowfullscreen="true"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        className="map"
         title="map"
-        style={{border:"none"}}
+        style={{ border: "none" }}
       ></iframe>
-    </div>
+    </>
   );
 }

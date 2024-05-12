@@ -70,7 +70,7 @@ async function getProductBySearchedName(nameEquipament, page = 1) {
     );
     return response.data;
   } catch (err) {
-    console.error(err.response.data.message);
+    console.error(err);
   }
 }
 
