@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import InputForm from "../../../../../components/InputForm/index.js";
+import styles from "./styles.module.css";
 import TextAreaForm from "../../../../../components/TextAreaForm/index.js";
 import SelectStatusForm from "../../../../../components/SelectStatusForm/index.js";
 import {
@@ -60,6 +61,7 @@ export default function EditCategoryForm({ category, setViewEditForm }) {
         maxLength={300}
       />
       <SelectStatusForm value={status} onChange={setStatus} />
+      <div className={styles.page}>
       <button type="button" onClick={(e) => submitForm(e)}>
         Enviar
       </button>
@@ -68,7 +70,7 @@ export default function EditCategoryForm({ category, setViewEditForm }) {
       </button>
       <button type="button" onClick={() => setViewEditForm(false)}>
         Cancelar
-      </button>
+      </button></div>
     </form>
   );
 }

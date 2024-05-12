@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import InputForm from "../../../../../components/InputForm/index.js";
+import styles from "./styles.module.css";
 import TextAreaForm from "../../../../../components/TextAreaForm/index.js";
 import SelectStatusForm from "../../../../../components/SelectStatusForm/index.js";
 import {
@@ -91,19 +92,22 @@ export default function EditProductForm({ product, setViewEditForm }) {
         selectedOption={categoryId}
         onChange={setCategoryId}
       />
-      <img
+      
+      <div className={styles.page}>
+        <img
         src={`data:image/png;base64,${product.image}`}
         alt="produto"
         style={{ width: "100px" }}
-      />
+      /></div>
       <InputImageForm handleImageChange={(e) => setImage(e.target.files[0])} />
+      <div className={styles.page}>
       <button type="submit">Enviar</button>
       <button type="button" onClick={changeStatus}>
         Alterar Status
       </button>
       <button type="button" onClick={() => setViewEditForm(false)}>
         Cancelar
-      </button>
+      </button></div>
     </form>
   );
 }
