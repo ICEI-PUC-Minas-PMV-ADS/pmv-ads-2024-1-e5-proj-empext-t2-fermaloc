@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
+
 namespace Fermaloc.Infra.IoC;
 
 public class DependencyContainer
@@ -55,13 +56,15 @@ public class DependencyContainer
                 services.AddScoped<IBannerRepository, BannerRepository>();
                 services.AddScoped<ICategoryRepository, CategoryRepository>();
                 services.AddScoped<IEquipamentRepository, EquipamentRepository>();
+                services.AddScoped<IEquipamentClicksRepository, EquipamentClicksRepositoryRepository>();
                 services.AddScoped<IAuthenticateService, AuthenticateService>();
                 services.AddScoped<IAdministratorService, AdministratorService>();
                 services.AddScoped<IBannerService, BannerService>();
                 services.AddScoped<ICategoryService, CategoryService>();
                 services.AddScoped<IEquipamentService, EquipamentService>();
-                
-                services.AddTransient<IEmailService, EmailService>();
+                services.AddScoped<IEquipamentClicksService, EquipamentClicksService>();
+                services.AddScoped<IReportService, ReportService>();
+                services.AddScoped<IEmailService, EmailService>();
                 return services;
         }
 }

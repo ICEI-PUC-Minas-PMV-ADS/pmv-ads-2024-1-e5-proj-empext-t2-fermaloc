@@ -82,6 +82,7 @@ async function postProduct(formData) {
         "Content-Type": "multipart/form-data",
       },
     });
+    console.log(response)
     return response.data;
   } catch (err) {
     console.error(err.response.data.message);

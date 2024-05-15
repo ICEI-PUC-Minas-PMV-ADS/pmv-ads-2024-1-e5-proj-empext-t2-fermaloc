@@ -15,7 +15,7 @@ public class Equipament
     public virtual Administrator Administrator { get; set; }
     public Guid CategoryId { get; private set; }
     public virtual Category Category { get; set; }
-    public virtual ICollection<EquipamentsClicks> EquipamentsClicks { get; set; }
+    public virtual ICollection<EquipamentClicks> EquipamentsClicks { get; set; }
 
     public Equipament(string name, string description, int equipamentCode, bool status, Guid administratorId, Guid categoryId)
     {

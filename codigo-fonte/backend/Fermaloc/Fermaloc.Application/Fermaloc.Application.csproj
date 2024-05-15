@@ -12,6 +12,22 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="PDFsharp\MigraDoc\**" />
+    <Compile Remove="PDFsharp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="PDFsharp\MigraDoc\**" />
+    <EmbeddedResource Remove="PDFsharp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="PDFsharp\MigraDoc\**" />
+    <None Remove="PDFsharp\**" />
   </ItemGroup>
 
 </Project>

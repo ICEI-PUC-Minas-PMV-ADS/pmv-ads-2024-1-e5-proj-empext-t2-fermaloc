@@ -71,13 +71,10 @@ public class EquipamentRepository : IEquipamentRepository
             equipaments = await _context.Equipaments.Where(e => e.Status == true).ToListAsync();
             return equipaments;
         }
-
-            equipaments = await _context.Equipaments.Where(e => e.Name.Contains(nameEquipament)).ToListAsync();
+        equipaments = await _context.Equipaments.Where(e => e.Name.Contains(nameEquipament)).ToListAsync();
         return equipaments;
-
-
-
     }
+    
     public async Task<Equipament> UpdateEquipamentAsync(Equipament equipament)
     {
         _context.Equipaments.Update(equipament);

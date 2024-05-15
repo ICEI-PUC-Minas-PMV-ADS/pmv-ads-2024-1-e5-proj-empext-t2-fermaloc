@@ -9,7 +9,7 @@ import FilterStatus from "../../../components/FilterStatus/index.js";
 export default function ProductsAdmin() {
   const [products, setProducts] = useState([]);
   const { authenticated } = useAuthentication();
-
+  
   useEffect(() => {
     async function fetchCategories() {
       const productsData = await getProductByStatus();

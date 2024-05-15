@@ -4,10 +4,10 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Fermaloc.Infra.Data;
 
-public class EquipamentsClicksConfiguration
+public class EquipamentClicksConfiguration : IEntityTypeConfiguration<EquipamentClicks>
 {
 
-        public void Configure(EntityTypeBuilder<EquipamentsClicks> builder)
+    public void Configure(EntityTypeBuilder<EquipamentClicks> builder)
     {
         builder.HasKey(c => c.Id);
         builder.Property(c => c.Date).HasColumnType("DATE").IsRequired();
