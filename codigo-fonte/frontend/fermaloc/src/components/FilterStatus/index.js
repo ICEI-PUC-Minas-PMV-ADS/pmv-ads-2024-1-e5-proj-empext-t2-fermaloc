@@ -10,27 +10,29 @@ export default function FilterStatus({ handleFilter }) {
     handleFilter(novoValorAtivo);
   };
 
-
-
   return (
-    <div className={styles.page}>
-      <input
-        type="radio"
-        id="ativo"
-        name="opcoes"
-        checked={ativo}
-        onChange={handleInput}
-      />
-      <label htmlFor="ativo">Ativo</label>
+    <div className={styles.options}>
+      <div className={styles.option}>
+        <input
+          type="radio"
+          id="ativo"
+          name="opcoes"
+          checked={ativo}
+          onChange={handleInput}
+        />
+        <label htmlFor="ativo">Ativo</label>
+      </div>
 
-      <input
-        type="radio"
-        id="inativo"
-        name="opcoes"
-        checked={!ativo}
-        onChange={handleInput}
-      />
-      <label htmlFor="inativo">Inativo</label>
+      <div className={styles.option}>
+        <input
+          type="radio"
+          id="inativo"
+          name="opcoes"
+          checked={!ativo}
+          onChange={handleInput}
+        />
+        <label htmlFor="inativo">Inativo</label>
+      </div>
     </div>
   );
 }

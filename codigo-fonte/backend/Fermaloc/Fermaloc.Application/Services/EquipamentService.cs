@@ -69,7 +69,7 @@ public class EquipamentService : IEquipamentService
         IEnumerable<ReadEquipamentDto> readCategoriesDto = _mapper.Map<IEnumerable<ReadEquipamentDto>>(equipaments);
         return readCategoriesDto;
     }
-    public async Task<IEnumerable<ReadEquipamentDto>> GetEquipamentsSearchNameEquipamentAsync(string nameEquipament)
+    public async Task<IEnumerable<ReadEquipamentDto>> GetEquipamentsSearchNameEquipamentAsync(string? nameEquipament)
     {
         var equipaments = await _equipamentRepository.GetEquipamentsSearchNameEquipamentAsync(nameEquipament);
         IEnumerable<ReadEquipamentDto> readCategoriesDto = _mapper.Map<IEnumerable<ReadEquipamentDto>>(equipaments);

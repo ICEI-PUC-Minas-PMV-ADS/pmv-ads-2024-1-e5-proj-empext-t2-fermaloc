@@ -3,4 +3,17 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.product{
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product img{
+    width: 100px;
 }

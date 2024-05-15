@@ -34,7 +34,7 @@ public class CategoryService : ICategoryService
     {
         var category = await _categoryRepository.GetCategoryByIdAsync(id);
         if(category == null){
-            throw new NotFoundException("Categoira não encontrado");
+            throw new NotFoundException("Categoria não encontrado");
         }          
         var categoryDto = _mapper.Map<ReadCategoryDto>(category);
         return categoryDto;
@@ -56,7 +56,7 @@ public class CategoryService : ICategoryService
         try{
             var category = await _categoryRepository.GetCategoryByIdAsync(id);
             if(category == null){
-                throw new NotFoundException("Categoira não encontrado");
+                throw new NotFoundException("Categoria não encontrado");
             }          
             _mapper.Map(categoryDto, category);
             if(category.Status == false){
@@ -75,7 +75,7 @@ public class CategoryService : ICategoryService
     {
         var category = await _categoryRepository.GetCategoryByIdAsync(id);
         if(category == null){
-            throw new NotFoundException("Categoira não encontrado");
+            throw new NotFoundException("Categoria não encontrado");
         }          
         category.SetStatus(!category.Status);
         if(!category.Status){

@@ -64,7 +64,7 @@ public class EquipamentController : ControllerBase
     }
     
     [HttpGet("pesquisa")]
-    public async Task<IActionResult> GetEquipamentsSearchNameEquipament([FromQuery] string nameEquipament){
+    public async Task<IActionResult> GetEquipamentsSearchNameEquipament([FromQuery] string? nameEquipament){
         var equipamentsDto = await _equipamentService.GetEquipamentsSearchNameEquipamentAsync(nameEquipament);
         return Ok(equipamentsDto);
     }

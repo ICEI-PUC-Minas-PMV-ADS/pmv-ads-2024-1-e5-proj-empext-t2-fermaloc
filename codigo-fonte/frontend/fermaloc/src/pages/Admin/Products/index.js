@@ -10,7 +10,6 @@ export default function ProductsAdmin() {
   const [products, setProducts] = useState([]);
   const { authenticated } = useAuthentication();
 
-
   useEffect(() => {
     async function fetchCategories() {
       const productsData = await getProductByStatus();
@@ -19,17 +18,19 @@ export default function ProductsAdmin() {
     fetchCategories();
   }, []);
 
-  async function handleFilter(status){
+  async function handleFilter(status) {
     const productsData = await getProductByStatus(status);
     setProducts(productsData);
   }
 
   return (
     authenticated && (
-      <div><div>
-        <div className={styles.page}>
-          <h1>Produtos</h1></div>
-          <FilterStatus handleFilter={handleFilter}/>
+      <div>
+        <div className={styles.products}>
+          <div>
+            <h1>Produtos</h1>
+          </div>
+          <FilterStatus handleFilter={handleFilter} />
           {products.length > 0 ? (
             products.map((product) => {
               return <Product key={product.id} product={product} />;

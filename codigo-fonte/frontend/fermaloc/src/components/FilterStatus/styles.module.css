@@ -1,9 +1,13 @@
-.page {
+.options {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.page label {
+.options label {
     padding: 15px;
+}
+
+.option{
+    display: flex;
 }
