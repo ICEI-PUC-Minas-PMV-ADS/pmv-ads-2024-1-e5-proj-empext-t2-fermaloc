@@ -30,7 +30,7 @@ export default function Footer() {
 
 
       <div className={styles.instagram}>
-        <a href="https://www.instagram.com/fermaloc.locacoes/">
+        <a target="_blank" href="https://www.instagram.com/fermaloc.locacoes/">
           <img src={instagram} alt="Instagram Fermaloc" />
         </a>
       </div>
