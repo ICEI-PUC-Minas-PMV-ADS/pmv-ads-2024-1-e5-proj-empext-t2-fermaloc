@@ -20,6 +20,7 @@ public class EquipamentController : ControllerBase
         byte[]? imageBytes = null;
         using (var memoryStream = new MemoryStream())
         {
+            
             await image.CopyToAsync(memoryStream);
             imageBytes = memoryStream.ToArray();
         }

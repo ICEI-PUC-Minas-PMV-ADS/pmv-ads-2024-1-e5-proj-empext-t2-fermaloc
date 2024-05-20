@@ -18,9 +18,9 @@ public class ReportController
     }
 
     [HttpGet]
-    public async Task<IActionResult> CreateReport()
+    public async Task<IActionResult> CreateReport([FromQuery]DateOnly startDate, [FromQuery]DateOnly endDate)
     {
-        var stream = _reportService.CreateReport();
+        var stream = await _reportService.CreateReport(startDate, endDate);
         string contentType = "application/pdf";
         string fileName = "relatorio.pdf";
         

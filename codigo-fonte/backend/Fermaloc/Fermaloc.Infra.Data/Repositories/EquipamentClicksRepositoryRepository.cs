@@ -38,7 +38,7 @@ public class EquipamentClicksRepositoryRepository : IEquipamentClicksRepository
     {
         var equipamentClicks = await _context.EquipamentClicks
             .Where(e => e.Date >= startDate && e.Date <= endDate)
-            .ToListAsync();
+            .Include(e => e.Equipament).ToListAsync();
         
         return equipamentClicks;
     }

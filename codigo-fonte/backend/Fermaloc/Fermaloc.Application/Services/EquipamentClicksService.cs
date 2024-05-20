@@ -25,18 +25,18 @@ public class EquipamentClicksService : IEquipamentClicksService
         {
             throw new System.IO.InvalidDataException("Equipamento não encontrado");
         }
-        var equipamentClicks = await _equipamentClicksRepository.GetEquipamentClickOnDate(DateOnly.FromDateTime(equipamentClicksDto.Date), equipamentClicksDto.EquipamentId);
+        var equipamentClicks = await _equipamentClicksRepository.GetEquipamentClickOnDate(equipamentClicksDto.Date, equipamentClicksDto.EquipamentId);
         if (equipamentClicks == null)
         {
-            await _equipamentClicksRepository.CreateClickAsync(equipamentClicksDto.EquipamentId, DateOnly.FromDateTime(equipamentClicksDto.Date));
+            await _equipamentClicksRepository.CreateClickAsync(equipamentClicksDto.EquipamentId, equipamentClicksDto.Date);
             return;
         }
-        await _equipamentClicksRepository.AddClickAsync(DateOnly.FromDateTime(equipamentClicksDto.Date), equipamentClicks);
+        await _equipamentClicksRepository.AddClickAsync(equipamentClicksDto.Date, equipamentClicks);
     }
 
-    public async Task<IEnumerable<EquipamentClicksDto>> GetClicksBetweenDatesAsync(DateOnly startDate, DateOnly endDate)
+    public async Task<IEnumerable<EquipamentClicks>> GetClicksBetweenDatesAsync(DateOnly startDate, DateOnly endDate)
     {
-        var equipamentsClicks = await _equipamentClicksRepository.GetClicksBetweenDatesAsync(startDate, endDate);
-        return _mapper.Map<IEnumerable<EquipamentClicksDto>>(equipamentsClicks);
+        return await _equipamentClicksRepository.GetClicksBetweenDatesAsync(startDate, endDate);
+         
     }
 }

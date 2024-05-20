@@ -1,8 +1,6 @@
-using iTextSharp.text;
-
 namespace Fermaloc.Application;
 
 public interface IReportService
 {
-     byte[] CreateReport();
+     Task<byte[]> CreateReport(DateOnly startDate, DateOnly endDate);
 }

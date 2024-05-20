@@ -2,7 +2,7 @@ import api from "../api/api";
 
 async function getReportPdf(startDate = null, endDate = null) {
   try {
-    const response = await api.get("reportpdf", {
+    const response = await api.get(`reportpdf?startDate=${startDate}&endDate=${endDate}`, {
       responseType: "blob", // Para lidar com a resposta binária
     });
 
