@@ -1,6 +1,3 @@
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
 using Fermaloc.Domain;
 using FileSignatures;
 using iText.IO.Image;
@@ -82,6 +79,19 @@ public async Task<byte[]> CreateReport(DateOnly startDate, DateOnly endDate)
         var newEquipamentsClicks = equipamentsClicks
             .Where(equipamentClick => equipamentClick.EquipamentId == equipament.Id).OrderBy(equipamentClick => equipamentClick.Date).ToList();
 
+        Cell titleDayCell = new Cell().Add(new Paragraph("Data"));
+        titleDayCell.SetBorder(Border.NO_BORDER);
+        titleDayCell.SetTextAlignment(TextAlignment.LEFT);
+        titleDayCell.SetVerticalAlignment(VerticalAlignment.MIDDLE);
+        
+        Cell tileVisitCell = new Cell().Add(new Paragraph("Numero de visitas"));
+        tileVisitCell.SetBorder(Border.NO_BORDER);
+        tileVisitCell.SetTextAlignment(TextAlignment.LEFT);
+        tileVisitCell.SetVerticalAlignment(VerticalAlignment.MIDDLE);
+        tableDates.AddCell(titleDayCell);
+        tableDates.AddCell(tileVisitCell);
+        
+        
         foreach (var equipamentClick in newEquipamentsClicks)
         {
             Cell dayCell = new Cell().Add(new Paragraph(equipamentClick.Date.ToString("dd/MM/yyyy")));
@@ -96,13 +106,11 @@ public async Task<byte[]> CreateReport(DateOnly startDate, DateOnly endDate)
             numberOfClicksCell.SetVerticalAlignment(VerticalAlignment.MIDDLE);
             tableDates.AddCell(numberOfClicksCell);
         }
-
+        
+        tableDates.SetMarginBottom(30);
         document.Add(tableDates);
-
-        if (equipaments.IndexOf(equipament) != equipaments.Count - 1)
-        {
-            document.Add(ls);
-        }
+        
+        
     }
 
     document.Close();
