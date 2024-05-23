@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./styles.module.css";
 
-export default function FilterStatus({ handleFilter }) {
-  const [ativo, setAtivo] = useState(true);
-
+export default function FilterStatus({ handleFilter, status, setStatus }) {
+  
   const handleInput = () => {
-    const novoValorAtivo = !ativo;
-    setAtivo(novoValorAtivo);
-    handleFilter(novoValorAtivo);
+    const newValue = !status;
+    setStatus(newValue);
+    handleFilter(newValue);
   };
 
   return (
@@ -17,7 +16,7 @@ export default function FilterStatus({ handleFilter }) {
           type="radio"
           id="ativo"
           name="opcoes"
-          checked={ativo}
+          checked={status}
           onChange={handleInput}
         />
         <label htmlFor="ativo">Ativo</label>
@@ -28,7 +27,7 @@ export default function FilterStatus({ handleFilter }) {
           type="radio"
           id="inativo"
           name="opcoes"
-          checked={!ativo}
+          checked={!status}
           onChange={handleInput}
         />
         <label htmlFor="inativo">Inativo</label>

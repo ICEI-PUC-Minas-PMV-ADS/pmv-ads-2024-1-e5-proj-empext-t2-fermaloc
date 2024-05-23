@@ -2,6 +2,7 @@
 .page{
     display: flex;
     align-items: flex-start;
+    gap: 100px
 }
 
 .filters{

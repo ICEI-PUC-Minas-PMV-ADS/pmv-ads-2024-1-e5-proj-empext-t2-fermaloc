@@ -1,11 +1,30 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.page h1{
+    text-align: center;
 }
 
 .products{
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 100%;
+}
+
+.categoriesAndProductsContainer{
+    display: flex;
+}
+
+.categoriesAndProductsContainer ul{
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+.categoriesAndProductsContainer ul li{
+    margin: 10px 0px;
+    display:  flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.categoriesAndProductsContainer ul li:hover{
+    color: #fbb035;
 }
