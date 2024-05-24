@@ -9,4 +9,13 @@ async function getAdmin(id) {
   }
 }
 
-export { getAdmin };
+async function resetPassword({ email }) {
+  try {
+    const response = await axios.post(`administrador/resetpassword`, { email });
+    return response;
+  } catch (err) {
+    console.error(err.response.data.message);
+  }
+}
+
+export { getAdmin, resetPassword };

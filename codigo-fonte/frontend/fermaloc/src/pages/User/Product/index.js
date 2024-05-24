@@ -13,6 +13,7 @@ import {
 // Components
 import SimilarProduct from "./components/SimilarProduct/index.js";
 import Title from "../../../components/Title/index.js";
+import ContactForm from "./components/ContactForm/index.js";
 
 export default function Product() {
   const { id } = useParams();
@@ -47,6 +48,11 @@ export default function Product() {
           <div className={styles.descriptionBackground} />
         </div>
       </div>
+
+      <div>
+        <ContactForm />
+      </div>
+
       <div className={styles.similarProductsContainer}>
         {similarProducts.length > 0 && <h1>Outros produtos parecidos</h1>}
         <div className={styles.similarProductsImageContainer}>
@@ -54,6 +60,7 @@ export default function Product() {
             ? similarProducts.map((similarProduct) => {
                 return (
                   <SimilarProduct
+                    key={similarProduct.id}
                     image={similarProduct.image}
                     id={similarProduct.id}
                   />
