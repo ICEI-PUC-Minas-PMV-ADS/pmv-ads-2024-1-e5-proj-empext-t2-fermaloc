@@ -8,10 +8,7 @@ using iText.Layout.Borders;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 
-
 namespace Fermaloc.Application;
-
-
 
 public class ReportService : IReportService
 {
@@ -42,6 +39,36 @@ public async Task<byte[]> CreateReport(DateOnly startDate, DateOnly endDate)
     PdfDocument pdf = new PdfDocument(writer);
     Document document = new Document(pdf);
 
+    string projectDirectory = Directory.GetCurrentDirectory();
+    string logoDirectory = Path.Combine(projectDirectory, "Public/images");
+    string logoPath = Path.Combine(logoDirectory, "logo.jpg");
+
+    ImageData logoImageData = ImageDataFactory.Create(logoPath);
+    Image logoImg = new Image(logoImageData);
+    logoImg.SetMaxWidth(70);
+    logoImg.SetMaxHeight(70);
+    
+    Table headerTable = new Table(2);
+    headerTable.SetMarginBottom(20);
+    headerTable.SetWidth(UnitValue.CreatePercentValue(100));
+    
+    Cell logoCell = new Cell().Add(logoImg);
+    logoCell.SetBorder(Border.NO_BORDER);
+    logoCell.SetTextAlignment(TextAlignment.RIGHT);
+    logoCell.SetVerticalAlignment(VerticalAlignment.MIDDLE);
+    headerTable.AddCell(logoCell);
+
+    Paragraph documentNameTitle = new Paragraph("Relatório de visitas")
+        .SetFontSize(20)
+        .SetBold();
+    Cell titleCell = new Cell().Add(documentNameTitle);
+    titleCell.SetBorder(Border.NO_BORDER);
+    titleCell.SetVerticalAlignment(VerticalAlignment.MIDDLE);
+    headerTable.AddCell(titleCell);
+    
+    document.Add(headerTable);
+    
+    
     foreach (var equipament in equipaments)
     {
         TestFormat(equipament.Image);
@@ -86,7 +113,7 @@ public async Task<byte[]> CreateReport(DateOnly startDate, DateOnly endDate)
         
         Cell tileVisitCell = new Cell().Add(new Paragraph("Numero de visitas"));
         tileVisitCell.SetBorder(Border.NO_BORDER);
-        tileVisitCell.SetTextAlignment(TextAlignment.LEFT);
+        tileVisitCell.SetTextAlignment(TextAlignment.CENTER);
         tileVisitCell.SetVerticalAlignment(VerticalAlignment.MIDDLE);
         tableDates.AddCell(titleDayCell);
         tableDates.AddCell(tileVisitCell);
@@ -102,7 +129,7 @@ public async Task<byte[]> CreateReport(DateOnly startDate, DateOnly endDate)
 
             Cell numberOfClicksCell = new Cell().Add(new Paragraph(equipamentClick.NumberOfClicks.ToString()));
             numberOfClicksCell.SetBorder(Border.NO_BORDER);
-            numberOfClicksCell.SetTextAlignment(TextAlignment.LEFT);
+            numberOfClicksCell.SetTextAlignment(TextAlignment.CENTER);
             numberOfClicksCell.SetVerticalAlignment(VerticalAlignment.MIDDLE);
             tableDates.AddCell(numberOfClicksCell);
         }
