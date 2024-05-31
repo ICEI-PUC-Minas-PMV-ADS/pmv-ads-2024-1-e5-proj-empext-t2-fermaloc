@@ -60,9 +60,10 @@ export default function Home() {
           </div>
           <Link
             to="/produtos"
-            style={{ textDecoration: "underline", color: "black" }}
+            // style={{ textDecoration: "underline", color: "black" }}
+            className={styles.TextProducts}
           >
-            Ver Mais
+            Ver Todos os Produtos
           </Link>
         </div>
       </div>

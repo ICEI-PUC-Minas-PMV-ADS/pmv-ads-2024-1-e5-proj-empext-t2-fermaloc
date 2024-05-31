@@ -1,6 +1,6 @@
 .bannerContainer{
     width: 100%;
-    display: flex;
+    display: grid;
     justify-content: center;
     margin-top: -41px;
 }
@@ -75,4 +75,16 @@
 
 .logoPartner img {
     width: 90%;
+}
+
+.TextProducts {
+    text-decoration: underline;
+    color: black;
+    text-align: center;
+}
+
+.TextProducts:hover {
+    color: #fbb035;
+    text-align: center;
+    transform: scale(1.05);
 }

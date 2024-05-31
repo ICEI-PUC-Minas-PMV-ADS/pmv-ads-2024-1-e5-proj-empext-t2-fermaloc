@@ -61,5 +61,6 @@
 
 .products :hover{
     color: #fbb035;
+    transform: scale(1.05);
 }
 

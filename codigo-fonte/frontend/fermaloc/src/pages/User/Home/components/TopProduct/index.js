@@ -6,7 +6,10 @@ export default function TopProduct({ image, name, id }) {
     return (
         <Link
             to={`/produtos/${id}`}
-            style={{ textDecoration: "none", color: "black" }}
+            // style={{ textDecoration: "none", color: "black", textAlign: "center" }}
+            
+            // CSS em substituição do acima.
+            className={styles.TextProduct}
         >
             <div className={styles.topProductContainer}>
                 <img
@@ -15,10 +18,10 @@ export default function TopProduct({ image, name, id }) {
                     className={styles.imageProduct}
                 />
                 <h2>{name}</h2>
-                <div className={styles.topProductFooter}>
+                {/* <div className={styles.topProductFooter}>
                     <div />
                     <span>Sobre</span>
-                </div>
+                </div> */}
             </div>
         </Link>
     );

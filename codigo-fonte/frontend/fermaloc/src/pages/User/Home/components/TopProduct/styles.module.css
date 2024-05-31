@@ -10,7 +10,11 @@
 
 .imageProduct {
     width: 90%;
+    display: grid;
+    /* margin:auto; */
+    margin-top: 40%;
 }
+
 
 .topProductContainer:hover .topProductFooter div {
     -webkit-transform: skew(-15deg) translateX(0);
@@ -18,7 +22,7 @@
     transform:         skew(-15deg) translateX(0);
 }
 
-.topProductFooter {
+/* .topProductFooter {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,9 +37,9 @@
 
 .topProductFooter span {
     z-index: 2;
-}
+} */
 
-.topProductFooter div {
+/* .topProductFooter div {
     width: 110%;
     height: 100%;
     z-index: 1;
@@ -47,4 +51,22 @@
     transform:         skew(-15deg) translateX(-20vw);
 
     transition: transform 0.2s ease-in-out;
+} */
+
+/* CSS dos textos dos produtos  INÍCIO */
+
+.TextProduct {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    display: grid;
 }
+
+.TextProduct:hover {
+    text-decoration: none;
+    color: #fbb035;
+    text-align: center;
+    transform: scale(1.05);
+}
+
+/* CSS dos textos dos produtos FIM */
