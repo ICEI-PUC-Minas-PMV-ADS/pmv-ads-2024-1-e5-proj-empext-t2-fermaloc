@@ -9,6 +9,7 @@ import styles from "./styles.module.css";
 export default function CategoriesAdmin() {
   const [categories, setCategories] = useState([]);
   const { authenticated } = useAuthentication();
+  const [status, setStatus] = useState(true);
 
   useEffect(() => {
     async function fetchCategories() {
@@ -18,8 +19,7 @@ export default function CategoriesAdmin() {
     fetchCategories();
   }, []);
 
-
-  async function handleFilter(status){
+  async function handleFilter(status) {
     const productsData = await getCategoriesByStatus(status);
     setCategories(productsData);
   }
@@ -31,7 +31,10 @@ export default function CategoriesAdmin() {
           <div className={styles.page}>
             <h1>Categorias</h1>
           </div>
-          <FilterStatus handleFilter={handleFilter}/>
+          <FilterStatus handleFilter={handleFilter}
+          status={status}
+          setStatus={setStatus}
+          />
           <div className={styles.container}>
             {categories.length > 0 ? (
               categories.map((category) => {
