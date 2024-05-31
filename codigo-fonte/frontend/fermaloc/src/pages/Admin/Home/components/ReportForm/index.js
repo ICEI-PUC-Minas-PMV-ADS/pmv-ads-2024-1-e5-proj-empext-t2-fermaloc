@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { getReportPdf } from "../../../../../services/reportPdfService.js";
+import styles from "./styles.module.css";
 
 export default function ReportForm() {
   const [startDate, setStartDate] = useState(
@@ -23,22 +24,24 @@ export default function ReportForm() {
 
   return (
     <div>
-      <h3>Relatório de visitas</h3>
-      <input
-        type="date"
-        id="start"
-        name="trip-start"
-        value={startDate}
-        onChange={handleStartDateChange}
-      />
-      <input
-        type="date"
-        id="end"
-        name="trip-end"
-        value={endDate}
-        onChange={handleEndDateChange}
-      />
-      <button onClick={handleGetReportPdf}>Gerar relatório</button>
+      <h1>Relatório de visitas</h1>
+      <div className={styles.dates}>
+        <input
+          type="date"
+          id="start"
+          name="trip-start"
+          value={startDate}
+          onChange={handleStartDateChange}
+        />
+        <input
+          type="date"
+          id="end"
+          name="trip-end"
+          value={endDate}
+          onChange={handleEndDateChange}
+        />
+      </div>
+      <button onClick={handleGetReportPdf} className={styles.button}>Gerar relatório</button>
     </div>
   );
 }

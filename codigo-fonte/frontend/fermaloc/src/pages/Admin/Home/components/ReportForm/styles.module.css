@@ -1,0 +1,28 @@
+.dates {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    padding: 5rem;
+}
+
+.dates input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #000;
+    cursor: pointer;
+    padding: 15px;
+}
