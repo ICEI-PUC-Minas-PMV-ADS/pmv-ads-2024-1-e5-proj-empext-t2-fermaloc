@@ -1,6 +1,6 @@
 .bannerContainer{
     width: 100%;
-    display: grid;
+    display: flex;
     justify-content: center;
     margin-top: -41px;
 }

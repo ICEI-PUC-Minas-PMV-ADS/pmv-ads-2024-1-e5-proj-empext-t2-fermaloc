@@ -50,6 +50,7 @@ export default function Products() {
       <aside className={styles.filters}>
         <div className={styles.filterInput}>
           <input
+            value={filterInput}
             onChange={(e) => setFilterInput(e.target.value)}
             placeholder="Pesquisa"
           />
@@ -57,7 +58,7 @@ export default function Products() {
             <IoSearchOutline />
           </button>
         </div>
-        <p>Categorias:</p>
+        <h1>Categorias:</h1>
         <ul>
           {categories.map((category) => {
             return (
@@ -70,6 +71,14 @@ export default function Products() {
               </li>
             );
           })}
+          <li
+                onClick={() => filterProductsByName("")}
+                style={{ cursor: "pointer" }}
+              >
+                <strong>Todos os Produtos</strong>
+                <FaAngleRight />
+          </li>
+          
         </ul>
       </aside>
       <div className={styles.products}>
