@@ -28,16 +28,19 @@ export default function CategoriesAdmin() {
     authenticated && (
       <div>
         <div>
-        <div className={styles.page}>
-          <h1>Categorias</h1></div>
+          <div className={styles.page}>
+            <h1>Categorias</h1>
+          </div>
           <FilterStatus handleFilter={handleFilter}/>
-          {categories.length > 0 ? (
-            categories.map((category) => {
-              return <Category key={category.id} category={category} />;
-            })
-          ) : (
-            <p>Nenhuma categoria cadastrada</p>
-          )}
+          <div className={styles.container}>
+            {categories.length > 0 ? (
+              categories.map((category) => {
+                return <Category key={category.id} category={category} />;
+              })
+            ) : (
+              <p>Nenhuma categoria cadastrada</p>
+            )}
+          </div>
         </div>
         <div>
           <NewCategoryForm />

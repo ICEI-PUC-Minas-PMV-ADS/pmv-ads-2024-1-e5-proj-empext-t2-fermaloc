@@ -10,7 +10,7 @@ export default function Category({ category }) {
     !viewEditForm ? (
       <div className={styles.page}>
         <p>{category.name}</p>
-        <FaEdit onClick={() => setViewEditForm(true)} />
+        <FaEdit onClick={() => setViewEditForm(true)} style={{cursor: "pointer"}} />
       </div>
     ) : (
       <EditCategoryForm category={category} setViewEditForm={setViewEditForm}/>

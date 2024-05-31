@@ -28,9 +28,17 @@ export default function BannersAdmin() {
               <img
                 src={`data:image/png;base64,${banner.image}`}
                 alt="banner"
-                style={{ width: "100px" }}
+                // style={{ width: "100px" }}
+                className={styles.banneradmin}
               />
-              <FaEdit onClick={() => setViewEditForm(true)} />
+              <div
+              onClick={() => setViewEditForm(true)}
+              style={{ cursor: "pointer" }}
+              >
+              
+              <FaEdit/>
+              
+              </div>
             </>
           ) : (
             <EditBannerForm setViewEditForm={setViewEditForm} />
