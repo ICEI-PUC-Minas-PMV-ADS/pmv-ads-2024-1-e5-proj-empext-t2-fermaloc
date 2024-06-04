@@ -9,7 +9,7 @@ import Home from "./pages/User/Home/index.js";
 import Product from "./pages/User/Product/index.js";
 import Products from "./pages/User/Products/index.js";
 import NotFound from "./pages/NotFound/index.js";
-import AboutUs from "./pages/User/Aboutus/index.js";
+import AboutUs from "./pages/User/AboutUs/index.js";
 import HomeAdmin from "./pages/Admin/Home/index.js";
 import CategoriesAdmin from "./pages/Admin/Categories/index.js";
 import BannersAdmin from "./pages/Admin/Banners/index.js";
@@ -20,42 +20,52 @@ const routes = [
         path: "/",
         element: <Home />,
         errorElement: <NotFound />,
+        id: 1
     },
     {
         path: "/produtos",
         element: <Products />,
+        id: 2
     },
     {
         path: "/produtos/:id",
         element: <Product />,
+        id: 3
     },
     {
         path: "/aboutus",
         element: <AboutUs />,
+        id: 4
     },
     {
         path: "/login",
         element: <Login />,
+        id: 5
     },
     {
         path: "/login/esqueci-senha",
         element: <LonginEsqueciSenha />,
+        id: 6
     },
     {
         path: "/admin/home",
         element: <HomeAdmin />,
+        id: 7
     },
     {
         path: "/admin/categorias",
         element: <CategoriesAdmin />,
+        id: 8
     },
     {
         path: "/admin/produtos",
         element: <ProductsAdmin />,
+        id: 9
     },
     {
         path: "/admin/banners",
         element: <BannersAdmin />,
+        id: 10
     },
 ];
 

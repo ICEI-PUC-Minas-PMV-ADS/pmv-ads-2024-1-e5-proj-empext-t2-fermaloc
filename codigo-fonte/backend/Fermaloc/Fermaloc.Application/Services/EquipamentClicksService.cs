@@ -8,13 +8,12 @@ public class EquipamentClicksService : IEquipamentClicksService
 {
     private readonly IEquipamentClicksRepository _equipamentClicksRepository;
     private readonly IEquipamentService _equipamentService;
-    private readonly IMapper _mapper;
+    
 
-    public EquipamentClicksService(IEquipamentClicksRepository equipamentClicksRepository, IMapper mapper, IEquipamentService equipamentService)
+    public EquipamentClicksService(IEquipamentClicksRepository equipamentClicksRepository, IEquipamentService equipamentService)
     {
         _equipamentClicksRepository = equipamentClicksRepository;
         _equipamentService = equipamentService;
-        _mapper = mapper;
     }
     
 

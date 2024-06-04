@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa6";
 import { IoSearchOutline } from "react-icons/io5";
 
@@ -72,32 +71,22 @@ export default function Products() {
             );
           })}
           <li
-                onClick={() => filterProductsByName("")}
-                style={{ cursor: "pointer" }}
-              >
-                <strong>Todos os Produtos</strong>
-                <FaAngleRight />
+            onClick={() => filterProductsByName("")}
+            style={{ cursor: "pointer" }}
+          >
+            <strong>Todos os Produtos</strong>
+            <FaAngleRight />
           </li>
-          
         </ul>
       </aside>
       <div className={styles.products}>
         {products.map((product) => {
           return (
-            <Link
-              to={`${product.id}`}
-              key={product.id}
-              style={{
-                textDecoration: "none",
-                color: "black",
-              }}
-            >
-              <Product
-                image={product.image}
-                id={product.id}
-                name={product.name}
-              />
-            </Link>
+            <Product
+              image={product.image}
+              id={product.id}
+              name={product.name}
+            />
           );
         })}
       </div>

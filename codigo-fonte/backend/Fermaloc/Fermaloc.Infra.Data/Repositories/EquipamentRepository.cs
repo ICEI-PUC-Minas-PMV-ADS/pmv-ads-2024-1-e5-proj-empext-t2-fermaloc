@@ -33,7 +33,7 @@ public class EquipamentRepository : IEquipamentRepository
     }
     public async Task<IEnumerable<Equipament>> GetActiveEquipamentsOrderByNumberOfClicksAsync()
     {
-        IEnumerable<Equipament> equipaments = await _context.Equipaments.Where(e => e.Status == true).ToListAsync();
+        IEnumerable<Equipament> equipaments = await _context.Equipaments.Where(e => e.Status == true).OrderByDescending(e => e.NumberOfClicks).ToListAsync();
         return equipaments;
     }
 

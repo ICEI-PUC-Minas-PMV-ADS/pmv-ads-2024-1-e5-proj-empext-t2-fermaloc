@@ -12,6 +12,7 @@ public class EquipamentConfiguration : IEntityTypeConfiguration<Equipament>
         builder.Property(e => e.Name).HasMaxLength(150).IsRequired();
         builder.Property(e => e.Description).HasMaxLength(1000).HasColumnType("TEXT").IsRequired();
         builder.Property(e => e.Image).HasMaxLength(5 * 1024 * 1024).HasColumnType("LONGBLOB").IsRequired();
+        builder.Property(e => e.NumberOfClicks).HasColumnType("BIGINT").IsRequired();
         builder
             .HasOne(e => e.Administrator)
             .WithMany(a => a.Equipaments)

@@ -87,6 +87,7 @@ public class AdministratorService : IAdministratorService
     public async Task<string> ResetPassword (string email){
         var administrator = await _administratorRepository.GetAdministratorByEmailAsync(email);
         string newPassword = GenerateNewPassword();
+        //string newPassword = "Fermaloc@123";
         var hashedPassword = _authenticateService.HashPassword(newPassword);
         administrator.SetPassword(hashedPassword);
         
