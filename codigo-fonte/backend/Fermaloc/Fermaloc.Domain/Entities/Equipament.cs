@@ -10,7 +10,6 @@ public class Equipament
     public string Description { get; private set; }
     public int EquipamentCode { get; private set; }
     public bool Status { get; private set; }
-    public int NumberOfClicks { get; private set; }
     public byte[] Image { get; private set; }
     public Guid AdministratorId { get; private set; }
     public virtual Administrator Administrator { get; set; }
@@ -65,10 +64,5 @@ public class Equipament
     public void SetImage(byte[] image){
         DomainExceptionValidation.ValidateByte(5 * 1024 * 1024, "Imagem do equipamento", image);
         Image = image;
-    }
-
-    public void AddClick()
-    {
-        NumberOfClicks += 1;
     }
 }

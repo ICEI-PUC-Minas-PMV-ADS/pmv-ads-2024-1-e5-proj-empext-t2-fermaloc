@@ -9,5 +9,5 @@ public interface IAdministratorService
     Task<ReadAdministratorDto> UpdateAdministratorAsync (Guid id, UpdateAdministratorDto administratorDto);
     Task<ReadAdministratorDto>  DeleteAdministratorAsync (Guid id);
     Task<LoginResponseDto> Login (LoginRequestDto loginRequestDto);
-    Task ResetPassword (string email);
+    Task<string> ResetPassword (string email);
 }

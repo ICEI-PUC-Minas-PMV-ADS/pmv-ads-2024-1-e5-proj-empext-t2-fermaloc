@@ -84,11 +84,20 @@ export default function Products() {
       <div className={styles.products}>
         {products.map((product) => {
           return (
+            <Link
+              to={`${product.id}`}
+              key={product.id}
+              style={{
+                textDecoration: "none",
+                color: "black",
+              }}
+            >
               <Product
                 image={product.image}
                 id={product.id}
                 name={product.name}
               />
+            </Link>
           );
         })}
       </div>

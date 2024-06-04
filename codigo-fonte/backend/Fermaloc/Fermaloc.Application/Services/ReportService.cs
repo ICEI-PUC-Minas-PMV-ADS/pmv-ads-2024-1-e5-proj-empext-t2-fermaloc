@@ -13,11 +13,12 @@ namespace Fermaloc.Application;
 public class ReportService : IReportService
 {
     private readonly IEquipamentClicksService _equipamentClicksService;
-    
+    private readonly IEquipamentService _equipamentService;
 
-    public ReportService(IEquipamentClicksService equipamentClicksService)
+    public ReportService(IEquipamentClicksService equipamentClicksService, IEquipamentService equipamentService)
     {
         _equipamentClicksService = equipamentClicksService;
+        _equipamentService = equipamentService;
     }
 
 public async Task<byte[]> CreateReport(DateOnly startDate, DateOnly endDate)

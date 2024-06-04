@@ -116,3 +116,39 @@
     width: 250px; 
 }
 
+.passwordAlert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    margin-bottom: 3vh;
+    position: relative;
+}
+
+.passwordAlert div {
+    background-color: #fbb035;
+    transform: skew(-15deg);
+    position: absolute;
+    width: 80%;
+    height: 100%;
+}
+
+.passwordAlert span {
+    color: white;
+    z-index: 1;
+    font-weight: bold;
+}
+
+.passwordAlert button {
+    z-index: 1;
+    margin-left: 1vh;
+    width: 2.5vh;
+    height: 2.5vh;
+    background-color: transparent;
+    box-shadow: none;
+    color: white;
+}
+
+.passwordAlert button:hover {
+    cursor: pointer;
+}

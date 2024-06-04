@@ -84,7 +84,7 @@ public class AdministratorService : IAdministratorService
         }
         throw new LoginException("Dados de login invalidos");   
     }
-    public async Task ResetPassword (string email){
+    public async Task<string> ResetPassword (string email){
         var administrator = await _administratorRepository.GetAdministratorByEmailAsync(email);
         string newPassword = GenerateNewPassword();
         var hashedPassword = _authenticateService.HashPassword(newPassword);
@@ -92,6 +92,8 @@ public class AdministratorService : IAdministratorService
         
         await _emailService.ResetPassword(email, newPassword);
         await _administratorRepository.UpdateAdministratorAsync(administrator);
+
+        return newPassword;
     }
 
     private static string GenerateNewPassword(){

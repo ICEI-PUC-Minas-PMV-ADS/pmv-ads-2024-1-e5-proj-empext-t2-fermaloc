@@ -56,7 +56,7 @@ public class DependencyContainer
                 services.AddScoped<IBannerRepository, BannerRepository>();
                 services.AddScoped<ICategoryRepository, CategoryRepository>();
                 services.AddScoped<IEquipamentRepository, EquipamentRepository>();
-                services.AddScoped<IEquipamentClicksRepository, EquipamentClicksRepository>();
+                services.AddScoped<IEquipamentClicksRepository, EquipamentClicksRepositoryRepository>();
                 services.AddScoped<IAuthenticateService, AuthenticateService>();
                 services.AddScoped<IAdministratorService, AdministratorService>();
                 services.AddScoped<IBannerService, BannerService>();

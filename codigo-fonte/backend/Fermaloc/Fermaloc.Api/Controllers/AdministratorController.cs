@@ -52,7 +52,7 @@ public class AdministratorController : ControllerBase
 
     [HttpPost("resetpassword")]
     public async Task<IActionResult> ResetAdministratorPassword ([FromBody] ResetPasswordDto resetPasswordDto){
-        await _administratorService.ResetPassword(resetPasswordDto.Email);
-        return NoContent();
+        string newPassword = await _administratorService.ResetPassword(resetPasswordDto.Email);
+        return Ok(newPassword);
     }
 }

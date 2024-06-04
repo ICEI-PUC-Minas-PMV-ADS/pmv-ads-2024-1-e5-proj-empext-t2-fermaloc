@@ -62,6 +62,7 @@ async function getProductByStatusAndCategory(status, categoryId, page = 1) {
   }
 }
 
+//O parâmetro page ainda não foi nem passado na requisição pois esse endpont no backend ainda não está aceitando esse parâmetro
 async function getProductBySearchedName(nameEquipament, page = 1) {
   try {
     const response = await api.get(
@@ -74,52 +75,40 @@ async function getProductBySearchedName(nameEquipament, page = 1) {
 }
 
 async function postProduct(formData) {
-  console.log(formData.get("EquipamentCode"));
+  console.log(formData.get("EquipamentCode"))
   try {
     const response = await api.post(`equipamento/`, formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
     });
-    console.log(response);
+    console.log(response)
     return response.data;
   } catch (err) {
     console.error(err.response.data.message);
-    alert(err.response.data.message);
+    alert(err.response.data.message)
   }
 }
 
 async function putProduct(formData, productId) {
-  console.log(formData.get("EquipamentCode"));
+  console.log(formData.get("EquipamentCode"))
   try {
     const response = await api.put(`equipamento/${productId}`, formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
     });
-    console.log(response);
+    console.log(response)
     return response.data;
   } catch (err) {
     console.error(err.response.data.message);
-    alert(err.response.data.message);
+    alert(err.response.data.message)
   }
 }
 
 async function changeStatusProduct(productId) {
   try {
     const response = await api.put(`equipamento/alterarstatus/${productId}`);
-    return response.data;
-  } catch (err) {
-    console.error(err.response.data.message);
-  }
-}
-
-async function addClick(date, equipamentId) {
-  try {
-    const response = await api.post(`click`, {
-      date,
-      equipamentId,
-    });
     return response.data;
   } catch (err) {
     console.error(err.response.data.message);
@@ -137,5 +126,4 @@ export {
   postProduct,
   putProduct,
   changeStatusProduct,
-  addClick,
 };
