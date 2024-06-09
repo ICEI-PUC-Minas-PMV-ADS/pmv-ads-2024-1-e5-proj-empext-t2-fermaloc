@@ -52,6 +52,13 @@ Diante dos cenários apresentados e analisando os requisitos do projeto, foi rea
 | Critério de Êxito   | O usuário consegue visualizar os produtos cadastrados de acordo com a categoria.
 
 
+| Caso de Teste       | CT-008 – Disponibilizar comunicaão direta com o empresário por meio do Whatsapp                                     |
+| ------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Requisito Associado | RF-007 – Disponibilizar a comunicação direta com o empresário por meio do Whatsapp.                            |
+| Objetivo do Teste   | Verificar se está abrindo Whatsapp na tela do produto.                                                    |
+| Passos              | 1) Acessar a tela inicial da aplicação; 2) Selecionar o produto"; 3) Clicar no ícone do Whatsapp.|
+| Critério de Êxito   | O Whatsapp será aberto direto no contato de telefone configurado.
+
 # Evidências de Testes de Software
 
 ### CT-001
@@ -72,3 +79,6 @@ Diante dos cenários apresentados e analisando os requisitos do projeto, foi rea
 <a href="https://youtu.be/oIGZaIHFJvg" title="CRUD de produtos">Vídeo fazendo o CRUD de produto</a>
 ### CT-006 e CT-007
 <a href="https://youtu.be/lta58_TIcMU" title="Visualização dos Produtos">Vídeo visualizando todos os produtos e a divisão de acordo com a categoria</a>
+
+### CT-008 
+<a href="https://youtu.be/yN61Kx0RLzA" tittle="Funcionalidade de contato pelo Whatsapp">Vídeo do Whatsapp sendo aberto ao selecionar a opção na tela do produto.</a>
