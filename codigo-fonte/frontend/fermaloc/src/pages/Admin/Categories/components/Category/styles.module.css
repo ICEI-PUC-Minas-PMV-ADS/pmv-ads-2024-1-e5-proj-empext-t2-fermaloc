@@ -12,6 +12,8 @@
     align-items: center;
     overflow-x: hidden;
     gap: 5px;
+    font-family: 'Calibri';
+    font-size: large;
 }
 
 

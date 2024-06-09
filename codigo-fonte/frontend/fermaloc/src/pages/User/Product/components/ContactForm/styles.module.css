@@ -17,6 +17,8 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-family: 'Calibri';
+    font-size: large;
   }
   
   .contactForm button {

@@ -95,3 +95,11 @@
 .contactContainer button img{
     width: 60px;
 }
+
+.whatsapp button{
+    margin: 1 1em;
+    font-size: 2em;
+    border: none;
+    color: green;
+    background-color: white;
+}

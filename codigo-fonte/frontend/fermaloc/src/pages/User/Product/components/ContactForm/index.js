@@ -57,10 +57,10 @@ export default function ContactForm() {
       </label>
 
       <label>
-        Telefone Móvel:
+        Telefone Celular:
         <InputMask
           mask="(99) 99999-9999"
-          placeholder="Digite aqui seu telefone móvel"
+          placeholder="Digite aqui seu telefone celular"
           value={phoneNumber1}
           onChange={(e) => setPhoneNumber1(e.target.value)}
         />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
+import ReactWhatsapp from 'react-whatsapp';
+import { FaWhatsapp } from "react-icons/fa";
 // Estilização
 import styles from "./styles.module.css";
 
@@ -14,6 +15,7 @@ import {
 import SimilarProduct from "./components/SimilarProduct/index.js";
 import Title from "../../../components/Title/index.js";
 import ContactForm from "./components/ContactForm/index.js";
+
 
 export default function Product() {
   const { id } = useParams();
@@ -53,6 +55,12 @@ export default function Product() {
         <ContactForm />
       </div>
 
+      Falar com vendedores
+    <div className={styles.whatsapp}>
+   <ReactWhatsapp number="+55 31996169421" classname whatsapp="btn" message="Gostaria de falar com os vendedores."><FaWhatsapp></FaWhatsapp></ReactWhatsapp>   
+          </div>
+     
+          
       <div className={styles.similarProductsContainer}>
         {similarProducts.length > 0 && <h1>Outros produtos parecidos</h1>}
         <div className={styles.similarProductsImageContainer}>
