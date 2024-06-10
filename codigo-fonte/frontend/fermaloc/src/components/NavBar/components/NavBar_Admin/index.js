@@ -13,11 +13,11 @@ export default function NavBar_Admin({ location, logonavbar }) {
       <ul>
         <li className={styles.navLink}>
           <Link
-            to="/admin/home"
+            to="/admin/produtos"
             style={{ textDecoration: "none", color: "white" }}
           >
             <div />
-            <p>Home</p>
+            <p>Home</p> {/* Antigo PRODUTOS */}
           </Link>
         </li>
         <li className={styles.navLink}>
@@ -40,11 +40,11 @@ export default function NavBar_Admin({ location, logonavbar }) {
         </li>
         <li className={styles.navLink}>
           <Link
-            to="/admin/produtos"
+            to="/admin/home"
             style={{ textDecoration: "none", color: "white" }}
           >
             <div />
-            <p>Produtos</p>
+            <p>Relatório</p> {/* Antiga HOME */}
           </Link>
         </li>
       </ul>
