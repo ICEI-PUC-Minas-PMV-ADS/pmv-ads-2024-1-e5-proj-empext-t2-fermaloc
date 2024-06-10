@@ -59,6 +59,14 @@ Diante dos cenários apresentados e analisando os requisitos do projeto, foi rea
 | Passos              | 1) Acessar a tela inicial da aplicação; 2) Selecionar o produto"; 3) Clicar no ícone do Whatsapp.|
 | Critério de Êxito   | O Whatsapp será aberto direto no contato de telefone configurado.
 
+
+| Caso de Teste       | CT-009 – Permitir que o administrador realize o reset de senha d aplicação                                    |
+| ------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Requisito Associado | RF-009 – Permitir que o usuário administrador peça o reset de senha.                            |
+| Objetivo do Teste   | Verificar se o usuario consegue realizar o reset da senha.                                                    |
+| Passos              | 1) Acessar a tela de login da aplicação; 2) Selecionar o esqueceu a senha; 3) Clicar na opção de reset de senha.|
+| Critério de Êxito   | A nova senha será alterada.
+
 # Evidências de Testes de Software
 
 ### CT-001
@@ -82,3 +90,6 @@ Diante dos cenários apresentados e analisando os requisitos do projeto, foi rea
 
 ### CT-008 
 <a href="https://youtu.be/yN61Kx0RLzA" tittle="Funcionalidade de contato pelo Whatsapp">Vídeo do Whatsapp sendo aberto ao selecionar a opção na tela do produto.</a>
+
+### CT-009
+<a href="https://youtu.be/2ngk27gsCrQ" title="Funcionalidade de reset da senha" >Vídeo do teste do reset da senha.</a>
