@@ -91,12 +91,12 @@ public class AdministratorService : IAdministratorService
         {
             throw new InvalidDataException("Email invalido");
         }
-        //string newPassword = GenerateNewPassword();
-        string newPassword = "Fermaloc@123";
+        string newPassword = GenerateNewPassword();
+        //string newPassword = "Fermaloc@123";
         var hashedPassword = _authenticateService.HashPassword(newPassword);
         administrator.SetPassword(hashedPassword);
         
-        //await _emailService.ResetPassword(email, newPassword);
+        await _emailService.ResetPassword(email, newPassword);
         await _administratorRepository.UpdateAdministratorAsync(administrator);
 
         return newPassword;

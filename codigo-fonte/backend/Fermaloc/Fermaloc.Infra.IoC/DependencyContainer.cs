@@ -26,7 +26,7 @@ public class DependencyContainer
                 {
                 options.AddPolicy("AllowSpecificOrigin", builder =>
                 {
-                        builder.WithOrigins("http://localhost:3000").WithMethods("GET", "POST", "PUT", "DELETE").AllowAnyHeader();
+                        builder.WithOrigins("https://test-fermaloc.vercel.app").WithMethods("GET", "POST", "PUT", "DELETE").AllowAnyHeader();
                 });
                 });
 

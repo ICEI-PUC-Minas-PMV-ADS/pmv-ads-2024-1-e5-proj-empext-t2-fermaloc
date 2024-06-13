@@ -41,7 +41,7 @@ public class EmailService : IEmailService
                 EnableSsl = true,
             };
                 
-            var mail = new MailMessage(from: email, to: email, subject: "Cliente entrou em contato", body: $"{text}\nEmail para contato: " +
+            var mail = new MailMessage(from: email, to: "fermaloc.maquinas@gmail.com", subject: "Cliente entrou em contato", body: $"{text}\nEmail para contato: " +
                 $"{emailContact}\nCelular: {phoneNumber1} \nTelefone Fixo: {phoneNumber2}");
             await client.SendMailAsync(mail);
             

@@ -57,7 +57,7 @@ export default function Product() {
 
       Falar com vendedores
     <div className={styles.whatsapp}>
-   <ReactWhatsapp number="+55 31996169421" classname whatsapp="btn" message="Gostaria de falar com os vendedores."><FaWhatsapp></FaWhatsapp></ReactWhatsapp>   
+   <ReactWhatsapp number="+55 31994938023" classname whatsapp="btn" message="Gostaria de falar com os vendedores."><FaWhatsapp></FaWhatsapp></ReactWhatsapp>   
           </div>
      
           
