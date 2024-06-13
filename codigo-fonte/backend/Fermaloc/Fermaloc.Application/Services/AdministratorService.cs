@@ -25,6 +25,7 @@ public class AdministratorService : IAdministratorService
         try{
             administratorDto.Password = _authenticateService.HashPassword(administratorDto.Password);
             var administrator = _mapper.Map<Administrator>(administratorDto);
+            administrator.SetRole("Admin");
             var administratorCreated = await _administratorRepository.CreateAdministratorAsync(administrator);
             return _mapper.Map<ReadAdministratorDto>(administratorCreated);
         }catch(DomainExceptionValidation ex){

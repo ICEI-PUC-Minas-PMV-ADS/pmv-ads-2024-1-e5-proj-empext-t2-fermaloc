@@ -14,12 +14,14 @@ public class Administrator
     public virtual ICollection<Banner> Banners { get; set; }
     public virtual ICollection<Category> Categories { get; set; }
     public virtual ICollection<Equipament> Equipaments { get; set; }
-
+    
+    public Administrator(){}
+    
     public Administrator(string name, string email, string password, string cnpj, string role)
     {
         ValidateDomain(name, email, password, cnpj, role);
     }
-    
+
     public Administrator(Guid id, string name, string email, string password, string cnpj, string role)
     {
         DomainExceptionValidation.ValidateGuid(id);
@@ -57,7 +59,6 @@ public class Administrator
 
     public void SetRole(string role){
         DomainExceptionValidation.ValidateRequiredValue(role == null, "Role");
-        DomainExceptionValidation.ValidatePassword(role);
-        Password = role;
+        Role = role;
     }
 }

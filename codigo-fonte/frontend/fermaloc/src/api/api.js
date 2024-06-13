@@ -1,6 +1,5 @@
 import axios from "axios";
-//const url = "http://localhost:5175/fermaloc/v1/";
-const url = "https://localhost:7020/fermaloc/v1/";
+const url = "https://fermaloc.azurewebsites.net/fermaloc/v1/";
 
 const api = axios.create({
     baseURL: url,
