@@ -14,6 +14,8 @@ public class Banner
         ValidateDomain(image, administratorId);
     }
     
+    public Banner(){}
+    
     public Banner(Guid id, byte[] image, Guid administratorId, Guid categoryId)
     {
         DomainExceptionValidation.ValidateGuid(id);

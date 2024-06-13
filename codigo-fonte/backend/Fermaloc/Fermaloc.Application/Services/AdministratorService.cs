@@ -87,12 +87,16 @@ public class AdministratorService : IAdministratorService
     }
     public async Task<string> ResetPassword (string email){
         var administrator = await _administratorRepository.GetAdministratorByEmailAsync(email);
-        string newPassword = GenerateNewPassword();
-        //string newPassword = "Fermaloc@123";
+        if (administrator is null)
+        {
+            throw new InvalidDataException("Email invalido");
+        }
+        //string newPassword = GenerateNewPassword();
+        string newPassword = "Fermaloc@123";
         var hashedPassword = _authenticateService.HashPassword(newPassword);
         administrator.SetPassword(hashedPassword);
         
-        await _emailService.ResetPassword(email, newPassword);
+        //await _emailService.ResetPassword(email, newPassword);
         await _administratorRepository.UpdateAdministratorAsync(administrator);
 
         return newPassword;
