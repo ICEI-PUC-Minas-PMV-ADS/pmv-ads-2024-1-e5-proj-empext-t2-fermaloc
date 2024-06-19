@@ -1,0 +1,27 @@
+message: Website criado como forma de divulgação de catalogo de equipamentos e ferramentas disponíveis para aluguel na empresa Fermaloc.
+title: Fermaloc
+authors:
+  - family-names: Victor Fraga
+    given-names: Diego
+  - family-names: Teixeira da Costa
+    given-names: Igor
+  - family-names: Estevam Nunes Cordeiro
+    given-names: Matheus
+  - family-names: Malta Boscatti
+    given-names: Thais
+  - family-names: Munhoz Carneiro
+    given-names: Thais
+  - family-names: Eduardo Silva Oliveira
+    given-names: Vinícius
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Lúcia da Silva
+    given-names: Soraia
+keywords:
+  - Aluguel
+  - Catalogo
+  - Ferramentas
+  - Equipamentos
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-empext-t2-fermaloc
+version: 1.0.0
+date-released: 2024-06-23
