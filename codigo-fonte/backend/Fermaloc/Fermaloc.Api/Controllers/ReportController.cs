@@ -1,5 +1,6 @@
 using System.Net;
 using Fermaloc.Application;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Fermaloc.Api;
@@ -18,6 +19,7 @@ public class ReportController
     }
 
     [HttpGet]
+    [Authorize]
     public async Task<IActionResult> CreateReport([FromQuery]DateOnly startDate, [FromQuery]DateOnly endDate)
     {
         var stream = await _reportService.CreateReport(startDate, endDate);
